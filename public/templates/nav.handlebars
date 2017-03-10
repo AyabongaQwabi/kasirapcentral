@@ -1,0 +1,9 @@
+
+  <div id='navBar-list' class='list-group'>
+    <a href="#" class="list-group-item list-group-item-action">
+      <img class='nav-logo' src='{{logo}}' />
+    </a>
+    {{#each links}}
+      <a href="{{href}}" class="list-group-item list-group-item-action" onclick="{{onClick}}">{{title}}</a>
+    {{/each}}
+  </div>

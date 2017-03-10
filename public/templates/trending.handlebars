@@ -1,0 +1,15 @@
+<div class='row'>
+  <div class="jumbotron">
+  <h1 class="display-3">Trending</h1>
+  <p class="lead">Stories trending on the internet today.  Celebrities , News , Gossip , Hot new styles be on top of your game. Fly Paper blah blah blah &nbsp &nbsp<br/> <b class='badge badge-default'> Trevor Noah</b><b class='badge badge-default'> Sabs Mkhabela</b><b class='badge badge-default'> Oscar Pistorius</b><b class='badge badge-default'> Menzi Black</b><b class='badge badge-default'> Summer Bash Central</b></p>
+  </div>
+  <div class='container'>
+  {{#each images}}
+  <div class="parent" onclick="">
+        <div class="child" style='background:url({{src}});background-size: cover;'>
+            <a href="#" class='card-cap'>{{caption}}</a>
+        </div>
+    </div>
+  {{/each}}
+</div>
+</div>
