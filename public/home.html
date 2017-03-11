@@ -16,6 +16,17 @@
         <link rel="stylesheet" href="css/home.css" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
+        <script type="text/javascript">
+          function playSound(el,soundfile) {
+              if (el.mp3) {
+                  if(el.mp3.paused) el.mp3.play();
+                  else el.mp3.pause();
+              } else {
+                  el.mp3 = new Audio(soundfile);
+                  el.mp3.play();
+              }
+          }
+      </script>
     </head>
 
 
@@ -33,35 +44,76 @@
 <li>
 
   <span style="height:65%" class='first'></span>
-  <span style="height:35%" class='second' ><h2> shows</h2></span>
+  <span style="height:35%" class='second' onclick="playSound(this, '/sound/fomo.mp3');">
+
+    <h2><b> Stunna </b></h2>
+    <h5> F.O.M.O </h5>
+    <br/>
+    <img class='play'src='/img/play.png'>
+  </span>
 </li>
 <li>
   <span style="height:65%" class='first'></span>
-  <span style="height:35%" class='second' ><h2>kasi</h2></span>
+  <span style="height:35%" class='second' onclick="playSound(this, '/sound/pantsula.mp3');">
+    <h2><b> V2V </b></h2>
+    <h5> Pantsula  </h5>
+    <br/>
+    <img class='play'src='/img/play.png'>
+  </span>
 </li>
 <li>
   <span style="height:65%" class='first'></span>
-  <span style="height:35%" class='second' ><h2> life</h2></span>
+  <span style="height:35%" class='second' onclick="playSound(this, '/sound/awta.mp3');">
+    <h2><b> NankOo </b></h2>
+    <h5> A.W.T.A </h5>
+    <br/>
+    <img class='play'src='/img/play.png'>
+  </span>
 </li>
 <li>
   <span style="height:65%" class='first'></span>
-  <span style="height:35%" class='second' ><h2> music</h2></span>
+  <span style="height:35%" class='second' onclick="playSound(this, '/sound/im sober.mp3');">
+    <h2><b> V2V Pham </b></h2>
+    <h5> I'm Sober </h5>
+    <br/>
+    <img class='play'src='/img/play.png'>
+  </span>
 </li>
 <li>
   <span style="height:65%" class='first'></span>
-  <span style="height:35%" class='second' ><h2>bishes</h2></span>
+  <span style="height:35%" class='second' onclick="playSound(this, '/sound/moneyat.mp3');">
+    <h2><b> V2V Pham </b></h2>
+    <h5> Money At</h5>
+    <br/>
+    <img class='play'src='/img/play.png'>
+  </span>
 </li>
 <li>
    <span style="height:35%" class='first'></span>
-  <span style="height:65%" class='second' ><h2> stars</h2></span>
+  <span style="height:65%" class='second' onclick="playSound(this, '/sound/andcengi.mp3');">
+    <h2><b> V2V Pham </b></h2>
+    <h5> And'cengi</h5>
+    <br/>
+    <img class='play'src='/img/play.png'>
+  </span>
 </li>
 <li>
   <span style="height:65%" class='first'></span>
-  <span style="height:35%" class='second' ><h2>and</h2></span>
+  <span style="height:35%" class='second' onclick="playSound(this, '/sound/bayabheka.mp3');">
+    <h2>V2V Pham </b></h2>
+    <h5> Bayabheka</h5>
+    <br/>
+    <img class='play'src='/img/play.png'>
+  </span>
 </li>
 <li>
   <span style="height:50%" class='first'></span>
-  <span style="height:50%" class='second' ><h2> events</h2></span>
+  <span style="height:50%" class='second' onclick="playSound(this, '/sound/pronto.mp3');">
+    <h2><b> Stunna </b></h2>
+    <h5> Pronto</h5>
+    <br/>
+    <img class='play'src='/img/play.png'>
+  </span>
 </li>
 </body>
 

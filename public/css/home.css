@@ -24,7 +24,12 @@ body {
 	display: table-cell;
 	vertical-align: bottom;
 	height: 100vh;
-  width:13vw}
+  width:13vw
+}
+.chart li:hover{
+	width:30vw;
+
+}
 
 .chart .second {
   background: rgba(255, 223, 0, 0.85);
@@ -67,28 +72,49 @@ body {
 	content: attr(title);
 	word-wrap: break-word;
 }
+.chart li span img{
+	max-width:50%;
+	max-height:50%;
+}
+.chart li:hover{
+	box-shadow: 1px 1px 100px 1px black;
+}
+.chart li:hover > .first {
+	height: 50%;
+	-webkit-animation-play-state: paused;
+	 -moz-animation-play-state: paused;
+	 -o-animation-play-state: paused;
+	 animation-play-state: paused;
+
+}
+.chart li:hover > .second {
+	height: 50%;
+	-webkit-animation-play-state: paused;
+	 -moz-animation-play-state: paused;
+	 -o-animation-play-state: paused;
+	 animation-play-state: paused;
 
 
-
+}
 li:nth-of-type(1) .first{
   animation: draw-1 10s alternate infinite;
-  background:rgba(0,0,0,0.4);
-  background-size:cover;
+	background:url(/img/background.jpg)no-repeat center center;
+	background-size:cover;
 }
 li:nth-of-type(1) .second{
-  animation: alterdraw-1 10s alternate infinite;
+
 }
 @keyframes draw-1 {
 	0% {height: 50%;}
-  35% {height: 70%;}
-  75% {height:30%}
-  100% {height: 50%;}
+  35% {height: 10%;}
+  75% {height:40%}
+  100% {height: 30%;}
 }
 @keyframes alterdraw-1 {
 	0% {height: 50%;}
   35% {height: 30%;}
-  75% {height:70%}
-  100% {height: 50%;}
+  75% {height:40%}
+  100% {height: 25%;}
 
 }
 
@@ -97,20 +123,21 @@ li:nth-of-type(1) .second{
 
 li:nth-of-type(2) .first{
   animation: draw-2 10s alternate infinite;
-  background:rgba(0,0,0,0.4);
+	background:url(/img/background.jpg)no-repeat center center;
+	background-size:cover;
 }
 li:nth-of-type(2) .second{
-  animation: alterdraw-2 10s alternate infinite;
+
 }
 @keyframes draw-2 {
 	0% {height: 50%;}
-  35% {height: 30%;}
-  75% {height:70%}
-  100% {height: 60%;}
+  35% {height: 40%;}
+  75% {height:10%}
+  100% {height: 30%;}
 }
 @keyframes alterdraw-2 {
 	0% {height: 50%;}
-  35% {height: 70%;}
+  35% {height: 60%;}
   75% {height:30%}
   100% {height: 40%;}
 
@@ -124,10 +151,12 @@ li:nth-of-type(2) .second{
 
 li:nth-of-type(3) .first{
   animation: draw-3 10s alternate infinite;
-  background:rgba(0,0,0,0.4);
+	background:url(/img/background.jpg)no-repeat center center;
+	background-size:cover;
+
 }
 li:nth-of-type(3) .second{
-  animation: alterdraw-3 10s alternate infinite;
+
 }
 @keyframes draw-3 {
 	0% {height: 50%;}
@@ -149,10 +178,11 @@ li:nth-of-type(3) .second{
 
 li:nth-of-type(4) .first{
   animation: draw-4 10s alternate infinite;
-  background:rgba(0,0,0,0.4);
+	background:url(/img/background.jpg)no-repeat center center;
+	background-size:cover;
 }
 li:nth-of-type(4) .second{
-  animation: alterdraw-4 10s alternate infinite;
+
 }
 @keyframes draw-4 {
 	0% {height: 70%;}
@@ -170,10 +200,11 @@ li:nth-of-type(4) .second{
 
 li:nth-of-type(5) .first{
   animation: draw-3 10s alternate infinite;
-  background:rgba(0,0,0,0.4);
+	background:url(/img/background.jpg)no-repeat center center;
+	background-size:cover;
 }
 li:nth-of-type(5) .second{
-  animation: alterdraw-3 10s alternate infinite;
+
 }
 @keyframes draw-4 {
 	0% {height: 70%;}
@@ -191,10 +222,11 @@ li:nth-of-type(5) .second{
 
 li:nth-of-type(6) .first{
   animation: draw-6 10s alternate infinite;
-  background:rgba(0,0,0,0.4);
+	background:url(/img/background.jpg)no-repeat center center;
+	background-size:cover;
 }
 li:nth-of-type(6) .second{
-  animation: alterdraw-6 10s alternate infinite;
+
 }
 @keyframes draw-6 {
 	0% {height: 15%;}
@@ -212,17 +244,19 @@ li:nth-of-type(6) .second{
 
 li:nth-of-type(7) .first{
   animation: draw-2 7s alternate infinite;
-  background:rgba(0,0,0,0.4);
+	background:url(/img/background.jpg)no-repeat center center;
+	background-size:cover;
 }
 li:nth-of-type(7) .second{
-  animation: alterdraw-2 7s alternate infinite;
+
 }
 li:nth-of-type(8) .first{
   animation: draw-2 17s alternate infinite;
-  background:rgba(0,0,0,0.4);
+	background:url(/img/background.jpg)no-repeat center center;
+	background-size:cover;
 }
 li:nth-of-type(8) .second{
-  animation: alterdraw-2 17s alternate infinite;
+
 }
 
 *, *:before, *:after {
