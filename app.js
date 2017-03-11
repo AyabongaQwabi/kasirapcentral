@@ -8,4 +8,4 @@ app.get('/',function(req,res){
     res.sendfile('public/home.html')
 })
 
-app.listen(5000)
+app.listen(80)

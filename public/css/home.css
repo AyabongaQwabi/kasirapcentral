@@ -1,7 +1,313 @@
+body {
+	font: 13px/1.3 'Lucida Grande',sans-serif;
+	color: #666;
+  overflow:hidden;
+}
+
+.chart {
+	display: table;
+	table-layout: fixed;
+	width: 60%;
+	max-width: 700px;
+	height: 400px;
+	margin: 0 auto;
+	background:url(http://i.imgur.com/ZJ6UUri.jpg);
+  background-size:cover;
+  text-align:center;
+}
+.chart h1{
+  color:white;
+  text-shadow: 1px 1px 1px 1px black;
+}
+.chart li {
+	position: relative;
+	display: table-cell;
+	vertical-align: bottom;
+	height: 100vh;
+  width:13vw}
+
+.chart .second {
+  background: rgba(255, 223, 0, 0.85);
+}
+.chart .second h2{
+  color:black;
+  font-family: 'Lato', sans-serif;
+  background: white;
+  word-wrap: break-word;
+  font-size: 1em;
+  letter-spacing: -2px;
+}
+.chart .second:before {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	padding: 5px 1em 0;
+	display: block;
+	text-align: center;
+	content: attr(title);
+	word-wrap: break-word;
+}
+
+.chart span {
+	margin: 0;
+	display: block;
+  border-left:0.1rem solid rgba(0,0,0,0.1);;
+
+}
+
+.chart span:before {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	padding: 5px 1em 0;
+	display: block;
+	text-align: center;
+	content: attr(title);
+	word-wrap: break-word;
+}
+
+
+
+li:nth-of-type(1) .first{
+  animation: draw-1 10s alternate infinite;
+  background:rgba(0,0,0,0.4);
+  background-size:cover;
+}
+li:nth-of-type(1) .second{
+  animation: alterdraw-1 10s alternate infinite;
+}
+@keyframes draw-1 {
+	0% {height: 50%;}
+  35% {height: 70%;}
+  75% {height:30%}
+  100% {height: 50%;}
+}
+@keyframes alterdraw-1 {
+	0% {height: 50%;}
+  35% {height: 30%;}
+  75% {height:70%}
+  100% {height: 50%;}
+
+}
+
+
+
+
+li:nth-of-type(2) .first{
+  animation: draw-2 10s alternate infinite;
+  background:rgba(0,0,0,0.4);
+}
+li:nth-of-type(2) .second{
+  animation: alterdraw-2 10s alternate infinite;
+}
+@keyframes draw-2 {
+	0% {height: 50%;}
+  35% {height: 30%;}
+  75% {height:70%}
+  100% {height: 60%;}
+}
+@keyframes alterdraw-2 {
+	0% {height: 50%;}
+  35% {height: 70%;}
+  75% {height:30%}
+  100% {height: 40%;}
+
+}
+
+
+
+
+
+
+
+li:nth-of-type(3) .first{
+  animation: draw-3 10s alternate infinite;
+  background:rgba(0,0,0,0.4);
+}
+li:nth-of-type(3) .second{
+  animation: alterdraw-3 10s alternate infinite;
+}
+@keyframes draw-3 {
+	0% {height: 50%;}
+  35% {height: 60%;}
+  75% {height:40%}
+  100% {height: 30%;}
+}
+@keyframes alterdraw-3 {
+	0% {height: 50%;}
+  35% {height: 40%;}
+  75% {height:60%}
+  100% {height: 70%;}
+
+}
+
+
+
+
+
+li:nth-of-type(4) .first{
+  animation: draw-4 10s alternate infinite;
+  background:rgba(0,0,0,0.4);
+}
+li:nth-of-type(4) .second{
+  animation: alterdraw-4 10s alternate infinite;
+}
+@keyframes draw-4 {
+	0% {height: 70%;}
+  35% {height: 70%;}
+  75% {height:15%}
+  100% {height: 75%;}
+}
+@keyframes alterdraw-4 {
+	0% {height: 30%;}
+  35% {height: 30%;}
+  75% {height:85%}
+  100% {height: 25%;}
+
+}
+
+li:nth-of-type(5) .first{
+  animation: draw-3 10s alternate infinite;
+  background:rgba(0,0,0,0.4);
+}
+li:nth-of-type(5) .second{
+  animation: alterdraw-3 10s alternate infinite;
+}
+@keyframes draw-4 {
+	0% {height: 70%;}
+  35% {height: 70%;}
+  75% {height:15%}
+  100% {height: 75%;}
+}
+@keyframes alterdraw-4 {
+	0% {height: 30%;}
+  35% {height: 30%;}
+  75% {height:85%}
+  100% {height: 25%;}
+
+}
+
+li:nth-of-type(6) .first{
+  animation: draw-6 10s alternate infinite;
+  background:rgba(0,0,0,0.4);
+}
+li:nth-of-type(6) .second{
+  animation: alterdraw-6 10s alternate infinite;
+}
+@keyframes draw-6 {
+	0% {height: 15%;}
+  35% {height: 65%;}
+  75% {height:57%}
+  100% {height: 45%;}
+}
+@keyframes alterdraw-6 {
+	0% {height: 85%;}
+  35% {height: 35%;}
+  75% {height:43%}
+  100% {height: 55%;}
+
+}
+
+li:nth-of-type(7) .first{
+  animation: draw-2 7s alternate infinite;
+  background:rgba(0,0,0,0.4);
+}
+li:nth-of-type(7) .second{
+  animation: alterdraw-2 7s alternate infinite;
+}
+li:nth-of-type(8) .first{
+  animation: draw-2 17s alternate infinite;
+  background:rgba(0,0,0,0.4);
+}
+li:nth-of-type(8) .second{
+  animation: alterdraw-2 17s alternate infinite;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+	padding: 0;
+	margin: 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
 html {
-  background: url(/img/background.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+	box-sizing: border-box;
+}
+
+body {
+	max-width: 680px;
+	margin: 100px auto;
+	background: #000;
+	color: #fff;
+}
+
+body:after {
+	content: '';
+	clear: both;
+	display: table;
+}
+
+header {
+	letter-spacing: 2px;
+	font-size: 19px;
+	padding: 10px 20px;
+	color: #555;
+	letter-spacing: 2px;
+	font-weight: 400;
+	border-bottom: 2.5px solid #555;
+}
+
+header:after {
+	content: 'NO20004790';
+	float: right;
+}
+
+/*
+	Giant Part */
+
+article {
+	font-size: 140px;
+	color: black;
+	text-align: center;
+	font-weight: 300;
+	line-height: 0.9;
+	margin-bottom: 110px;
+  font-family: 'Lato', sans-serif;
+
+   letter-spacing: -15px;
+}
+
+/*
+	Footer Part */
+
+footer {
+	color: #434343;
+	font-size: 18px;
+	border-top: 2px solid #434343;
+	display: table;
+	width: 100%;
+	table-layout: fixed;
+}
+
+footer p {
+	display: table-cell;
+	line-height: 1.7;
+	padding: 10px;
+}
+
+p:first-child {
+	font-weight: 300;
+}
+
+p:nth-child(2) {
+	font-weight: 400;
+}
+
+p:last-child {
+	font-weight: bold;
 }
