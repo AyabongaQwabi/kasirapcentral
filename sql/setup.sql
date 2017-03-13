@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2017 at 03:35 PM
+-- Generation Time: Mar 13, 2017 at 03:38 PM
 -- Server version: 10.1.19-MariaDB
 -- PHP Version: 5.6.28
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `kriss`
 --
+CREATE DATABASE IF NOT EXISTS `kriss` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `kriss`;
 
 -- --------------------------------------------------------
 
@@ -26,6 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `bio`
 --
 
+DROP TABLE IF EXISTS `bio`;
 CREATE TABLE `bio` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -41,6 +44,7 @@ CREATE TABLE `bio` (
 -- Table structure for table `cover_image`
 --
 
+DROP TABLE IF EXISTS `cover_image`;
 CREATE TABLE `cover_image` (
   `id` int(11) NOT NULL,
   `src` varchar(100) NOT NULL,
@@ -53,6 +57,7 @@ CREATE TABLE `cover_image` (
 -- Table structure for table `featured`
 --
 
+DROP TABLE IF EXISTS `featured`;
 CREATE TABLE `featured` (
   `id` int(11) NOT NULL,
   `song_id` int(11) NOT NULL
@@ -73,6 +78,7 @@ INSERT INTO `featured` (`id`, `song_id`) VALUES
 -- Table structure for table `image_art`
 --
 
+DROP TABLE IF EXISTS `image_art`;
 CREATE TABLE `image_art` (
   `id` int(11) NOT NULL,
   `src` varchar(255) NOT NULL,
@@ -95,6 +101,7 @@ INSERT INTO `image_art` (`id`, `src`, `song_id`) VALUES
 -- Table structure for table `song`
 --
 
+DROP TABLE IF EXISTS `song`;
 CREATE TABLE `song` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -118,6 +125,7 @@ INSERT INTO `song` (`id`, `name`, `user_id`) VALUES
 -- Table structure for table `user`
 --
 
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
