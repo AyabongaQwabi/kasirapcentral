@@ -4,11 +4,14 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.14.1"
+    "express": "^4.14.1",
+    "express-handlebars": "^3.0.0",
+    "express-myconnection": "^1.0.4",
+    "mysql": "^2.13.0"
   },
   "devDependencies": {},
   "scripts": {
-    "start":"node app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
