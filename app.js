@@ -8,7 +8,10 @@ var app = express();
 userMethods =require('./routes/user')
 userDataService = require('./dataServices/userDataService'),
 featureMethods =require('./routes/feature')
-featureDataService = require('./dataServices/featureDataService'),
+songMethods =require('./routes/songs')
+songDataService = require('./dataServices/songDataService'),
+videoMethods =require('./routes/videos')
+videoDataService = require('./dataServices/videoDataService'),
 ConnectionProvider = require('./routes/connectionProvider');
 
 var dbOptions = {
@@ -20,7 +23,8 @@ var dbOptions = {
 };
 var serviceSetupCallback = function(connection){
 	return {
-		songDataServ : new songDataService(connection),
+    songDataServ : new songDataService(connection),
+    videoDataServ : new videoDataService(connection),
     userDataServ : new userDataService(connection)
 	}
 };
@@ -34,11 +38,12 @@ app.use(express.static('public'))
 app.engine('handlebars', exphbs({defaultLayout: 'index'}));
 app.set('view engine', 'handlebars');
 
+var feature = new featureMethods();
 var songs = new songMethods();
 var videos = new videoMethods();
 var user = new userMethods();
 
-app.get('/',songs.getFeatured)
+app.get('/',feature.getFeatured)
 app.get('/music',songs.getAll)
 app.get('/videos',videos.getAll)
 
