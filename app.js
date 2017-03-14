@@ -17,7 +17,7 @@ ConnectionProvider = require('./routes/connectionProvider');
 var dbOptions = {
  host: 'localhost',
   user: 'root',
-  password: '',
+  password: 'theaya5379',
   port: 3306,
   database: 'kriss'
 };
