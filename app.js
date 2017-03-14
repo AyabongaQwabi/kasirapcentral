@@ -3,10 +3,12 @@ var mysql = require("mysql");
 var myconnection = require("express-myconnection")
 exphbs  = require('express-handlebars')
 var path = require('path')
+var bodyParser = require('body-parser')
 
 var app = express();
 userMethods =require('./routes/user')
 userDataService = require('./dataServices/userDataService'),
+eventDataService = require('./dataServices/eventDataService'),
 featureMethods =require('./routes/feature')
 songMethods =require('./routes/songs')
 songDataService = require('./dataServices/songDataService'),
@@ -25,7 +27,8 @@ var serviceSetupCallback = function(connection){
 	return {
     songDataServ : new songDataService(connection),
     videoDataServ : new videoDataService(connection),
-    userDataServ : new userDataService(connection)
+    userDataServ : new userDataService(connection),
+    eventDataServ : new eventDataService(connection)
 	}
 };
 
@@ -38,6 +41,9 @@ app.use(express.static('public'))
 app.engine('handlebars', exphbs({defaultLayout: 'index'}));
 app.set('view engine', 'handlebars');
 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 var feature = new featureMethods();
 var songs = new songMethods();
 var videos = new videoMethods();
@@ -46,5 +52,11 @@ var user = new userMethods();
 app.get('/',feature.getFeatured)
 app.get('/music',songs.getAll)
 app.get('/videos',videos.getAll)
+app.post('/update/flame',songs.updateFlameCount)
+app.post('/update/download',songs.updateDownloadCount)
+app.post('/update/play/',function(req,res){
+    console.log('/update play')
+    songs.updatePlayCount(req,res)
+})
 
 app.listen(5000)
