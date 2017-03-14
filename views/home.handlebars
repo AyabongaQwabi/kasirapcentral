@@ -1,4 +1,5 @@
-
+        <script src="js/jquery.fileDownload.js"></script>
+        <script src="js/progress.js"></script>
 
         <div class='row'>
             <div class='col-md-2 col-xs-12 hidden-xs-down hidden-md-down ad'>
@@ -28,10 +29,14 @@
                               <h3>{{artist}}</h3>
                             </div>
                             <div class='functional'>
-                              <img class='download ' src='/img/download.png '>
-                              <img class='play' src='/img/play.png ' onclick="playSound(this, '/sound/liso.mp3 ');">
-                              <img class='heat' src='/img/heat.png '>
-                              <br/>
+                              <a href="{{url}}" download><img id='{{song_id}}' onclick="download(this,'{{url}}')" class='download ' src='img/download.png'></a>
+                              <img id='{{song_id}}' onclick="playSound(this,'{{url}}');" class='play' src='img/play.png'  />
+                              <img id='{{song_id}}' onclick='flame(this)' ='heat' src='img/heat.png' >
+                              <div class='analytics'>
+                                <span class='badge badge-pill badge-default download_'>{{download_count}}</span>'
+                                <span class='badge badge-pill badge-default play_count'>{{play_count}}</span>'
+                                <span class='badge badge-pill badge-default flame_count'>{{flame_count}}</span>'
+                              </div>
                               <div class="hp_slide">
                                   <div class="hp_range"></div>
                               </div>
@@ -60,15 +65,16 @@
 
                   <div class='event-items'>
                     <ul class='collection'>
-                    {{#each songs}}
+                    {{#each events}}
                       <li class='collection-item'>
-                        <div class='event-image' style="background:url({{art}}) center center;background-size:cover;">
+                        <div class='event-image' style="background:url({{image}}) center center;background-size:cover;">
 
                         </div>
                         <div class='event-body'>
-                          <h2 class="h2">{{name}}</h2>
-                          <h3>{{artist}}</h3>
-                          <p> Lorem ipsum dolor sit amt sinyar dofjhy asnlaskjdb alskdmniius  lasdjaknsdhu </p>
+                          <h5><b>{{name}}</b></h5>
+                          <h6>{{venue}}</h6>
+                          <h6>{{date}}</h6>
+                          <p> {{description}} </p>
                         </div>
                       </li>
                       {{/each}}
@@ -84,13 +90,14 @@
                     </div>
                 </div>
 
-
+                <div class='row featured form-fields'></div>
                 <div class='row featured post'></div>
-                <div class='row footer'>
+
+                <!--<div class='row footer'>
                   <p> Copyright KRISS ©2017</p>
                   <br/>
                   <p> Web Design by <a href="http://salmonesolutions.tk"> Salmone Solutions</a><p>
-                </div>
+                </div>!-->
             </div>
             <div class='col-md-2 hidden-xs-down  hidden-md-down ad'></div>
         </div>
