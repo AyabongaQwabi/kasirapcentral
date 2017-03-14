@@ -13,15 +13,19 @@ module.exports = function(){
         req.services(function(err,services){
               var songService = services.songDataServ;
               var videoService = services.videoDataServ;
+              var eventService = services.eventDataServ;
               songService.getFeatured(function(err, results) {
                  var songs = results;
+                 //console.log(results);
                 videoService.getFeatured(function(err, results) {
                     results.forEach(function(result){
                       result.url=getId(result.url)
                     })
-                    console.log(results)
-                    console.log('rendering songs')
-                    res.render('home',{songs:songs,videos:results})
+                    var videos = results;
+                    eventService.getEvents(function(err, results) {
+                      res.render('home',{songs:songs,videos:videos,events:results})
+                    })
+
                 })
             })
         });
