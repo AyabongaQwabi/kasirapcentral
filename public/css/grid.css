@@ -1,0 +1,241 @@
+.music .collection .collection-item{
+  display:inline-block;
+  background: orange;
+  width:15vw;
+  height:100%;
+  border:1px solid black;
+  list-style-type: none;
+
+}
+.video{
+  height:45vh;
+  overflow:hidden;
+}
+.video-embed{
+  background-color: red;
+  height:80vh;
+}
+.music .collection .collection-item .functional img{
+    max-width:5%;
+
+}
+.main{
+  background:blue;
+  height:100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.ad{
+  background:red;
+  height:100vh;
+}
+.navigationBar{
+  background:white;
+  height:15vh;
+}
+.featured{
+  background:yellow;
+  height:40vh;
+  border:1px solid black;
+}
+.footer{
+  background:dimgrey;
+  height:40vh;
+  border:1px solid black;
+}
+.music{
+  height:30vh;
+  overflow:hidden;
+}
+.music .collection{
+  width:inherit;
+  height:inherit;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.music .collection .collection-item .functional{
+  width:100%;
+  padding:5%;
+  text-align: center;
+  margin-bottom:10%
+}
+
+.music .collection .collection-item .heading{
+  font-family: 'Lato', sans-serif;
+  width:100%;
+  background:black;
+  color: white;
+  font-size: 1vw;
+  text-align: center;
+  word-wrap:break-word;
+
+}
+.music .collection .collection-item .functional img{
+
+    max-width: 30%;
+    padding: 5%;
+
+}
+.music .collection .collection-item .heading h2,h3{
+  font-size: 4vw;
+  display: block;
+}
+.music .collection .collection-item{
+  padding:2% 0;
+  display:inline-block;
+  background: orange;
+  background-size: cover;
+  width:45vw;
+  height:100%;
+  border:1px solid black;
+  list-style-type: none;
+
+}
+.video{
+  height:85vh;
+  overflow:hidden;
+  width:113vw;
+}
+.video .collection{
+  width:105vw;
+  height:100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.video .collection .collection-item{
+  display:block;
+  background: orange;
+  width:100%;
+  height:10vh;
+  border:1px solid black;
+  list-style-type: none;
+}
+.video-embed{
+  background-color: red;
+  height:50vh;
+  width:100%;
+
+}
+.video-embed iframe{
+  height:inherit;
+  margin:0 auto;
+}
+.video-playlist{
+  width:inherit;
+  margin:0 auto;
+}
+
+
+
+
+
+
+.navigationBar .navitem{
+  border:1px solid rgba(0,0,0,0.5);
+  height:inherit;
+  width:50%
+}
+.navigationBar .navitem .navbtn{
+  border:1px solid rgba(0,0,0,0.5);
+  height:50%;
+  padding: 5% 30%;
+  background: rgba(255, 200, 0, 0.85);
+    font-family: 'Lato', sans-serif;
+
+
+
+}
+.navigationBar .navitem .navbtn a{
+  text-decoration: none;
+  color:black;
+}
+.navigationBar .navitem .logo{
+  font-family: 'Lato', sans-serif;
+  margin: 5% 30%;
+  color:black;
+}
+
+
+
+
+
+
+
+.events .header{
+  font-family: 'Lato', sans-serif
+  text-align: center;
+  height:25%;
+  border: 1px solid black;
+  background:white;
+  color:black;
+  width:100%;
+}
+.events .header h1{
+  font-family: 'Lato', sans-serif;
+  margin: 1% 30%;
+}
+.events .event-items{
+  height:75%;
+  overflow-y:hidden;
+
+  width: 100%;
+}
+.events .event-items .collection{
+  height:100%;
+  width: 100%;
+  overflow-x:scroll;
+  overflow-y: hidden;
+  white-space:nowrap;
+}
+.events .event-items .collection .collection-item{
+  height:100%;
+  display: inline-block;
+
+}
+.events .event-items .collection .collection-item .event-image{
+  height:100%;
+  width:50%;
+  border:2px solid red;
+  display: inline;
+  float: left;
+}
+.events .event-items .collection .collection-item .event-body{
+  height:100%;
+  width:50%;
+  border:2px solid red;
+  display: inline;
+  float: left;
+  white-space: normal;
+  padding: 5%;
+}
+.events .event-items .collection .collection-item .event-image img{
+  max-width: 20vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::-webkit-scrollbar{width: 9px;}
+
+::-webkit-scrollbar-thumb{background-color: rgba(255, 200, 0, 0.85); border-radius: 0;}
+::-webkit-scrollbar-thumb:hover{background-color:rgb(196, 196, 196);}
+
+::-webkit-scrollbar-track{background-color:rgb(0,0, 0);}
