@@ -17,7 +17,7 @@
     width:70vw;
   }
   .video-embed{
-    background-color: red;
+    background-color: black;
     height:100%;
   }
   .music .collection .collection-item .functional img{
@@ -25,7 +25,7 @@
 
   }
   .main{
-    background:blue;
+    background:black;
     height:100vh;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -35,18 +35,24 @@
     height:100vh;
   }
   .navigationBar{
-    background:grey;
+    background:white;
     height:15vh;
   }
   .featured{
-    background:yellow;
+    background:black;
     height:45h;
     border:1px solid black;
   }
+  .post{
+    background:url(/img/background1.jpg);
+    background-size:cover;
+  }
   .footer{
-    background:dimgrey;
+    border-top: 1px solid white;
+    padding:30%;
+    color:white;
+    background:black;
     height:40vh;
-    border:1px solid black;
   }
   .music{
     height:40vh;
