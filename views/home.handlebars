@@ -1,24 +1,84 @@
-<h1> Songs </h1>
-<ul>
-{{#each songs}}
-  <li>
-    <ul>
-      <li><b> {{name}}</b></li>
-      <li> {{art}}</li>
-      <li> {{artist}}</li>
-    </ul>
-  </li>
-{{/each}}
-</ul>
-<h1> Videos</h1>
-<ul>
-{{#each videos}}
-  <li>
-    <ul>
-      <li><b> {{name}}</b></li>
-      <li> {{art}}</li>
-      <li> {{artist}}</li>
-    </ul>
-  </li>
-{{/each}}
-</ul>
+
+
+        <div class='row'>
+            <div class='col-md-2 col-xs-12 hidden-xs-down hidden-md-down ad'>
+            </div>
+
+
+            <div class='col-md-12 col-lg-8 main'>
+                <div class='row navigationBar'>
+                    <div class=' navitem'><h1 class='logo'>KRISS </h1></div>
+                    <div class=' navitem'>
+                        <div class='navbtn'>
+                           <a href='songlist' >List Music</a>
+                         </div>
+                        <div class='navbtn'>
+                            <a href='songlist' >View Chart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class='row featured music'>
+                    <ul class='collection'>
+                        {{#each songs}}
+                          <li class='collection-item ' style="background:url({{art}}) center center;background-size:cover;">
+                            <div class='heading'>
+                              <h2 class="h2">{{name}}</h2>
+                              <h3>{{artist}}</h3>
+                            </div>
+                            <div class='functional'>
+                              <img class='download ' src='/img/download.png '>
+                              <img class='play' src='/img/play.png ' onclick="playSound(this, '/sound/liso.mp3 ');">
+                              <img class='heat' src='/img/heat.png '>
+                              <br/>
+                              <div class="hp_slide">
+                                  <div class="hp_range"></div>
+                              </div>
+                            </div>
+                          </li>
+                          {{/each}}
+                    </ul>
+                </div>
+
+
+
+
+                <div class='row featured video'>
+                    <div class='row video-embed'>
+                      <iframe id="ytplayer" type="text/html"
+                        src="https://www.youtube.com/embed/{{videos.1.url}}?rel=0&showinfo=0&color=white&iv_load_policy=3"
+                        frameborder="0" allowfullscreen class="col-md-12 col-lg1-12 col-sm-12"></iframe>
+                    </div>
+
+                </div>
+
+                <div class='row featured events'>
+                  <div class='header'>
+                    <h1> EVENTS </h1>
+                  </div>
+                  <div class='event-items'>
+                    <ul class='collection'>
+                    {{#each songs}}
+                      <li class='collection-item'>
+                        <div class='event-image' style="background:url({{art}}) center center;background-size:cover;">
+                          
+                        </div>
+                        <div class='event-body'>
+                          <h2 class="h2">{{name}}</h2>
+                          <h3>{{artist}}</h3>
+                          <p> Lorem ipsum dolor sit amt sinyar dofjhy asnlaskjdb alskdmniius  lasdjaknsdhu </p>
+                        </div>
+                      </li>
+                      {{/each}}
+                    </ul>
+                    </div>
+                </div>
+
+
+                <div class='row featured post'></div>
+                <div class='row footer'></div>
+            </div>
+            <div class='col-md-2 hidden-xs-down  hidden-md-down ad'></div>
+        </div>
+        <script src="js/bootstrap.min.js"></script>
