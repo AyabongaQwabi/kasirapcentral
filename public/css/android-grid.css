@@ -1,0 +1,174 @@
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+  .music .collection .collection-item{
+    display:inline-block;
+    background: orange;
+    width:45vw;
+    height:100%;
+    border:1px solid black;
+    list-style-type: none;
+
+  }
+  .video{
+    height:45vh;
+    overflow:hidden;
+  }
+  .video-embed{
+    background-color: red;
+    height:80vh;
+  }
+  .music .collection .collection-item .functional img{
+      max-width:5%;
+
+  }
+  .main{
+    background:blue;
+    height:100vh;
+    overflow: scroll;
+  }
+  .ad{
+    background:red;
+    height:100vh;
+  }
+  .navigationBar{
+    background:white;
+    height:15vh;
+  }
+  .featured{
+    background:yellow;
+    height:40vh;
+    border:1px solid black;
+  }
+  .footer{
+    background:dimgrey;
+    height:40vh;
+    border:1px solid black;
+  }
+  .music{
+    height:30vh;
+    overflow:hidden;
+  }
+  .music .collection{
+    width:inherit;
+    height:inherit;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+  .music .collection .collection-item .functional{
+    width:100%;
+    padding:5%;
+    text-align: center;
+    margin-bottom:10%
+  }
+
+  .music .collection .collection-item .heading{
+    font-family: 'Lato', sans-serif;
+    width:100%;
+    background:black;
+    color: white;
+    font-size: 1vw;
+    text-align: center;
+    word-wrap:break-word;
+
+  }
+  .music .collection .collection-item .functional img{
+      max-width:15%;
+
+  }
+  .music .collection .collection-item .heading h2,h3{
+    font-size: 3vw;
+    display: inline;
+  }
+}
+
+
+
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+  .music .collection .collection-item{
+    display:inline-block;
+    background: orange;
+    width:45vw;
+    height:100%;
+    border:1px solid black;
+    list-style-type: none;
+
+  }
+  .video{
+    height:45vh;
+    overflow:hidden;
+  }
+  .video-embed{
+    background-color: black;
+    height:100%;
+  }
+  .music .collection .collection-item .functional img{
+      max-width:5%;
+
+  }
+  .main{
+    background:blue;
+    height:100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .ad{
+    background:red;
+    height:100vh;
+  }
+  .navigationBar{
+    background:white;
+    height:15vh;
+  }
+  .featured{
+    background:black;
+    height:40vh;
+    border:1px solid black;
+  }
+  .footer{
+    background:dimgrey;
+    height:40vh;
+    border:1px solid black;
+  }
+  .music{
+    height:30vh;
+    overflow:hidden;
+  }
+  .music .collection{
+    width:inherit;
+    height:inherit;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+  }
+  .music .collection .collection-item .functional{
+    width:100%;
+    padding:5%;
+    text-align: center;
+    margin-bottom:10%
+  }
+
+  .music .collection .collection-item .heading{
+    font-family: 'Lato', sans-serif;
+    width:100%;
+    background:rgba(0,0,0,0.3);
+    color: white;
+    font-size: 1vw;
+    text-align: center;
+    word-wrap:break-word;
+
+  }
+  .music .collection .collection-item .functional img{
+    max-width: 30%;
+    padding: 5%;
+
+    filter: drop-shadow(1px 1px 0 white)
+          drop-shadow(-1px -1px 0 white);
+
+  }
+  .music .collection .collection-item .heading h2,h3{
+    font-size: 4vw;
+    display: block;
+  }
+}
