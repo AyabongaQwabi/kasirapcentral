@@ -12,77 +12,12 @@
         </script>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+
         <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="css/home.css" type="text/css">
+        <link rel="stylesheet" href="css/grid.css" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
-        <script type="text/javascript">
-            var currentEl;
-
-            function restoreLevel(item) {
-                console.log('\n Restoring item at play to natural state')
-                $(item).children('.first').toggle();
-                $(item).children('.info').toggle();
-                $(item).children('.first').height(height)
-            }
-
-            function displayProgressBar(el) {
-                $(el).siblings(".hp_slide").css('display', 'inline-block');
-                console.log($(el).siblings(".hp_slide"))
-            }
-
-            function hideProgressBar(el) {
-                $(el).siblings(".hp_slide").css('display', 'none');
-                console.log($(el).siblings(".hp_slide"))
-                el.src = '/img/play.png'
-            }
-
-            function playSound(el, soundfile) {
-                function handleProgressBar(elm) {
-                    if (currentEl) {
-                        currentEl.mp3.pause();
-                        hideProgressBar(currentEl)
-                        restoreLevel($(currentEl).parent().parent())
-                        displayProgressBar(elm)
-                        currentEl = elm
-                    } else {
-                        currentEl = elm
-                        displayProgressBar(elm)
-                    }
-                }
-
-                function handleButtonIcon() {
-                    if (currentEl) {
-
-                    }
-                }
-                if (el.mp3) {
-                    if (el.mp3.paused) {
-                        el.mp3.play();
-                        el.src = '/img/pause.png'
-                        handleProgressBar(el)
-
-                    } else {
-                        el.mp3.pause();
-                        el.src = '/img/play.png'
-                    }
-                } else {
-                    el.mp3 = new Audio(soundfile);
-                    el.mp3.play();
-                    el.src = '/img/pause.png'
-                    handleProgressBar(el)
-
-                }
-                $(el.mp3).on("timeupdate", function(e) {
-                    console.log('time')
-                    var currentTime = this.currentTime;
-                    var duration = this.duration;
-                    $('.hp_range').stop(true, true).animate({
-                        'width': (currentTime + .25) / duration * 100 + '%'
-                    }, 250, 'linear');
-                })
-            }
-        </script>
 
     </head>
 
@@ -95,250 +30,51 @@
 
 
     <body>
-        <div class='navigation'>
-            <button class='btn btn-large'> Upload </button>
-            <button class='btn btn-large'> Sign Up </button>
-            <h2 style='color:red;'> <b>coming soon ! </b></h2>
+
+        <div class='row'>
+            <div class='col-md-2 col-xs-12 hidden-xs-down hidden-md-down ad'></div>
+            <div class='col-md-12 col-lg-8 main'>
+                <div class='row navigationBar'></div>
+                <div class='row featured music'>
+                    <ul class='collection'>
+                        <li class='collection-item '></li>
+                        <li class='collection-item'></li>
+                        <li class='collection-item'></li>
+                        <li class='collection-item'></li>
+                        <li class='collection-item'></li>
+                        <li class='collection-item'></li>
+                        <li class='collection-item'></li>
+                        <li class='collection-item'></li>
+                        <li class='collection-item'></li>
+                        </li>
+                    </ul>
+                </div>
+                <div class='row featured video'>
+                    <div class='col-lg-8 col-sm-12 col-md-12 col-xs-12 video-embed'>
+                    </div>
+                    <div class='col-lg-4 col-sm-12 col-md-12 col-xs-12 video-playlist'>
+                        <ul class='collection'>
+                            <li class='collection-item'></li>
+                            <li class='collection-item'></li>
+                            <li class='collection-item'></li>
+                            <li class='collection-item'></li>
+                            <li class='collection-item'></li>
+                            <li class='collection-item'></li>
+                            <li class='collection-item'></li>
+                            <li class='collection-item'></li>
+                            <li class='collection-item'></li>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class='row featured post'></div>
+                <div class='row featured post'></div>
+                <div class='row footer'></div>
+            </div>
+            <div class='col-md-2 hidden-xs-down  hidden-md-down ad'></div>
         </div>
-
-
-        <div class="chart">
-            <article> KRISS </article>
-            <li>
-                <span style="height:15%" class='first '></span>
-                <span style="height:40%" class='info '>
-              <div class="card">
-
-                <div class="banner" style="background-image: url(/img/manax.jpg)"></div>
-                <div class='data '><span><b>Stunna Manax</b></span><span>Cape Town</span></div>
-        <div class='social '><button class='btn '> Follow </button></div>
-        </div>
-        </span>
-        <span style="height:28%" class='second '>
-
-            <h2><b> Stunna </b></h2>
-            <h5> F.O.M.O </h5>
-            <br/>
-            <img class='download ' src='/img/download.png '>
-            <img class='play 'src='/img/play.png ' onclick="playSound(this, '/sound/fomo.mp3 ');">
-            <img class='heat ' src='/img/heat.png '>
-            <br/>
-            <div class="hp_slide">
-                <div class="hp_range"></div>
-            </div>
-          </span>
-        </li>
-
-
-        <li>
-            <span style="height:35%" class='first '></span>
-            <span style="height:40%" class='info '>
-              <div class="card">
-                                <div class="banner" style="background-image: url(/img/liso.jpg)"></div>
-                <div class='data '><span><b>L.I.S.O</b></span><span>East London</span></div>
-            <div class='social '><button class='btn '> Follow </button></div>
-            </div>
-            </span>
-            <span style="height:28%" class='second '>
-            <h2><b> L.I.SO </b></h2>
-            <h5> Shona Phantsi </h5>
-            <br/><img class= 'download ' src='/img/download.png '>
-            <img class='play 'src='/img/play.png ' onclick="playSound(this, '/sound/liso.mp3 ');">
-              <img class='heat ' src='/img/heat.png '>
-            <br/>
-            <div class="hp_slide">
-                <div class="hp_range"></div>
-            </div>
-          </span>
-        </li>
-
-
-
-        <li>
-            <span style="height:25%" class='first '></span>
-            <span style="height:40%" class='info '>
-              <div class="card">
-                          <div class="banner" style="background-image: url(/img/nankoocover.jpg)"></div>
-                <div class='data '><span><b>NankOo</b></span><span>Cape Town</span></div>
-            <div class='social '><button class='btn '> Follow </button></div>
-            </div>
-            </span>
-            <span style="height:28%" class='second '>
-            <h2><b> NankOo </b></h2>
-            <h5> A.W.T.A </h5>
-            <br/>
-            <img class= 'download ' src='/img/download.png '>
-            <img class='play 'src='/img/play.png ' onclick="playSound(this, '/sound/awta.mp3 ');">
-            <img class='heat ' src='/img/heat.png '>
-            <br/>
-            <div class="hp_slide">
-                <div class="hp_range"></div>
-            </div>
-          </span>
-        </li>
-
-
-
-
-        <li>
-            <span style="height:17%" class='first '></span>
-            <span style="height:40%" class='info '>
-              <div class="card">
-                    <div class="banner" style="background-image: url(/img/v2vcover.jpg)"></div>
-                <div class='data '><span><b>V2V</b></span><span>Cape Town</span></div>
-            <div class='social '><button class='btn '> Follow </button></div>
-            </div>
-            </span>
-            <span style="height:28%" class='second '>
-            <h2><b> V2V Pham </b></h2>
-            <h5> I'm Sober </h5>
-            <br/>
-            <img class='heat' src='/img/download.png'>
-            <img class='play' src='/img/play.png' onclick="playSound(this, '/sound/im sober.mp3');">
-            <img class='heat' src='/img/heat.png'>
-            <br/>
-            <div class="hp_slide">
-                <div class="hp_range"></div>
-            </div>
-            </span>
-        </li>
-
-
-
-
-        <li>
-            <span style="height:32%" class='first'></span>
-            <span style="height:40%" class='info'>
-              <div class="card">
-                      <div class="banner" style="background-image: url(/img/ndlucover.jpg)"></div>
-                <div class='data'><span><b>Ndlulamthi</b></span><span>Cape Town</span></div>
-            <div class='social'><button class='btn'> Follow </button></div>
-            </div>
-            </span>
-            <span style="height:28%" class='second'>
-            <h2><b> Ndlulamthi</b></h2>
-            <h5>Now or Never</h5>
-
-            <br/>
-            <img class= 'download' src='/img/download.png'>
-            <img class='play'src='/img/play.png' onclick="playSound(this, '/sound/ndlu.mp3');">
-            <img class='heat' src='/img/heat.png'>
-            <br/>
-            <div class="hp_slide">
-                <div class="hp_range"></div>
-            </div>
-          </span>
-        </li>
-        <li>
-            <span style="height:47%" class='first'></span>
-            <span style="height:40%" class='info'>
-              <div class="card">
-
-                <div class="banner" style="background-image: url(/img/luzzacover.jpg)"></div>
-                <div class='data'><span><b>Luzza Da Main</b></span><span>Cape Town</span></div>
-            <div class='social'><button class='btn'> Follow </button></div>
-            </div>
-            </span>
-            <span style="height:28%" class='second'>
-            <h2><b> Luzza Da Main </b></h2>
-            <h5> Hero to Zero</h5>
-            <br/>
-            <img class= 'download' src='/img/download.png'>
-            <img class='play'src='/img/play.png' onclick="playSound(this, '/sound/andcengi.mp3');">
-            <img class='heat' src='/img/heat.png'>
-            <br/>
-            <div class="hp_slide">
-                <div class="hp_range"></div>
-            </div>
-          </span>
-        </li>
-        <li>
-            <span style="height:18%" class='first'></span>
-            <span style="height:40%" class='info'>
-              <div class="card">
-                    <div class="banner" style="background-image: url(/img/v2vcover.jpg)"></div>
-                <div class='data'><span><b>V2V</b></span><span><small>Cape Town</small></span></div>
-            <div class='social'><button class='btn'> Follow </button></div>
-            </div>
-            </span>
-            <span style="height:28%" class='second'>
-            <h2>V2V Pham </b></h2>
-            <h5> Bayabheka</h5>
-            <br/><img class= 'download' src='/img/download.png'>
-            <img class='play'src='/img/play.png' onclick="playSound(this, '/sound/bayabheka.mp3');">
-            <img class='heat' src='/img/heat.png'>
-            <br/>
-            <div class="hp_slide">
-                <div class="hp_range"></div>
-            </div>
-          </span>
-        </li>
-        <li>
-            <span style="height:20%" class='first'></span>
-            <span style="height:40%" class='info'>
-              <div class="card">
-
-                <div class="banner" style="background-image: url(/img/manax.jpg)"></div>
-                <div class='data'><span><b>Stunna Manax</b></span><span>Cape Town</span></div>
-            <div class='social'><button class='btn'> Follow </button></div>
-            </div>
-            </span>
-            <span style="height:28%" class='second'>
-            <h2><b> Stunna </b></h2>
-            <h5> Pronto</h5>
-            <br/><img class= 'download' src='/img/download.png'>
-            <img class='play'src='/img/play.png' onclick="playSound(this, '/sound/pronto.mp3');">
-            <img class='heat' src='/img/heat.png'>
-            <br/>
-            <div class="hp_slide">
-                <div class="hp_range"></div>
-            </div>
-          </span>
-        </li>
-        <script type='text/javascript'>
-            var height = 0;
-            $('.chart li').mouseenter(function() {
-                if ($(this).children('span.second').children('img.play').attr('src') == $(currentEl).attr('src')) {
-                    console.log('leaving.Note: This element is at play')
-                } else {
-                    $(this).children('.info').toggle();
-                    $(this).children('.first').toggle();
-                    height = $(this).children('.first').height()
-                    $(this).children('.first').height('10px')
-                }
-
-
-
-            })
-
-            $('.chart li').mouseleave(function() {
-                if ($(this).children('span.second').children('img.play').attr('src') == $(currentEl).attr('src')) {
-                    console.log('leaving.Note: This element is at play')
-                } else {
-                    $(this).children('.first').toggle();
-                    $(this).children('.info').toggle();
-                    $(this).children('.first').height(height)
-                    console.log('leaving. element not busy')
-                    console.log('proof')
-                    console.log($(this).children('span.second').children('img.play').attr('src'))
-                    console.log($(currentEl))
-                }
-                /*$(this).children('.first').toggle();
-                $(this).children('.info').toggle();
-                $(this).children('.first').height(height) */
-            })
-            $('.heat').click(function() {
-                console.log('heat click')
-                console.log($(this).attr('src'))
-                if ($(this).attr('src') == '/img/heat.png') {
-                    $(this).attr('src', '/img/redfire.png')
-                } else {
-                    $(this).attr('src', '/img/heat.png')
-                }
-
-            })
-        </script>
-        </div>
+        <script src="js/bootstrap.min.js"></script>
     </body>
 
 
