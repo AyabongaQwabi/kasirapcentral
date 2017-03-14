@@ -43,13 +43,21 @@
     height:100vh;
   }
   .navigationBar{
-    background:grey;
+    background:white;
     height:15vh;
   }
+  .navigationBar .navitem .navbtn{
+
+      font-size: 1.5rem;
+  }
   .featured{
-    background:yellow;
+    background:black;
     height:40vh;
     border:1px solid black;
+  }
+  .post{
+    background:url(/img/background1.jpg);
+    background-size:cover;
   }
   .footer{
     background:dimgrey;
