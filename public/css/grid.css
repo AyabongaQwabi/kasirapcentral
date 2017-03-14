@@ -20,7 +20,7 @@
 
 }
 .main{
-  background:blue;
+  background:black;
   height:100vh;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -34,13 +34,19 @@
   height:15vh;
 }
 .featured{
-  background:yellow;
+  background:black;
   height:40vh;
   border:1px solid black;
 }
+.post{
+  background:url(/img/background1.jpg);
+  background-size:cover;
+}
 .footer{
-  background:dimgrey;
+  background:black;
   height:40vh;
+  padding:10%;
+  text-align:center;
   border:1px solid black;
 }
 .music{
@@ -72,7 +78,7 @@
 
 }
 .music .collection .collection-item .functional img{
-
+    filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 white);
     max-width: 30%;
     padding: 5%;
 
@@ -93,7 +99,7 @@
 
 }
 .video{
-  height:85vh;
+  height:45vh;
   overflow:hidden;
   width:113vw;
 }
@@ -112,7 +118,7 @@
   list-style-type: none;
 }
 .video-embed{
-  background-color: red;
+  background-color: black;
   height:50vh;
   width:100%;
 
@@ -142,13 +148,19 @@
   padding: 5% 30%;
   background: rgba(255, 200, 0, 0.85);
     font-family: 'Lato', sans-serif;
-
-
+    font-size: .7rem;
+}
+.navigationBar .navitem .navbtn:hover{
+        background: black;
+        color:rgba(255, 200, 0, 0.85);
 
 }
 .navigationBar .navitem .navbtn a{
   text-decoration: none;
   color:black;
+}
+.navigationBar .navitem .navbtn:hover > a{
+  color:rgba(255, 200, 0, 0.85);
 }
 .navigationBar .navitem .logo{
   font-family: 'Lato', sans-serif;
@@ -172,8 +184,37 @@
   width:100%;
 }
 .events .header h1{
+
   font-family: 'Lato', sans-serif;
-  margin: 1% 30%;
+  margin: 5% 36%;
+  font-size: 1.5rem;
+}
+.events .header .navbtn{
+  border:1px solid rgba(0,0,0,0.5);
+  width:50%;
+  height:100%;
+  display:inline;
+  float:left;
+  padding: 5% 1%;
+  background: rgba(255, 200, 0, 0.85);
+    font-family: 'Lato', sans-serif;
+
+
+
+}
+.events .header .navbtn:hover{
+    background: black;
+    color:rgba(255, 200, 0, 0.85);
+}
+.events .header .navbtn:hover > a{
+  color:rgba(255, 200, 0, 0.85);
+}
+.events .header .navbtn a{
+  text-decoration: none;
+  color:black;
+  font-family: 'Lato', sans-serif;
+  margin: 5% 30%;
+  font-size: 1rem;
 }
 .events .event-items{
   height:75%;
@@ -196,14 +237,14 @@
 .events .event-items .collection .collection-item .event-image{
   height:100%;
   width:50%;
-  border:2px solid red;
+  border:2px solid rgba(0,0,0,0.5);
   display: inline;
   float: left;
 }
 .events .event-items .collection .collection-item .event-body{
   height:100%;
   width:50%;
-  border:2px solid red;
+  border:2px solid rgba(0,0,0,0.5);
   display: inline;
   float: left;
   white-space: normal;
