@@ -15,8 +15,8 @@
     overflow:hidden;
   }
   .video-embed{
-    background-color: red;
-    height:80vh;
+    background-color: black;
+    height:100%;
   }
   .music .collection .collection-item .functional img{
       max-width:5%;
@@ -36,15 +36,29 @@
     height:15vh;
   }
   .featured{
-    background:yellow;
+    background:black;
     height:40vh;
     border:1px solid black;
   }
-  .footer{
-    background:dimgrey;
-    height:40vh;
-    border:1px solid black;
-  }
+  .post {
+    background: url(/img/background1.jpg);
+    background-size: cover;
+}
+  .events .header .navbtn a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Lato', sans-serif;
+    margin: 5% 30%;
+    font-size: .8rem;
+}
+.footer {
+  background: black;
+  height: 40vh;
+  padding: 5%;
+  color: white;
+  text-align: center;
+  border: 1px solid black;
+}
   .music{
     height:30vh;
     overflow:hidden;
@@ -126,11 +140,25 @@
     height:40vh;
     border:1px solid black;
   }
-  .footer{
-    background:dimgrey;
-    height:40vh;
-    border:1px solid black;
-  }
+  .post {
+    background: url(/img/background1.jpg);
+    background-size: cover;
+}
+  .events .header .navbtn a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Lato', sans-serif;
+    margin: 5% 30%;
+    font-size: 1rem;
+}
+.footer {
+  background: black;
+  height: 40vh;
+  padding: 5%;
+  color: white;
+  text-align: center;
+  border: 1px solid black;
+}
   .music{
     height:30vh;
     overflow:hidden;
