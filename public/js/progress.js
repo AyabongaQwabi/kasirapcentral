@@ -1,3 +1,8 @@
+function loadForm(){
+  $('.form-fields').css('display','block')
+}
+
+
 var currentEl;
 /************************************
   Song Analytics Update functions [AJAX]

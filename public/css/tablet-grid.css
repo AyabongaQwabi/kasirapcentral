@@ -33,13 +33,13 @@
 
   }
   .main{
-    background:blue;
+    background:black;
     height:100vh;
     overflow-y: scroll;
     overflow-x: hidden;
   }
   .ad{
-    background:red;
+    background:white;
     height:100vh;
   }
   .navigationBar{
@@ -50,10 +50,18 @@
 
       font-size: 1.5rem;
   }
+
   .featured{
     background:black;
     height:40vh;
     border:1px solid black;
+  }
+  .form-fields{
+    display:none;
+    height:150vh;
+    margin-top:15%;
+    padding: 5%;
+    color:white;
   }
   .post{
     background:url(/img/background1.jpg);

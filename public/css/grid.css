@@ -26,7 +26,7 @@
   overflow-x: hidden;
 }
 .ad{
-  background:red;
+  background:white;
   height:100vh;
 }
 .navigationBar{
@@ -274,7 +274,13 @@
 
 
 
-
+.form-fields{
+  display:none;
+  height:150vh;
+  margin-top:15%;
+  padding: 5%;
+  color:white;
+}
 
 
 

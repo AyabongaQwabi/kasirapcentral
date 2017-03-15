@@ -40,6 +40,13 @@
     height:40vh;
     border:1px solid black;
   }
+  .form-fields {
+    display: none;
+    height: 150vh;
+    margin-top: 15%;
+    padding: 5%;
+    color: white;
+}
   .post {
     background: url(/img/background1.jpg);
     background-size: cover;
@@ -140,6 +147,13 @@
     height:40vh;
     border:1px solid black;
   }
+  .form-fields {
+    display: none;
+    height: 130vh;
+    margin-top: 15%;
+    padding: 5%;
+    color: white;
+}
   .post {
     background: url(/img/background1.jpg);
     background-size: cover;

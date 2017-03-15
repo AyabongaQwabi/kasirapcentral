@@ -54,9 +54,9 @@ app.get('/music',songs.getAll)
 app.get('/videos',videos.getAll)
 app.post('/update/flame',songs.updateFlameCount)
 app.post('/update/download',songs.updateDownloadCount)
-app.post('/update/play/',function(req,res){
-    console.log('/update play')
-    songs.updatePlayCount(req,res)
+app.post('/update/play',songs.updatePlayCount)
+app.get('/songlist',function(req,res){
+  res.render('songlist')
 })
 
 app.listen(5000)
