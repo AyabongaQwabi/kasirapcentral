@@ -7,9 +7,9 @@ module.exports = function(connection){
   };
 
   this.getFeatured = function(cb){
-      executeQuery('select featured.song_id , song.name as name ,user.id as user_id,user.name as artist ,image_art.src as art from featured,song,user, image_art where featured.song_id =song.id and song.user_id = user.id and image_art.song_id = song.id',cb);
+      executeQuery('select featured_video.video_id , video.url ,video.name as name ,user.id as user_id,user.name as artist ,thumbnail.src as thumbnail from featured_video,video,user, thumbnail where featured_video.video_id =video.id and video.user_id = user.id and thumbnail.video_id = video.id',cb);
   }
   this.getVideos= function(cb){
-      executeQuery('select * from song',cb);
+      executeQuery('select * from video',cb);
   }
 }

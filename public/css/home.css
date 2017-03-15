@@ -24,14 +24,14 @@ body {
     width: 60%;
     background: white;
     height: 10px;
-    display: none;
+    
 }
 
 .hp_range {
     width: 0;
     background: black;
     height: 10px;
-}
+    overflow:hidden;}
 
 .chart {
     display: table;

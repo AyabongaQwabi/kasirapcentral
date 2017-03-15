@@ -1,24 +1,140 @@
-<h1> Songs </h1>
-<ul>
-{{#each songs}}
-  <li>
-    <ul>
-      <li><b> {{name}}</b></li>
-      <li> {{art}}</li>
-      <li> {{artist}}</li>
-    </ul>
-  </li>
-{{/each}}
-</ul>
-<h1> Videos</h1>
-<ul>
-{{#each videos}}
-  <li>
-    <ul>
-      <li><b> {{name}}</b></li>
-      <li> {{art}}</li>
-      <li> {{artist}}</li>
-    </ul>
-  </li>
-{{/each}}
-</ul>
+        <script src="js/jquery.fileDownload.js"></script>
+        <script src="js/progress.js"></script>
+
+        <div class='row'>
+            <div class='col-md-2 col-xs-12 hidden-xs-down hidden-md-down ad'>
+            </div>
+
+
+            <div class='col-md-12 col-lg-8 main'>
+                <div class='row navigationBar'>
+                    <div class=' navitem'><h1 class='logo'>KRISS </h1></div>
+                    <div class=' navitem'>
+                        <div class='navbtn'>
+                           <a href='songlist' >List Music</a>
+                         </div>
+                        <div class='navbtn'>
+                            <a href='songlist' >View Chart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class='row featured music'>
+                    <ul class='collection'>
+                        {{#each songs}}
+                          <li class='collection-item ' style="background:url({{art}}) center center;background-size:cover;">
+                            <div class='heading'>
+                              <h2 class="h2">{{name}}</h2>
+                              <h3>{{artist}}</h3>
+                            </div>
+                            <div class='functional'>
+                              <a href="{{url}}" download><img id='{{song_id}}' onclick="download(this,'{{url}}')" class='download ' src='img/download.png'></a>
+                              <img id='{{song_id}}' onclick="playSound(this,'{{url}}');" class='play' src='img/play.png'  />
+                              <img id='{{song_id}}' onclick='flame(this)' ='heat' src='img/heat.png' >
+                              <div class='analytics'>
+                                <span class='badge badge-pill badge-default download_count'>{{download_count}}</span>'
+                                <span class='badge badge-pill badge-default play_count'>{{play_count}}</span>'
+                                <span class='badge badge-pill badge-default flame_count'>{{flame_count}}</span>'
+                              </div>
+                              <div class="hp_slide">
+                                  <div class="hp_range"></div>
+                              </div>
+                            </div>
+                          </li>
+                          {{/each}}
+                    </ul>
+                </div>
+
+
+
+
+                <div class='row featured video'>
+                    <div class='row video-embed'>
+                      <iframe id="ytplayer" type="text/html"
+                        src="https://www.youtube.com/embed/{{videos.1.url}}?rel=0&showinfo=0&color=white&iv_load_policy=3"
+                        frameborder="0" allowfullscreen class="col-md-12 col-lg1-12 col-sm-12"></iframe>
+                    </div>
+
+                </div>
+
+                <div class='row featured events'>
+                  <div class='header'>
+                    <h1> EVENTS </h1>
+                  </div>
+
+                  <div class='event-items'>
+                    <ul class='collection'>
+                    {{#each events}}
+                      <li class='collection-item'>
+                        <div class='event-image' style="background:url({{image}}) center center;background-size:cover;">
+
+                        </div>
+                        <div class='event-body'>
+                          <h5><b>{{name}}</b></h5>
+                          <h6>{{venue}}</h6>
+                          <h6>{{date}}</h6>
+                          <p> {{description}} </p>
+                        </div>
+                      </li>
+                      {{/each}}
+                    </ul>
+                    </div>
+                    <div class='header'>
+                      <div class='navbtn'  onclick="loadForm();">
+                        <a href='#'>Add new</a>
+                      </div>
+                      <div class='navbtn'>
+                        <a href='#' onclick="listAll()">View all</a>
+                      </div>
+                    </div>
+                </div>
+
+                <div class='row featured form-fields'>
+                    <div class='col-md-12 col-xs-12'>
+                      <form>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Name</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter event name">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Venue</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="e.g Imbizo Club , East London">
+                        </div>
+                        <div class="form-group row">
+                          <label for="example-datetime-local-input" class="col-2 col-form-label">Date and time</label>
+                          <div class="col-10">
+                            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleTextarea">Description</label>
+                          <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Price</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter ticket fee">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputFile">Image</label>
+                          <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Cellphone Number</label>
+                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your contact details">
+                        </div>
+                        <button type="submit" class="btn btn-warning">Submit</button>
+                        </form>
+                    </div>
+                </div>
+                <div class='row featured post'></div>
+
+                <!--<div class='row footer'>
+                  <p> Copyright KRISS ©2017</p>
+                  <br/>
+                  <p> Web Design by <a href="http://salmonesolutions.tk"> Salmone Solutions</a><p>
+                </div>!-->
+            </div>
+            <div class='col-md-2 hidden-xs-down  hidden-md-down ad'></div>
+        </div>
+        <script src="js/bootstrap.min.js"></script>
