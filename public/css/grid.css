@@ -1,3 +1,21 @@
+.music .collection .upload-item{
+  display:inline;
+  float:left;
+  margin-left: 5%;
+  border:10px dotted black;
+  border-radius: 30px;
+  padding:2% 0;
+  display:inline-block;
+  background: rgba(255, 200, 0, 0.55);
+  background-size: cover;
+  width:45vw;
+  height:100%;
+  list-style-type: none;
+}
+.music .collection .upload-item a{
+    margin:30% 28%;
+    background:black;
+}
 .music .collection .collection-item{
   display:inline-block;
   background: orange;
@@ -15,6 +33,7 @@
   background-color: red;
   height:80vh;
 }
+
 .music .collection .collection-item .functional img{
     max-width:5%;
 
