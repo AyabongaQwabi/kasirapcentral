@@ -92,7 +92,7 @@ module.exports = function(){
                                                               console.log(err)
                                                             }
                                                             else{
-                                                              res.send("<p style='padding:50%;'>File Upload Complete</p>")
+                                                              res.redirect('/');
                                                             }
                                                           })
 
