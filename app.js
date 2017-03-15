@@ -1,25 +1,30 @@
-var express= require("express")
+var express= require("express");
 var mysql = require("mysql");
-var myconnection = require("express-myconnection")
-exphbs  = require('express-handlebars')
-var path = require('path')
-var bodyParser = require('body-parser')
+var myconnection = require("express-myconnection");
+var fileUpload = require('express-fileupload');
+exphbs  = require('express-handlebars');
+var path = require('path');
+var bodyParser = require('body-parser');
 
 var app = express();
 userMethods =require('./routes/user')
 userDataService = require('./dataServices/userDataService'),
 eventDataService = require('./dataServices/eventDataService'),
-featureMethods =require('./routes/feature')
-songMethods =require('./routes/songs')
+imageDataService = require('./dataServices/imageDataService'),
+bioDataService = require('./dataServices/bioDataService'),
+featureDataService = require('./dataServices/featureDataService'),
+featureMethods =require('./routes/feature'),
+songMethods =require('./routes/songs'),
+uploadMethods =require('./routes/upload'),
 songDataService = require('./dataServices/songDataService'),
-videoMethods =require('./routes/videos')
+videoMethods =require('./routes/videos'),
 videoDataService = require('./dataServices/videoDataService'),
 ConnectionProvider = require('./routes/connectionProvider');
 
 var dbOptions = {
  host: 'localhost',
   user: 'root',
-  password: 'theaya5379',
+  password: '',
   port: 3306,
   database: 'kriss'
 };
@@ -28,7 +33,10 @@ var serviceSetupCallback = function(connection){
     songDataServ : new songDataService(connection),
     videoDataServ : new videoDataService(connection),
     userDataServ : new userDataService(connection),
-    eventDataServ : new eventDataService(connection)
+    eventDataServ : new eventDataService(connection),
+    imageDataServ : new imageDataService(connection),
+    bioDataServ : new bioDataService(connection),
+    featureDataServ : new featureDataService(connection)
 	}
 };
 
@@ -37,6 +45,7 @@ var myConnectionProvider = new ConnectionProvider(dbOptions, serviceSetupCallbac
 app.use(myConnectionProvider.setupProvider);
 app.use(myconnection(mysql, dbOptions, 'pool'));
 app.use(express.static('public'))
+app.use(fileUpload());
 
 app.engine('handlebars', exphbs({defaultLayout: 'index'}));
 app.set('view engine', 'handlebars');
@@ -48,6 +57,7 @@ var feature = new featureMethods();
 var songs = new songMethods();
 var videos = new videoMethods();
 var user = new userMethods();
+var upload = new uploadMethods();
 
 app.get('/',feature.getFeatured)
 app.get('/music',songs.getAll)
@@ -55,6 +65,8 @@ app.get('/videos',videos.getAll)
 app.post('/update/flame',songs.updateFlameCount)
 app.post('/update/download',songs.updateDownloadCount)
 app.post('/update/play',songs.updatePlayCount)
+app.get('/upload',upload.setup)
+app.post('/upload',upload.send)
 app.get('/songlist',function(req,res){
   res.render('songlist')
 })
