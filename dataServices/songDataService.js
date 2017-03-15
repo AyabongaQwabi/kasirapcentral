@@ -9,8 +9,18 @@ module.exports = function(connection){
   this.getSongs= function(cb){
       executeQuery('select * from song',cb);
   }
-  this.updateSong = function(dataObj){
-    console.log(dataObj)
-    executeQuery('update song SET ? where ?',dataObj)
+  this.updateSong = function(data){
+    
+    executeQuery('update song SET ? where ?',data)
+  }
+  this.add= function(data,cb){
+      executeQuery('insert into song set ?',data,cb);
+  }
+  this.get = function(data,cb){
+      //executeQuery('select * from user where '+connection.escape(column)+' like ?'+data,cb)
+      console.log('select * from user where ?')
+      console.log(data);
+    executeQuery('select * from song where ?',data,cb)
+
   }
 }
