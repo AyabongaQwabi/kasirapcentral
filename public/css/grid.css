@@ -1,20 +1,27 @@
+.logo{
+  font-size: 8rem;
+  font-weight: 900;
+  letter-spacing: -6px;
+  color:white;
+}
 .music .collection .upload-item{
   display:inline;
   float:left;
   margin-left: 5%;
-  border:10px dotted black;
+
   border-radius: 30px;
   padding:2% 0;
   display:inline-block;
-  background: rgba(255, 200, 0, 0.55);
+  background: black;
   background-size: cover;
   width:45vw;
   height:100%;
   list-style-type: none;
 }
+
 .music .collection .upload-item a{
-    margin:30% 28%;
-    background:black;
+    margin:20% 28%;
+
 }
 .music .collection .collection-item{
   display:inline-block;
@@ -171,20 +178,14 @@
   height:inherit;
   width:50%
 }
-.navigationBar .navitem .navbtn{
-  border:1px solid rgba(0,0,0,0.5);
-  height:50%;
-  padding: 5% 30%;
-  background: rgba(255, 200, 0, 0.85);
-    font-family: 'Lato', sans-serif;
-    font-size: .7rem;
-}
+
 .navigationBar .navitem .navbtn:hover{
         background: black;
         color:rgba(255, 200, 0, 0.85);
 
 }
 .navigationBar .navitem .navbtn a{
+  max-width: 5%;
   text-decoration: none;
   color:black;
 }
@@ -208,7 +209,7 @@
   text-align: center;
   height:25%;
   border: 1px solid black;
-  background:white;
+  background:#fcad26;
   color:black;
   width:100%;
 }
@@ -225,25 +226,27 @@
   display:inline;
   float:left;
   padding: 5% 1%;
-  background: rgba(255, 200, 0, 0.85);
-    font-family: 'Lato', sans-serif;
+
+  background: black;
+  font-family: 'Lato', sans-serif;
 
 
 
 }
 .events .header .navbtn:hover{
-    background: black;
-    color:rgba(255, 200, 0, 0.85);
+    background: #fcad26;
+    color:black;
 }
 .events .header .navbtn:hover > a{
-  color:rgba(255, 200, 0, 0.85);
+  color:black;
 }
 .events .header .navbtn a{
   text-decoration: none;
-  color:black;
+  color:#fcad26;
   font-family: 'Lato', sans-serif;
-  margin: 5% 30%;
+  margin: 25%;
   font-size: 1rem;
+  font-weight: 900;
 }
 .events .event-items{
   height:75%;
@@ -302,7 +305,11 @@
 }
 
 
-
+.ico{
+  filter: drop-shadow(1px 1px 0 white) drop-shadow(-1px -1px 0 white);
+  max-width: 30%;
+  padding: 5%;
+}
 
 
 

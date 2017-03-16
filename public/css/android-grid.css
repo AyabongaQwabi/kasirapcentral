@@ -35,6 +35,16 @@
     background:white;
     height:15vh;
   }
+  .navigationBar .navitem .navbtn{
+    border:1px solid rgba(0,0,0,0.5);
+    height:50%%;
+    width:100%%;
+    display:block;
+    float:left;
+    background: rgba(255, 200, 0, 0.85);
+      font-family: 'Lato', sans-serif;
+      font-size: .7rem;
+  }
   .featured{
     background:black;
     height:40vh;
@@ -129,7 +139,7 @@
 
   }
   .main{
-    background:blue;
+    background:black;
     height:100vh;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -141,6 +151,21 @@
   .navigationBar{
     background:white;
     height:15vh;
+  }
+  .navigationBar .navitem{
+    border:1px solid rgba(0,0,0,0.5);
+    height:inherit;
+    width:100%
+  }
+  .navigationBar .navitem .navbtn{
+    border:1px solid rgba(0,0,0,0.5);
+    height:50%%;
+    width:100%%;
+    display:block;
+    float:left;
+    background: rgba(255, 200, 0, 0.85);
+      font-family: 'Lato', sans-serif;
+      font-size: .7rem;
   }
   .featured{
     background:black;
@@ -162,7 +187,7 @@
     text-decoration: none;
     color: black;
     font-family: 'Lato', sans-serif;
-    margin: 5% 30%;
+    margin: 25%;
     font-size: 1rem;
 }
 .footer {

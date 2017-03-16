@@ -10,9 +10,9 @@ var app = express();
 userMethods =require('./routes/user')
 userDataService = require('./dataServices/userDataService'),
 eventDataService = require('./dataServices/eventDataService'),
-imageDataService = require('./dataServices/imageDataService'),
-bioDataService = require('./dataServices/bioDataService'),
-featureDataService = require('./dataServices/featureDataService'),
+imageDataService = require('./dataServices/imageDataservice'),
+bioDataService = require('./dataServices/bioDataservice'),
+featureDataService = require('./dataServices/featureDataservice'),
 featureMethods =require('./routes/feature'),
 songMethods =require('./routes/songs'),
 uploadMethods =require('./routes/upload'),
@@ -24,7 +24,7 @@ ConnectionProvider = require('./routes/connectionProvider');
 var dbOptions = {
  host: 'localhost',
   user: 'root',
-  password: '',
+  password: 'theaya5379',
   port: 3306,
   database: 'kriss'
 };
@@ -67,8 +67,6 @@ app.post('/update/download',songs.updateDownloadCount)
 app.post('/update/play',songs.updatePlayCount)
 app.get('/upload',upload.setup)
 app.post('/upload',upload.send)
-app.get('/songlist',function(req,res){
-  res.render('songlist')
-})
+app.get('/songlist',songs.getAll)
 
 app.listen(5000)
