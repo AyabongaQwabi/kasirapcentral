@@ -18,6 +18,39 @@ module.exports = function(){
               })
         });
   }
+  this.getSetupVersus = function(req,res,next){
+    req.services(function(err,services){
+      console.log(err)
+          var songService = services.songDataServ;
+          songService.getSongs(function(err, results) {
+            res.render('versus_setup',{songs:results})
+          })
+    })
+
+  }
+  this.setVersus = function(req,res,next){
+    var id1 = req.body.song1
+    var id2 = req.body.song2
+    var data=[id1,id2]
+    req.services(function(err,services){
+      var songService = services.songDataServ;
+      songService.createCompetition(data,function(err,results){
+        if(err){console.log(err)}
+        else{
+          res.redirect('/versus')
+        }
+
+      })
+    })
+  }
+  this.getVersus = function(req,res,next){
+    req.services(function(err,services){
+      var songService = services.songDataServ;
+      songService.getCompetition(function(err,results){
+        res.render('versus',{songs:results})
+      })
+    })
+  }
   this.updateFlameCount = function(req, res, next){
         console.log('User updating flame')
         req.services(function(err,services){
