@@ -68,5 +68,8 @@ app.post('/update/play',songs.updatePlayCount)
 app.get('/upload',upload.setup)
 app.post('/upload',upload.send)
 app.get('/songlist',songs.getAll)
+app.get('/versus/setup',songs.getSetupVersus)
+app.post('/versus/setup',songs.setVersus)
+app.get('/versus',songs.getVersus)
 
 app.listen(5000)
