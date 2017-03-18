@@ -1,0 +1,41 @@
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-93856902-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<link rel="stylesheet" href="/css/bootstrap.css" type="text/css">
+<div class='row versus-form container-fluid'>
+  <div class="jumbotron col-md-12 col-xxs-12 container center">
+    <h1 class="display-3 container">Setup Versus</h1>
+    <p class="lead container">Select the songs you want to setup for versus </p>
+    <hr class="my-4">
+    <p class="lead container">
+      <a class="btn btn-primary btn-lg" href="/" role="button">Home</a>
+    </p>
+  </div>
+  <form class='form-group col-md-12 col-xs-12' action ='/versus/setup' method='post'>
+    <div class='col-md-6 col-xs-12 versus-block container-fluid'>
+      <select name="song1" class=" col-md-12 custom-select">
+      {{#each songs}}
+        <option selected value="{{id}}">{{name}}</option>
+      {{/each}}
+      </select>
+    </div>
+
+    <div class='col-md-6 col-xs-12 versus-block container-fluid'>
+      <select name="song2" class="col-md-12 custom-select">
+      {{#each songs}}
+        <option selected value="{{id}}">{{name}}</option>
+      {{/each}}
+      </select>
+    </div>
+    <div class="col-md-6 col-xs-12 container">
+      <input class='btn col-md-12' type='submit'>
+    </div>
+  </form>
+</div>
