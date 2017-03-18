@@ -10,11 +10,18 @@ module.exports = function(connection){
       executeQuery('select * from song',cb);
   }
   this.updateSong = function(data){
-    
+
     executeQuery('update song SET ? where ?',data)
   }
   this.add= function(data,cb){
       executeQuery('insert into song set ?',data,cb);
+  }
+  this.createCompetition= function(data,cb){
+      executeQuery('Truncate table versus')
+      executeQuery('insert into versus (song_id) values (?),(?)',data,cb);
+  }
+  this.getCompetition = function(cb){
+    executeQuery("SELECT image_art.src as albumart,song.name,song.src,song.flame_count,song.play_count,song.download_count,user.name as artist FROM song,versus,user,image_art where versus.song_id = song.id and versus.song_id = image_art.song_id and song.user_id = user.id",cb)
   }
   this.get = function(data,cb){
       //executeQuery('select * from user where '+connection.escape(column)+' like ?'+data,cb)
