@@ -3,7 +3,7 @@ module.exports = function(){
   this.setup = function(req, res, next){
         res.render('upload')
   }
-  this.send = function(req, res, next){
+  this.storeFile = function(req, res, next){
         req.services(function(err,services){
             //console.log(req.files.audio)
             var data = req.body;
@@ -88,11 +88,14 @@ module.exports = function(){
                                                         }
                                                         else{
                                                           feature.add({song_id:imageArtData.song_id},function(err,results){
+                                                            console.log('addding soooong to fetetetet')
                                                             if(err){
                                                               console.log(err)
                                                             }
                                                             else{
-                                                              res.redirect('/');
+                                                              var url ='/s/'+imageArtData.song_id
+                                                              console.log('redirecting to '+url)
+                                                              res.redirect(url);
                                                             }
                                                           })
 

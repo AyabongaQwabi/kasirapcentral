@@ -24,7 +24,7 @@ ConnectionProvider = require('./routes/connectionProvider');
 var dbOptions = {
  host: 'localhost',
   user: 'root',
-  password: '@theaya5379085;',
+  password: 'theaya5379',
   port: 3306,
   database: 'kriss'
 };
@@ -66,10 +66,12 @@ app.post('/update/flame',songs.updateFlameCount)
 app.post('/update/download',songs.updateDownloadCount)
 app.post('/update/play',songs.updatePlayCount)
 app.get('/upload',upload.setup)
-app.post('/upload',upload.send)
+app.post('/upload',upload.storeFile)
 app.get('/songlist',songs.getAll)
 app.get('/versus/setup',songs.getSetupVersus)
 app.post('/versus/setup',songs.setVersus)
 app.get('/versus',songs.getVersus)
-
-app.listen(80)
+app.get('/s/:songid',songs.getSong)
+app.post('/s/find',songs.find)
+/*app.get('/a/:artistname',songs.getArtist)*/
+app.listen(5000)

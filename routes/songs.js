@@ -18,6 +18,58 @@ module.exports = function(){
               })
         });
   }
+  this.find = function(req,res,next){
+    if(req.body.id){
+      var url = '/s/'+req.body.id
+      res.redirect(url)
+    }
+    else{
+      res.redirect('/s/unknown')
+    }
+  }
+  this.getSong = function(req,res,next){
+    console.log('\n\n\ngetting song')
+    req.services(function(err,services){
+          console.log(err)
+          var song = req.params.songid
+          var data = {id:song}
+          var songService = services.songDataServ;
+          console.log('loading song service')
+          songService.getSong(data,function(err, results) {
+            console.log('Got song')
+            if(err){console.log(err)}
+            console.log(results)
+            if(!results.length==0){
+              console.log('song exists...rendering')
+              res.render('song',{song:results[0],layout:false})
+            }
+            else{
+              console.log('song not exists')
+              req.services(function(err,services){
+                    var songService = services.songDataServ;
+                    songService.getSongs(function(err, results) {
+                        res.render('find',{found:false,layout:false,songs:results})
+                    })
+              });
+
+            }
+
+          })
+    })
+
+  }
+  /*this.getArtistSongs = function(req,res,next){
+    req.services(function(err,services){
+          console.log(err)
+          var artist = req.params.artistname
+          var data = {name:artist}
+          var songService = services.songDataServ;
+          songService.getArtist(data,function(err, results) {
+            res.render('versus_setup',{songs:results})
+          })
+    })
+
+  }*/
   this.getSetupVersus = function(req,res,next){
     req.services(function(err,services){
       console.log(err)
