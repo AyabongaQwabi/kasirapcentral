@@ -47,7 +47,7 @@ module.exports = function(){
     req.services(function(err,services){
       var songService = services.songDataServ;
       songService.getCompetition(function(err,results){
-        res.render('versus',{songs:results})
+        res.render('versus',{songs:results,layout:false})
       })
     })
   }
