@@ -285,17 +285,19 @@ div.user-menu div.user-menu-content:not(.active){
 
 
                 <div class='row'>
-                  {{#each songs}}
                   <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
-                  <div class="container">
+                  {{#each songs}}
+                  <div class="container" onclick="window.location.replace('/s/{{song_id}}')">
                       <div class="row user-menu-container square">
                           <div class="col-md-12 user-details">
                               <div class="row coralbg white">
                                   <div class="col-md-6 no-pad">
                                       <div class="user-pad">
-                                          <h3 class='display-4'><a href='/s/{{song_id}}' style='color:white;'>{{name}}</a></h3>
+                                          <h3 class='display-4'> {{name}}</h3>
                                           <h4 class="white"><i class="fa fa-user-circle"></i> <b>{{artist}}</b></h4>
-                                          <h4 class="white"><i class="fa fa-globe"></i> {{location}}</h4>
+                                          {{#location}}
+                                          <h4 class="white"><i class="fa fa-globe"></i> {{this}}</h4>
+                                          {{/location}}
                                       </div>
                                   </div>
                                   <div class="col-md-6 no-pad">
