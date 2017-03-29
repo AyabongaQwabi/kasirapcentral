@@ -4,7 +4,7 @@ module.exports = function(connection){
       connection.query(query, data, cb);
   };
   this.getFeatured = function(cb){
-      executeQuery('select featured.song_id , song.name as name,song.play_count,song.download_count,song.flame_count,song.src as url ,user.id as user_id,user.name as artist ,image_art.src as art from featured,song,user, image_art where featured.song_id =song.id and song.user_id = user.id and image_art.song_id = song.id',cb);
+      executeQuery('select featured.song_id , song.name as name,song.play_count,song.download_count,song.flame_count,song.src as url ,user.id as user_id,user.location,user.name as artist ,image_art.src as art from featured,song,user, image_art where featured.song_id =song.id and song.user_id = user.id and image_art.song_id = song.id',cb);
   }
   this.getSongs= function(cb){
       executeQuery('select song.id,song.src,song.name,song.play_count,song.download_count,song.flame_count,user.name as artist,image_art.src as image  from user,song,image_art where user.id=song.user_id and song.id = image_art.song_id',cb);
@@ -17,7 +17,7 @@ module.exports = function(connection){
       executeQuery('insert into song set ?',data,cb);
   }
   this.getSong = function(data,cb){
-    executeQuery("select song.id,song.src,song.name,song.play_count,song.download_count,song.flame_count,user.name as artist,image_art.src as image  from user,song,image_art where user.id=song.user_id and song.id = image_art.song_id and song.id = ?",data.id,cb)
+    executeQuery("select song.id,song.src,song.name,song.play_count,song.download_count,song.flame_count,user.name as artist,image_art.src as image ,bio.link as social_link from user,song,image_art,bio where user.id=song.user_id and song.id = image_art.song_id and user.id = bio.user_id and song.id = ?",data.id,cb)
   }
   /*this.getArtist = function(data,cb){
     executeQuery(" ",cb)
