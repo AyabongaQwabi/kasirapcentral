@@ -103,9 +103,9 @@
         <input class='form-control col-md-12 col-xs-12' value='www.kasirapcentral.tk/s/{{song.id}}' onmouseenter='this.select()'>
       </div>
       <div class='col-xs-12 col-sm-12 col-md-6 col-lg-12'>
-        <a href="../{{song.src}}" download><img id='{{id}}' onclick="download(this,'{{../song.src}}')" class='download ico' src='../img/download.png'></a>
+        <a href="../{{song.src}}" download><img id='{{song.id}}' onclick="download(this,'{{../song.src}}')" class='download ico' src='../img/download.png'></a>
         <img id='{{song.id}}' onclick="playSound(this,'../{{song.src}}');" class='play ico' src='../img/play.png'  />
-        <img id='{{id}}' onclick='flame(this)' class='heat ico' src='../img/heat.png' >
+        <img id='{{song.id}}' onclick='flame(this)' class='heat ico' src='../img/heat.png' >
         <div class='analytics'>
           <span class='badge badge-pill badge-warning download_count'>{{song.download_count}}</span>
           <span class='badge badge-pill badge-warning play_count'>{{song.play_count}}</span>
