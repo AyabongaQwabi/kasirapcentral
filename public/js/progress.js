@@ -81,7 +81,7 @@ function playSound(el, soundfile) {
                 console.log('this element is paused')
                 console.log('so im gonna leave play it')
                 displayProgressBar(elm)
-                //elm.mp3.play()
+                $(elm).addClass('played')
 
               }
               else{
@@ -96,7 +96,9 @@ function playSound(el, soundfile) {
               console.log('So im gonna hide progress bar for the current one')
               console.log("and then pause it")
               currentEl.mp3.pause()
+
               hideProgressBar(currentEl)
+              $(currentEl).removeClass('played')
               console.log('then show progress bar for this one')
               displayProgressBar(elm)
               currentEl = elm
@@ -127,12 +129,13 @@ function playSound(el, soundfile) {
             console.log(' playing the mp3')
             el.mp3.play();
             el.src = '/img/pause.png'
+            $(el).addClass('played')
             handleProgressBar(el)
 
         } else {
             console.log('pausing the mp3')
-
             el.mp3.pause();
+            $(el).removeClass('played')
             el.src = '/img/play.png'
         }
     } else {
@@ -142,6 +145,7 @@ function playSound(el, soundfile) {
         console.log(' playing the mp3')
         el.mp3.play();
         el.src = '/img/pause.png'
+        $(el).addClass('played')
         handleProgressBar(el)
 
     }
@@ -195,15 +199,20 @@ function flame(el){
   console.log('heat click')
   console.log($(el).attr('src'))
   console.log(el.src == '/img/heat.png')
-  if ($(el).attr('src') == 'img/heat.png') {
-      $(el).attr('src','img/redfire.png')
+  if (!$(el).hasClass('flamed')) {
+      $(el).addClass('flamed')
   } else {
-      $(el).attr('src','img/heat.png')
+      $(el).removeClass('flamed')
   }
 }
 function download(el){
   if (!el.downloaded){
     updateDownloadCount(el)
     el.downloaded = true;
+  }
+  if (!$(el).hasClass('downloaded')) {
+      $(el).addClass('downloaded')
+  } else {
+      $(el).removeClass('downloaded')
   }
 }

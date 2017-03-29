@@ -1,3 +1,4 @@
+
 .logo{
   font-size: 6rem;
   font-weight: 900;
@@ -310,11 +311,50 @@
   max-width: 30%;
   padding: 5%;
 }
+.flamed {
+  -webkit-filter:drop-shadow(1px 1px 10px red) drop-shadow(-1px -1px 0 yellow);
+  filter:drop-shadow(1px 1px 10px red) drop-shadow(-1px -1px 0 yellow);
+}
+.downloaded{
+  -webkit-filter:drop-shadow(1px 1px 10px blue) drop-shadow(-1px -1px 0 blue);
+  filter:drop-shadow(1px 1px 10px red) drop-shadow(-1px -1px 0 blue);
+}
+.played {
+  animation: playbutton 5s ease-in-out alternate infinite;
+  -webkit-animation: playbutton  5s ease-in-out alternate infinite;
+  -webkit-filter:drop-shadow(1px 1px 10px yellow) drop-shadow(-1px -1px 0 orange);
+  filter:drop-shadow(1px 1px 10px yellow) drop-shadow(-1px -1px 0 orange);
+}
 
 
-
-
-
+@-webkit-keyframes playbutton{
+  0%{
+    -webkit-filter:drop-shadow(1px 1px 10px yellow) drop-shadow(-1px -1px 0 orange);
+    filter:drop-shadow(1px 1px 10px yellow) drop-shadow(-1px -1px 0 orange);
+  }
+  50%{
+    -webkit-filter:drop-shadow(1px 1px 10px red) drop-shadow(-1px -1px 0 yellow);
+    filter:drop-shadow(1px 1px 10px red) drop-shadow(-1px -1px 0 yellow);
+  }
+  100%{
+    -webkit-filter:drop-shadow(1px 1px 10px blue) drop-shadow(-1px -1px 0 blue);
+    filter:drop-shadow(1px 1px 10px blue) drop-shadow(-1px -1px 0 blue);
+  }
+}
+@keyframes playbutton{
+  0%{
+    -webkit-filter:drop-shadow(1px 1px 10px yellow) drop-shadow(-1px -1px 0 orange);
+    filter:drop-shadow(1px 1px 10px yellow) drop-shadow(-1px -1px 0 orange);
+  }
+  50%{
+    -webkit-filter:drop-shadow(1px 1px 10px red) drop-shadow(-1px -1px 0 yellow);
+    filter:drop-shadow(1px 1px 10px red) drop-shadow(-1px -1px 0 yellow);
+  }
+  100%{
+    -webkit-filter:drop-shadow(1px 1px 10px blue) drop-shadow(-1px -1px 0 blue);
+    filter:drop-shadow(1px 1px 10px blue) drop-shadow(-1px -1px 0 blue);
+  }
+}
 
 
 
