@@ -4,11 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>{{song.name}}</title>
-        <meta property="og:url"                content="http://www.kasirapcentral.tk/s/{{song.id}}" />
-        <meta property="og:type"               content="website" />
+        <meta property="og:url"                content="http://www.kasirapcentral.tk/versus" />
+        <meta property="og:type"               content="Music" />
         <meta property="og:title"              content="{{song.name}}" />
         <meta property="og:description"        content="Download , Listen and flame {{song.artist}}'s {{song.name}} on Kriss now" />
-        <meta property="og:image"              content="http://www.kasirapcentral.tk/{{song.image}}" />
+        <meta property="og:image"              content="{{song.image}}" />
         <meta name="keywords" content="hip hop,music , apparel ,dance,spaza, south africa">
         <meta name="google-site-verification" content="9W1yVIpOAJzHa3H0rNpTSY8yKrLqt-FAPnMsxOJR5s8" />
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous">
@@ -53,6 +53,7 @@
     color:white;
   }
   .image{
+    max-width:100%;
     height:300px;
   }
   .image-wrapper{
@@ -69,7 +70,7 @@
     text-decoration: none;
   }
 </style>
-<div class='row'>
+<div class='row justify-content-center'>
     <div class=' col-xs-12 col-sm-12 col-md-6 col-lg-6'><a href='/' ><h1 class='logo'>KRISS </h1></a></div>
     <div class='col-xs-12 col-sm-12 col-md-6 col-lg-6'>
       <div class='col-xs-12 col-sm-12 col-md-6 col-lg-6'>
@@ -81,18 +82,27 @@
 
     </div>
 </div>
-<div class='row black'>
+<div class='row justify-content-center'>
+  <div class='col-md-12 text-justify' style='padding:8%;color:black;background:#fcad26;'>
+    <p class='lead'> Listen and Download </p>
+    <h2 class='display-5'> Did you know ? </p>
+    <p class='lead'> Every time your song is downloaded </p>
+    <p class='lead'>  on KRISS you get 25c.</p>
+    <p class='lead'><a href='/upload'><b> Upload Yours NOW !</b></a></p>
+  </div>
+</div>
+<div class='row black' style='padding:2%;'>
   <div class='col-md-4 col-xs-12 text-center image-wrapper'>
     <img class='image' src='{{song.image}}'/>
   </div>
-  <div class="col-md-8 col-xs-12 jumbotron jumbotron-fluid">
+  <div class="col-md-4 col-xs-12 jumbotron jumbotron-fluid">
     <div class="container">
       <h1 class="display-4 container-fluid">{{song.name}}</h1>
-      <div class='col-xs-12 col-sm-12 col-md-6 col-lg-6'>
+      <div class='col-xs-12 col-sm-12 col-md-6 col-lg-12'>
         <h4 class="h4 container-fluid">{{song.artist}}</h4>
-        <input class='form-control' value='www.kasirapcentral.tk/s/{{song.id}}' onmouseenter='this.select()' readonly>
+        <input class='form-control col-md-12 col-xs-12' value='www.kasirapcentral.tk/s/{{song.id}}' onmouseenter='this.select()'>
       </div>
-      <div class='col-xs-12 col-sm-12 col-md-6 col-lg-6'>
+      <div class='col-xs-12 col-sm-12 col-md-6 col-lg-12'>
         <a href="../{{song.src}}" download><img id='{{id}}' onclick="download(this,'{{../song.src}}')" class='download ico' src='../img/download.png'></a>
         <img id='{{song.id}}' onclick="playSound(this,'../{{song.src}}');" class='play ico' src='../img/play.png'  />
 
@@ -106,6 +116,17 @@
       </div>
     </div>
   </div>
-
+  <div class='col-md-4 col-xs-12'>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- responsive bar kasi -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-8294995671791919"
+         data-ad-slot="4328078988"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </div>
 
 </div>
