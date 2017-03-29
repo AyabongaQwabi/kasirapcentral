@@ -24,7 +24,7 @@ ConnectionProvider = require('./routes/connectionProvider');
 var dbOptions = {
  host: 'localhost',
   user: 'root',
-  password: 'theaya5379',
+  password: '@theaya5379085;',
   port: 3306,
   database: 'kriss'
 };
@@ -74,4 +74,4 @@ app.get('/versus',songs.getVersus)
 app.get('/s/:songid',songs.getSong)
 app.post('/s/find',songs.find)
 /*app.get('/a/:artistname',songs.getArtist)*/
-app.listen(5000)
+app.listen(80)
