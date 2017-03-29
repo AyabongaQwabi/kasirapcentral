@@ -14,12 +14,11 @@
 	border: none;
 	font-family: inherit;
 	font-size: inherit;
-	color: inherit;
-	background: none;
 	cursor: pointer;
-	padding: 25px 80px;
+	padding: 15px 80px;
 	display: inline-block;
-	margin: 15px 30px;
+	margin: 10px 0px;
+	color:white;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: 700;
