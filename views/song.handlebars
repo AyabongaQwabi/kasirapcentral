@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>{{song.name}}</title>
-        <meta property="og:url"                content="http://www.kasirapcentral.tk/versus" />
+        <meta property="og:url"                content="http://www.kasirapcentral.tk/s/{{song.id}}" />
         <meta property="og:type"               content="Music" />
         <meta property="og:title"              content="{{song.name}}" />
         <meta property="og:description"        content="Download , Listen and flame {{song.artist}}'s {{song.name}} on Kriss now" />
@@ -23,9 +23,17 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
 
+
     </head>
 
-
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=222881211522138";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
 
 
@@ -92,16 +100,35 @@
   </div>
 </div>
 <div class='row black' style='padding:2%;'>
+  {{#song.social_link}}
+  <div class="fb-page col-12" data-href="{{this}}" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+    <blockquote cite="{{this}}" class="fb-xfbml-parse-ignore">
+      <a href="{{this}}">{{song.artist}}</a>
+    </blockquote>
+  </div>
+  {{/song.social_link}}
   <div class='col-md-4 col-xs-12 text-center image-wrapper'>
     <img class='image' src='{{song.image}}'/>
   </div>
   <div class="col-md-4 col-xs-12 jumbotron jumbotron-fluid">
     <div class="container">
+
       <h1 class="display-4 container-fluid">{{song.name}}</h1>
       <div class='col-xs-12 col-sm-12 col-md-6 col-lg-12'>
-        <h4 class="h4 container-fluid">{{song.artist}}</h4>
+        <h4 class="h4 container-fluid">
+          {{song.artist}}
+          <div class="fb-follow" data-href="{{song.social_link}}" data-layout="button_count" data-size="small" data-show-faces="true"></div>
+        </h4>
+
         <input class='form-control col-md-12 col-xs-12' value='www.kasirapcentral.tk/s/{{song.id}}' onmouseenter='this.select()'>
+
+        <div class="fb-share-button"
+          data-href="http://www.kasirapcentral.tk/s/{{song.id}}"
+          data-layout="button_count">
+        </div>
+        <div class="fb-send" href="http://www.kasirapcentral.tk/s/{{song.id}}"></div>
       </div>
+
       <div class='col-xs-12 col-sm-12 col-md-6 col-lg-12'>
         <a href="../{{song.src}}" download><img id='{{song.id}}' onclick="download(this,'{{../song.src}}')" class='download ico' src='../img/download.png'></a>
         <img id='{{song.id}}' onclick="playSound(this,'../{{song.src}}');" class='play ico' src='../img/play.png'  />
@@ -110,24 +137,32 @@
           <span class='badge badge-pill badge-warning download_count'>{{song.download_count}}</span>
           <span class='badge badge-pill badge-warning play_count'>{{song.play_count}}</span>
           <span class='badge badge-pill badge-warning flame_count'>{{song.flame_count}}</span>
+
         </div>
         <div class="hp_slide">
             <div class="hp_range"></div>
         </div>
+
       </div>
     </div>
   </div>
+
   <div class='col-md-4 col-xs-12'>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- responsive bar kasi -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-8294995671791919"
-         data-ad-slot="4328078988"
-         data-ad-format="auto"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+
+    <div class="fb-comments col-8" width="100%" data-href="http://www.kasirapcentral.tk/s/{{song.id}}"  data-numposts="5"></div>
+
   </div>
 
+</div>
+<div class='row' style='padding:2%;'>
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <!-- responsive bar kasi -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-8294995671791919"
+       data-ad-slot="4328078988"
+       data-ad-format="auto"></ins>
+  <script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
 </div>
