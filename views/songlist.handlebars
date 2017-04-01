@@ -12,33 +12,47 @@
       </script>
 
         <style type='text/css'>
-          body{background:black;
+          body{
+            background:url('/img/Kasil.png')no-repeat center right fixed;
+            background-size:cover;
             color: white;
             padding:2% 3%;
           overflow-y:scroll;}
+          .list-group-item{background:rgba(255,255,255,0.7);}
 
         </style>
 
-        <div class='row '>
-          <div class='row'>
-              <div class='col-md-6 col-xs12'>
-                <a href='/'>
-                    <h1 class=' col-md-4 col-xs-12 logo'>KRISS </h1>
-                </a>
+        <div class='row text-center'>
+          <div class='col-12'>
+              <div class='col-12'>
+                <div class='col-md-4 col-xs12'>
+
+                  <a href='/'>
+                      <h1 class=' col-md-4 col-xs-12 logo'>KRISS </h1>
+                  </a>
+                </div>
               </div>
-              <div class= 'col-md-6 col-xs-12'>
-                 <a href='/s/find' class='btn btn-3 btn-3a icon-list-all'>Find</a>
+              <div class='col-12'>
+                <div class='row'>
+                  <div class= 'col-md-5 col-xs-12'>
+                     <a href='/s/find' class='btn btn-warning'>Find</a>
+                  </div>
+                  <div class= 'col-md-5 col-xs-12'>
+                     <input class=' form-control-lg' placeholder='search '>
+                  </div>
+                </div>
+
               </div>
           </div>
 
-            <ul class='col-md-12 col-xs-12 list-group'>
+          <ul class='list-group'>
                 {{#each songs}}
                   <li class='list-group-item'>
                     <div class='col-xs-12 col-sm-12 col-md-6 col-lg-6 '>
-                    
+
                     <a href='/s/{{id}}'>
-                      <h2 class="display-4"><b>{{name}}</b></h2>
-                      <h2 class="display-5">{{artist}}</h2>
+                      <h2 class="lead"><b>{{name}}</b></h2>
+                      <h2 class="display-6">{{artist}}</b></h2>
                     </a>
 
 
@@ -54,8 +68,7 @@
                   </li>
                   {{/each}}
 
-            </ul>
-          </div>
+          </ul>
         </div>
 
         <script src="js/bootstrap.min.js"></script>

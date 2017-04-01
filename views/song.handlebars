@@ -71,9 +71,12 @@
 
 </script>
 <style>
-  body{overflow-y:scroll}
+  body{overflow-y:scroll;
+    background:url('/img/Kasil.png')no-repeat center right fixed;
+    background-size:cover;
+  }
   .jumbotron{
-    background: black;
+    background: rgba(0,0,0,0.5);
     color:white;
   }
   .image{
@@ -86,7 +89,12 @@
   .black{
     background:black;
   }
-  .logo{color:black;}
+  .logo {
+    font-size: 6rem;
+    font-weight: 900;
+    letter-spacing: -6px;
+    color: white;
+  }
   a:hover{
     text-decoration: none;
   }
@@ -94,14 +102,15 @@
     text-decoration: none;
   }
 </style>
-<div class='row justify-content-center'>
+<div class='row text-center justify-content-center'>
     <div class=' col-xs-12 col-sm-12 col-md-6 col-lg-6'>
-      <a href='/' ><h1 class='logo'>KRISS </h1></a>
-      <div
-        class="fb-like"
-        data-share="true"
-        data-width="450"
-        data-show-faces="true">
+      <a href='/' ><h1 class='col-xs-12 logo'>KRISS </h1></a>
+      <div class='col-xs-12 col-md-6' style="padding: 0% 30%;">
+        <div
+          class="fb-like"
+          data-share="true"
+          data-show-faces="true">
+        </div>
       </div>
     </div>
 
@@ -115,7 +124,7 @@
 
     </div>
 </div>
-<div class='row justify-content-center'>
+<!--<div class='row justify-content-center'>
   <div class='col-md-12 text-justify' style='padding:1% 10%;color:black;background:#fcad26;'>
     <small>
     <p class='lead'> Listen and Download </p>
@@ -125,8 +134,8 @@
     <p class='lead'><a href='/upload'><b> Upload Yours NOW !</b></a></p>
   </small>
   </div>
-</div>
-<div class='row black' style='padding:2%;'>
+</div> !-->
+<div class='row ' style='padding:2%;'>
 
   {{#song.social_link}}
   <div class="fb-page col-lg-4 col-md-12 col-xs-12" data-href="{{this}}" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
@@ -141,9 +150,9 @@
   <div class="col-lg-4 col-md-7 col-xs-12 jumbotron jumbotron-fluid">
     <div class="col-12 container">
 
-      <h1 class="col-12 display-4 container-fluid">{{song.name}}</h1>
+      <h1 class="col-12 h4container-fluid">{{song.name}}</h1>
       <div class='col-12'>
-        <h4 class="h4 container-fluid">
+        <h4 class="lead container-fluid">
           {{song.artist}}
           <div class="fb-follow" data-href="{{song.social_link}}" data-layout="button_count" data-size="small" data-show-faces="true"></div>
         </h4>
@@ -177,7 +186,7 @@
 
   <div class='col-lg-12 col-md-12 col-xs-12'>
 
-    <div class="fb-comments col-8" width="100%" href="http://www.kasirapcentral.tk/s/{{song.id}}"  data-numposts="5"></div>
+
 
   </div>
 
