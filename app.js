@@ -5,6 +5,8 @@ var fileUpload = require('express-fileupload');
 exphbs  = require('express-handlebars');
 var path = require('path');
 var bodyParser = require('body-parser');
+var minify = require('express-minify');
+
 
 var app = express();
 userMethods =require('./routes/user')
@@ -45,7 +47,9 @@ var myConnectionProvider = new ConnectionProvider(dbOptions, serviceSetupCallbac
 app.use(myConnectionProvider.setupProvider);
 app.use(myconnection(mysql, dbOptions, 'pool'));
 app.use(express.static('public'))
+app.use(minify({cache: __dirname + '/cache'}));
 app.use(fileUpload());
+app.use(minify());
 
 app.engine('handlebars', exphbs({defaultLayout: 'index'}));
 app.set('view engine', 'handlebars');
