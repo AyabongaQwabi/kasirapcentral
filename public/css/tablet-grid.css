@@ -33,7 +33,8 @@
 
   }
   .main{
-    background:black;
+    background:url('/img/Kasil.png')no-repeat center right fixed;
+    background-size:cover;
     height:100vh;
     overflow-y: scroll;
     overflow-x: hidden;
