@@ -38,7 +38,7 @@ module.exports = function(){
           songService.getSong(data,function(err, results) {
             console.log('Got song')
             if(err){console.log(err)}
-            console.log(results)
+            //console.log(results)
             if(!results.length==0){
               console.log('song exists...rendering')
               res.render('song',{song:results[0],layout:false})

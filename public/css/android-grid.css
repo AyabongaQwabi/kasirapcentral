@@ -1,6 +1,7 @@
 
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : 320px) {
+  body{overflow-y:scroll}
   .music .collection .collection-item{
     display:inline-block;
     background: orange;
@@ -10,6 +11,7 @@
     list-style-type: none;
 
   }
+  .cooldiv{background-size:cover}
   .video{
     height:45vh;
     overflow:hidden;
@@ -23,9 +25,11 @@
 
   }
   .main{
-    background:black;
+    background:url('/img/Kasil.png')no-repeat center right fixed;
+    background-size:cover;
     height:100vh;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
   }
   .ad{
     background:red;
@@ -117,6 +121,8 @@
 
 
 @media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation : portrait) and (-webkit-device-pixel-ratio: 3){
+  body{overflow-y:scroll}
+  .cooldiv{background-size:cover}
   .music .collection .collection-item{
     display:inline-block;
     background: orange;
@@ -139,7 +145,8 @@
 
   }
   .main{
-    background:black;
+    background:url('/img/Kasil.png')no-repeat center right fixed;
+    background-size:cover;
     height:100vh;
     overflow-y: scroll;
     overflow-x: hidden;
