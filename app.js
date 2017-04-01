@@ -81,8 +81,10 @@ app.get('/versus',songs.getVersus)
 app.get('/s/:songid',songs.getSong)
 app.get('/s/latest/id',songs.getLatestID)
 app.post('/s/find',songs.find)
-app.get('/generate',function(req,res){  
+app.get('/generate',function(req,res){
   res.send({code:Math.floor(Math.random() * 90000) + 10000});
 })
 /*app.get('/a/:artistname',songs.getArtist)*/
+app.get('/api/standalone/app',songs.app)
+
 app.listen(5000)
