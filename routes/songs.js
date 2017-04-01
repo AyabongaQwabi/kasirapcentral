@@ -18,6 +18,15 @@ module.exports = function(){
               })
         });
   }
+  this.getLatestID = function(req, res, next){
+        req.services(function(err,services){
+              var songService = services.songDataServ;
+              songService.getSongs(function(err, results) {
+                  //console.log(results)
+                  res.send({id:results[results.length-1].id})
+              })
+        });
+  }
   this.find = function(req,res,next){
     if(req.body.id){
       var url = '/s/'+req.body.id

@@ -5,6 +5,9 @@ var fileUpload = require('express-fileupload');
 exphbs  = require('express-handlebars');
 var path = require('path');
 var bodyParser = require('body-parser');
+var minify = require('express-minify');
+
+
 
 var app = express();
 userMethods =require('./routes/user')
@@ -20,6 +23,8 @@ songDataService = require('./dataServices/songDataService'),
 videoMethods =require('./routes/videos'),
 videoDataService = require('./dataServices/videoDataService'),
 ConnectionProvider = require('./routes/connectionProvider');
+
+
 
 var dbOptions = {
  host: 'localhost',
@@ -45,7 +50,9 @@ var myConnectionProvider = new ConnectionProvider(dbOptions, serviceSetupCallbac
 app.use(myConnectionProvider.setupProvider);
 app.use(myconnection(mysql, dbOptions, 'pool'));
 app.use(express.static('public'))
+app.use(minify({cache: __dirname + '/cache'}));
 app.use(fileUpload());
+app.use(minify());
 
 app.engine('handlebars', exphbs({defaultLayout: 'index'}));
 app.set('view engine', 'handlebars');
@@ -72,6 +79,10 @@ app.get('/versus/setup',songs.getSetupVersus)
 app.post('/versus/setup',songs.setVersus)
 app.get('/versus',songs.getVersus)
 app.get('/s/:songid',songs.getSong)
+app.get('/s/latest/id',songs.getLatestID)
 app.post('/s/find',songs.find)
+app.get('/generate',function(req,res){  
+  res.send({code:Math.floor(Math.random() * 90000) + 10000});
+})
 /*app.get('/a/:artistname',songs.getArtist)*/
 app.listen(5000)
