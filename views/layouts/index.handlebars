@@ -1,14 +1,7 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <script>
-          (adsbygoogle = window.adsbygoogle || []).push({
-            google_ad_client: "ca-pub-8294995671791919",
-            enable_page_level_ads: true
-          });
-        </script>
         <link rel="apple-touch-icon" sizes="57x57" href="/img/favicon/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="/img/favicon/apple-icon-60x60.png">
         <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon/apple-icon-72x72.png">
@@ -29,12 +22,12 @@
         <meta name="google-site-verification" content="M4CgH0wlh9lRXSn8UdPsMwA2hLGGNRvHfZE8QqOQZY8" />
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>KRC</title>
+        <title>KRISS</title>
         <meta property="og:url"                content="http://www.krissmusic.tk" />
         <meta property="og:type"               content="Music" />
-        <meta property="og:title"              content="Kriss" />
+        <meta property="og:title"              content="KRISS" />
         <meta property="og:description"        content="Upload ,Download and Listen to the latest Kasi tracks by your favourite Artists ❱❱❱" />
-        <meta property="og:image"              content="http://www.krissmusic.tk/img/preview.PNG" />
+        <meta property="og:image"              content="www.krissmusic.tk/img/og/preview.png" />
         <meta name="keywords" content="hip hop,music,kasi,apparel ,dance,spaza, south africa">
         <meta name="google-site-verification" content="9W1yVIpOAJzHa3H0rNpTSY8yKrLqt-FAPnMsxOJR5s8" />
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous">
@@ -50,6 +43,532 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
     </head>
+    <style>
+        .square,
+        .btn {
+            border-radius: 0px!important;
+        }
+        /* -- color classes -- */
+
+        .coralbg {
+            background-color: rgba(255, 200, 0, 0.85);
+        }
+
+        .coral {
+            color: #FA396f;
+        }
+
+        .turqbg {
+            background-color: #46D8D2;
+        }
+
+        .turq {
+            color: #46D8D2;
+        }
+
+        .white {
+            color: #fff!important;
+        }
+        /* -- The "User's Menu Container" specific elements. Custom container for the snippet -- */
+
+        div.user-menu-container {
+            z-index: 10;
+            background-color: #fff;
+            margin-top: 20px;
+            cursor: pointer;
+            background-clip: padding-box;
+            opacity: 0.9;
+            filter: alpha(opacity=97);
+            -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+        }
+
+        div.user-menu-container .btn-lg {
+            padding: 0px 12px;
+        }
+
+        div.user-menu-container h4 {
+            font-weight: 300;
+            color: #8b8b8b;
+        }
+
+        div.user-menu-container a,
+        div.user-menu-container .btn {
+            transition: 1s ease;
+        }
+
+        div.user-menu-container .thumbnail {
+            width: 100%;
+            min-height: 200px;
+            max-height: 100%;
+            border: 0px!important;
+            padding: 0px;
+            border-radius: 0;
+            border: 0px!important;
+        }
+        /* -- Vertical Button Group -- */
+
+        div.user-menu-container .btn-group-vertical {
+            display: block;
+        }
+
+        div.user-menu-container .btn-group-vertical>a {
+            padding: 20px 25px;
+            background-color: #46D8D2;
+            color: white;
+            border-color: #fff;
+        }
+
+        div.btn-group-vertical>a:hover {
+            color: white;
+            border-color: white;
+        }
+
+        div.btn-group-vertical>a.active {
+            background: #FA396F;
+            box-shadow: none;
+            color: white;
+        }
+        /* -- Individual button styles of vertical btn group -- */
+
+        div.user-menu-btns {
+            padding-right: 0;
+            padding-left: 0;
+            padding-bottom: 0;
+        }
+
+        div.user-menu-btns div.btn-group-vertical>a.active:after {
+            content: '';
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            margin-top: -13px;
+            border-left: 0;
+            border-bottom: 13px solid transparent;
+            border-top: 13px solid transparent;
+            border-left: 10px solid #46D8D2;
+        }
+        /* -- The main tab & content styling of the vertical buttons info-- */
+
+        div.user-menu-content {
+            color: #323232;
+        }
+
+        ul.user-menu-list {
+            list-style: none;
+            margin-top: 20px;
+            margin-bottom: 0;
+            padding: 10px;
+            border: 1px solid #eee;
+        }
+
+        ul.user-menu-list>li {
+            padding-bottom: 8px;
+            text-align: center;
+        }
+
+        div.user-menu div.user-menu-content:not(.active) {
+            display: none;
+        }
+        /* -- The btn stylings for the btn icons -- */
+
+        .btn-label {
+            position: relative;
+            left: -12px;
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(0, 0, 0, 0.15);
+            border-radius: 3px 0 0 3px;
+        }
+
+        .btn-labeled {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        /* -- Custom classes for the snippet, won't effect any existing bootstrap classes of your site, but can be reused. -- */
+
+        .user-pad {
+            padding: 10px 25px;
+        }
+
+        .no-pad {
+            padding-right: 0;
+            padding-left: 0;
+            padding-bottom: 0;
+        }
+
+        .user-details {
+            background: #fff;
+            min-height: 33px;
+        }
+
+        .user-image {
+            max-height: 200px;
+            overflow: hidden;
+        }
+
+        .overview h3 {
+            font-weight: 300;
+            margin-top: 15px;
+            margin: 10px 0 0 0;
+        }
+
+        .overview h4 {
+            font-weight: bold!important;
+            font-size: 40px;
+            margin-top: 0;
+        }
+
+        .view {
+            position: relative;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .view p {
+            margin-top: 20px;
+            margin-bottom: 0;
+        }
+
+        .caption {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: rgba(70, 216, 210, 0.44);
+            width: 100%;
+            height: 100%;
+            padding: 2%;
+            display: none;
+            text-align: center;
+            color: #fff !important;
+            z-index: 2;
+        }
+
+        .caption a {
+            padding-right: 10px;
+            color: #fff;
+        }
+
+        .info {
+            display: block;
+            padding: 10px;
+            background: #eee;
+            text-transform: uppercase;
+            font-weight: 300;
+            text-align: right;
+        }
+
+        .info p,
+        .stats p {
+            margin-bottom: 0;
+        }
+
+        .stats {
+            display: block;
+            padding: 10px;
+            color: white;
+        }
+
+        .share-links {
+            border: 1px solid #eee;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .square,
+        .btn {
+            border-radius: 0px!important;
+        }
+
+        .btn {
+            background: rgba(255, 200, 0, 0.85)
+        }
+
+        .cooldiv {
+            background: url('/img/salaphi.jpg')no-repeat center center fixed;
+            background-size: cover;
+            -webkit-filter: saturate(.5)contrast(1.3);
+            padding: 5% 1%;
+        }
+
+        .blacktip {
+            background: black;
+            padding: 1%;
+        }
+
+        .blackpar {
+            padding: 1%;
+            background: rgba(0, 0, 0, 0.6)
+        }
+
+        .whitepar {
+            padding: 1%;
+            background: rgba(255, 255, 255, 0.6)
+        }
+        /* -- media query for user profile image -- */
+
+        @media (max-width: 767px) {
+            .user-image {
+                max-height: 400px;
+            }
+        }
+
+        #presentation {
+            width: 480px;
+            height: 120px;
+            padding: 20px;
+            margin: auto;
+            background: #FFF;
+            margin-top: 10px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+            transition: all 0.3s;
+            border-radius: 3px;
+        }
+
+        #presentation:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+            transition: all 0.3s;
+            transform: translateZ(10px);
+        }
+
+        #floating-button {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #db4437;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            cursor: pointer;
+            box-shadow: 0px 2px 5px #666;
+        }
+
+        .plus {
+            color: white;
+            position: absolute;
+            top: 0;
+            display: block;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            line-height: 55px;
+            font-size: 38px;
+            font-family: 'Roboto';
+            font-weight: 300;
+            animation: plus-out 0.3s;
+            transition: all 0.3s;
+        }
+
+        #container-floating {
+            position: fixed;
+            width: 70px;
+            height: 70px;
+            bottom: 30px;
+            right: 30px;
+            z-index: 5;
+        }
+
+        #container-floating:hover {
+            height: 400px;
+            width: 90px;
+            padding: 30px;
+        }
+
+        #container-floating:hover .plus {
+            animation: plus-in 0.15s linear;
+            animation-fill-mode: forwards;
+        }
+
+        .edit {
+            position: absolute;
+            top: 0;
+            display: block;
+            bottom: 0;
+            left: 0;
+            display: block;
+            right: 0;
+            padding: 0;
+            opacity: 0;
+            margin: auto;
+            line-height: 65px;
+            transform: rotateZ(-70deg);
+            transition: all 0.3s;
+            animation: edit-out 0.3s;
+        }
+
+        #container-floating:hover .edit {
+            animation: edit-in 0.2s;
+            animation-delay: 0.1s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes edit-in {
+            from {
+                opacity: 0;
+                transform: rotateZ(-70deg);
+            }
+            to {
+                opacity: 1;
+                transform: rotateZ(0deg);
+            }
+        }
+
+        @keyframes edit-out {
+            from {
+                opacity: 1;
+                transform: rotateZ(0deg);
+            }
+            to {
+                opacity: 0;
+                transform: rotateZ(-70deg);
+            }
+        }
+
+        @keyframes plus-in {
+            from {
+                opacity: 1;
+                transform: rotateZ(0deg);
+            }
+            to {
+                opacity: 0;
+                transform: rotateZ(180deg);
+            }
+        }
+
+        @keyframes plus-out {
+            from {
+                opacity: 0;
+                transform: rotateZ(180deg);
+            }
+            to {
+                opacity: 1;
+                transform: rotateZ(0deg);
+            }
+        }
+
+        .nds {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            position: fixed;
+            z-index: 300;
+            transform: scale(0);
+            cursor: pointer;
+        }
+
+        .nd1 {
+            background: #d3a411;
+            right: 40px;
+            bottom: 120px;
+            animation-delay: 0.2s;
+            animation: bounce-out-nds 0.3s linear;
+            animation-fill-mode: forwards;
+        }
+
+        .nd3 {
+            background: #3c80f6;
+            right: 40px;
+            bottom: 180px;
+            animation-delay: 0.15s;
+            animation: bounce-out-nds 0.15s linear;
+            animation-fill-mode: forwards;
+        }
+
+        .nd4 {
+            background: #ba68c8;
+            right: 40px;
+            bottom: 240px;
+            animation-delay: 0.1s;
+            animation: bounce-out-nds 0.1s linear;
+            animation-fill-mode: forwards;
+        }
+
+        .nd5 {
+            background-image: url('https://lh3.googleusercontent.com/-X-aQXHatDQY/Uy86XLOyEdI/AAAAAAAAAF0/TBEZvkCnLVE/w140-h140-p/fb3a11ae-1fb4-4c31-b2b9-bf0cfa835c27');
+            background-size: 100%;
+            right: 40px;
+            bottom: 300px;
+            animation-delay: 0.08s;
+            animation: bounce-out-nds 0.1s linear;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes bounce-nds {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounce-out-nds {
+            from {
+                opacity: 1;
+                transform: scale(1);
+            }
+            to {
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+
+        #container-floating:hover .nds {
+            animation: bounce-nds 0.1s linear;
+            animation-fill-mode: forwards;
+        }
+
+        #container-floating:hover .nd3 {
+            animation-delay: 0.08s;
+        }
+
+        #container-floating:hover .nd4 {
+            animation-delay: 0.15s;
+        }
+
+        #container-floating:hover .nd5 {
+            animation-delay: 0.2s;
+        }
+
+        .letter {
+            font-size: 23px;
+            font-family: 'Roboto';
+            color: white;
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0;
+            top: 0;
+            bottom: 0;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .reminder {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            line-height: 40px;
+        }
+
+        .profile {
+            border-radius: 50%;
+            width: 40px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            right: 20px;
+        }
+    </style>
+
     <script>
       window.fbAsyncInit = function() {
         FB.init({
@@ -67,15 +586,24 @@
          fjs.parentNode.insertBefore(js, fjs);
        }(document, 'script', 'facebook-jssdk'));
     </script>
-
-
-
-
-
-
-
-
     <body>
-      {{{body}}}
+      <div class='row'>
+        <div class='col-md-8 col-sm-8 col-xs-12'>
+            {{{body}}}
+        </div>
+        <div class='col-md-4 col-sm-4 col-xs-12 cooldiv'>
+
+            <div class='col-md-10 col-xs-12'>
+              <p class= 'white lead blacktip'>
+                 TheSalaphi Sistas
+                 <div class="fb-like" data-href="https://www.facebook.com/thesalaphisistas/" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+              </p>
+              <p class='white lead blackpar'>The Salaphi Sistas are an Afro pop duo comprised of sisters Enkosi and Tina Salaphi who were born and raised in a small town called Dutywa, Eastern Cape</p>
+              <div class='col-12 whitepar white'>
+                <div class="fb-video" data-href="https://www.facebook.com/thesalaphisistas/videos/1654667208157969/" data-width="600" data-show-text="true"><blockquote cite="https://www.facebook.com/thesalaphisistas/videos/1654667208157969/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/thesalaphisistas/videos/1654667208157969/">Kush Mahleka ft The Salaphi Sistas</a><p>When poetry meets music...this was taken a while back at Durban Youth Radio 105.1</p>Posted by <a href="https://www.facebook.com/thesalaphisistas/">The Salaphi Sistas</a> on Sunday, November 13, 2016</blockquote></div>
+              </div>
+            </div>
+
+        </div>
     </body>
   </html>
