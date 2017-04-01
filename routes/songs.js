@@ -18,6 +18,20 @@ module.exports = function(){
               })
         });
   }
+  this.app = function(req, res, next){
+
+        req.services(function(err,services){
+              var songService = services.songDataServ;
+              songService.getSongs(function(err, results) {
+                results.forEach(function(result){
+                  result.src = 'http://krissmusic.tk'+result.src
+                  result.image = 'http://krissmusic.tk'+result.image
+                })
+                res.render('app',{songs:results,layout:false})
+              })
+        });
+
+  }
   this.getLatestID = function(req, res, next){
         req.services(function(err,services){
               var songService = services.songDataServ;
