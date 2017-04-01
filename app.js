@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var minify = require('express-minify');
 
 
+
 var app = express();
 userMethods =require('./routes/user')
 userDataService = require('./dataServices/userDataService'),
@@ -22,6 +23,8 @@ songDataService = require('./dataServices/songDataService'),
 videoMethods =require('./routes/videos'),
 videoDataService = require('./dataServices/videoDataService'),
 ConnectionProvider = require('./routes/connectionProvider');
+
+
 
 var dbOptions = {
  host: 'localhost',
@@ -76,6 +79,10 @@ app.get('/versus/setup',songs.getSetupVersus)
 app.post('/versus/setup',songs.setVersus)
 app.get('/versus',songs.getVersus)
 app.get('/s/:songid',songs.getSong)
+app.get('/s/latest/id',songs.getLatestID)
 app.post('/s/find',songs.find)
+app.get('/generate',function(req,res){  
+  res.send({code:Math.floor(Math.random() * 90000) + 10000});
+})
 /*app.get('/a/:artistname',songs.getArtist)*/
 app.listen(5000)
