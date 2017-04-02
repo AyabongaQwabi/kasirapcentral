@@ -1,3 +1,4 @@
+var exphbs  = require('express-handlebars');
 module.exports = function(){
 
   this.getFeatured = function(req, res, next){
@@ -27,7 +28,10 @@ module.exports = function(){
                   result.src = 'http://krissmusic.tk'+result.src
                   result.image = 'http://krissmusic.tk'+result.image
                 })
-                res.render('app',{songs:results,layout:false})
+                var hbs = exphbs.create({
+                    defaultLayout: 'index',
+                });
+                hbs.render(__dirname+'/../views/app.handlebars',{songs:results,layout:false}).then(function(t){res.send(t)})
               })
         });
 
@@ -51,23 +55,17 @@ module.exports = function(){
     }
   }
   this.getSong = function(req,res,next){
-    console.log('\n\n\ngetting song')
     req.services(function(err,services){
           console.log(err)
           var song = req.params.songid
           var data = {id:song}
           var songService = services.songDataServ;
-          console.log('loading song service')
           songService.getSong(data,function(err, results) {
-            console.log('Got song')
             if(err){console.log(err)}
-            //console.log(results)
             if(!results.length==0){
-              console.log('song exists...rendering')
               res.render('song',{song:results[0],layout:false})
             }
             else{
-              console.log('song not exists')
               req.services(function(err,services){
                     var songService = services.songDataServ;
                     songService.getSongs(function(err, results) {
