@@ -6,10 +6,12 @@ exphbs  = require('express-handlebars');
 var path = require('path');
 var bodyParser = require('body-parser');
 var minify = require('express-minify');
-
+var http = require('https');
+var fs = require('fs');
 
 
 var app = express();
+//app.use(require('helmet')());
 userMethods =require('./routes/user')
 userDataService = require('./dataServices/userDataService'),
 eventDataService = require('./dataServices/eventDataService'),
@@ -44,6 +46,17 @@ var serviceSetupCallback = function(connection){
     featureDataServ : new featureDataService(connection)
 	}
 };
+
+
+
+
+var sslPath = '/etc/letsencrypt/live/krissmusic.tk/';
+
+var options = {
+    key: fs.readFileSync(sslPath + 'privkey.pem'),
+    cert: fs.readFileSync(sslPath + 'fullchain.pem')
+};
+
 
 
 var myConnectionProvider = new ConnectionProvider(dbOptions, serviceSetupCallback);
@@ -87,3 +100,9 @@ app.get('/generate',function(req,res){
 /*app.get('/a/:artistname',songs.getArtist)*/
 app.listen(80)
 app.get('/api/standalone/app',songs.app)
+app.post('/api/standalone/app',songs.app)
+
+var server = http.createServer(options, app);
+var io = require('socket.io').listen(server);
+server.listen(443);
+
