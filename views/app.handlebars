@@ -70,39 +70,27 @@ ga('send', 'pageview');
 </style>
 
 <div class='row text-center'>
-  <div class='col-12'>
-      <div class='col-12'>
-        <div class='col-md-12 col-xs12'>
 
-          <a href='/' style='display:inline'>
-              <h1 class=' col-md-12 col-xs-12 logo'>KRISS </h1>
-          </a>
-          <input style='display:inline' class=' form-control-lg' placeholder='search '>
-          <p class='h4'><b>Download and Listen to your favourite musicians</b></p>
-        </div>
-      </div>
-  </div>
   <div class='col-md-12 container' style='padding-left:0% 30%'>
     <div class='row justify-content-center '>
-      <ul class='col-md-5 list-group'>
+      <ul class='col-md-8 list-group'>
             {{#each songs}}
               <li class='list-group-item'>
-                <div class='col-xs-12 col-sm-12 col-md-6 col-lg-6 '>
+                <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+                  <img src='{{image}}' style='max-width:100px;display:inline;'>
+                </div>
+                <div class='col-xs-12 col-sm-4 col-md-4 col-lg-46 '>
 
                 <a href='/s/{{id}}'>
+
                   <h2 class="lead"><b>{{name}}</b></h2>
-                  <h2 class="display-6">{{artist}}</b></h2>
+                  <h2 class="lead">{{artist}}</b></h2>
                 </a>
 
 
                 </div>
-                <div class='col-xs-12 col-sm-12 col-md-6 col-lg-6'>
+                <div class='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
                   <a href="{{src}}" download><img id='{{id}}' onclick="download(this,'{{src}}')" class='download ico' src='http://www.krissmusic.tk/img/download.png'></a>
-                  <img id='{{id}}' onclick="playSound(this,'{{src}}');" class='play ico' src='http://www.krissmusic.tk/img/play.png'  />
-                  <img id='{{id}}' onclick='flame(this)' class='heat ico' src='http://www.krissmusic.tk/img/heat.png' >
-                  <div class="hp_slide">
-                      <div class="hp_range"></div>
-                  </div>
                 </div>
               </li>
               {{/each}}
