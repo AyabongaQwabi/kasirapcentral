@@ -31,7 +31,7 @@ ConnectionProvider = require('./routes/connectionProvider');
 var dbOptions = {
  host: 'localhost',
   user: 'root',
-  password: '@theaya5379085;',
+  password: '@theaya5379085;', //Secure Method to be added later
   port: 3306,
   database: 'kriss'
 };
@@ -105,4 +105,3 @@ app.post('/api/standalone/app',songs.app)
 var server = http.createServer(options, app);
 var io = require('socket.io').listen(server);
 server.listen(443);
-
