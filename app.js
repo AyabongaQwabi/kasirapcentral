@@ -6,7 +6,8 @@ exphbs  = require('express-handlebars');
 var path = require('path');
 var bodyParser = require('body-parser');
 var minify = require('express-minify');
-
+var http = require('https');
+var fs = require('fs');
 
 
 var app = express();
@@ -44,6 +45,17 @@ var serviceSetupCallback = function(connection){
     featureDataServ : new featureDataService(connection)
 	}
 };
+
+
+
+
+var sslPath = '/etc/letsencrypt/live/yourdomain.example.com/';
+
+var options = {
+    key: fs.readFileSync(sslPath + 'privkey.pem'),
+    cert: fs.readFileSync(sslPath + 'fullchain.pem')
+};
+
 
 
 var myConnectionProvider = new ConnectionProvider(dbOptions, serviceSetupCallback);
@@ -88,3 +100,6 @@ app.get('/generate',function(req,res){
 app.get('/api/standalone/app',songs.app)
 
 app.listen(5000)
+var server = http.createServer(options, this.app);
+var io = require('socket.io').listen(server);
+server.listen(443);
