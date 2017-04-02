@@ -11,11 +11,12 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <title>{{song.name}}</title>
-        <meta property="og:url"                content="http://www.kasirapcentral.tk/s/{{song.id}}" />
-        <meta property="og:type"               content="Music" />
-        <meta property="og:title"              content="{{song.name}}" />
-        <meta property="og:description"        content="🡇 Download , listen ▶ and flame 🔥 {{song.artist}}'s {{song.name}} on Κriss now ❱❱❱" />
-        <meta property="og:image"      itemprop="image"        content="ttp://www.kasirapcentral.tk{{song.image}}" />
+	<meta property="fb:app_id" content="222881211522138" />
+        <meta property="og:url"                content="http://www.krissmusic.tk/s/{{song.id}}" />
+        <meta property="og:type"               content="music.song" />
+        <meta property="og:title" itemprop="name"             content="{{song.name}}" />
+        <meta property="og:description"   itemprop="description"     content="🡇 Download , listen ▶ and flame 🔥 {{song.artist}}'s {{song.name}} on Κriss now ❱❱❱" />
+        <meta property="og:image"      itemprop="image"        content="http://www.krissmusic.tk{{song.image}}" />
         <meta name="keywords" content="hip hop,music , apparel ,dance,spaza, south africa">
         <meta name="google-site-verification" content="9W1yVIpOAJzHa3H0rNpTSY8yKrLqt-FAPnMsxOJR5s8" />
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous">
@@ -29,7 +30,7 @@
         <link rel="stylesheet" href="../css/component.css" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
-
+	<script src="https://use.fontawesome.com/98bb8c27bf.js"></script>
 </head>
 
 
@@ -157,13 +158,16 @@
           <div class="fb-follow" data-href="{{song.social_link}}" data-layout="button_count" data-size="small" data-show-faces="true"></div>
         </h4>
 
-        <input class='form-control col-12' value='www.kasirapcentral.tk/s/{{song.id}}' onmouseenter='this.select()'>
+        <input class='form-control form-control-warning col-12' value='www.krissmusic.tk/s/{{song.id}}' onmouseenter='this.select()'>
 
         <div class="fb-share-button"
-          data-href="http://www.kasirapcentral.tk/s/{{song.id}}"
+          data-href="http://www.krissmusic.tk/s/{{song.id}}"
           data-layout="button_count">
         </div>
-        <div class="fb-send" href="http://www.kasirapcentral.tk/s/{{song.id}}"></div>
+        <div class="fb-send" href="http://www.krissmusic.tk/s/{{song.id}}"></div>
+        <a href="whatsapp://send?text=http://www.kasirapcentral.tk/s/{{song.id}}"class='badge badge-success' style="padding:1.6%"  data-action="share/whatsapp/share" aria-label="Left Align">
+  		<span class="glyphicon glyphicon-align-left" aria-hidden="true"><i class="fa fa-whatsapp" aria-hidden="true"></i></span> Share on Whatsapp
+	</a>
       </div>
 
       <div class='col-12'>
