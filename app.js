@@ -11,6 +11,7 @@ var fs = require('fs');
 
 
 var app = express();
+//app.use(require('helmet')());
 userMethods =require('./routes/user')
 userDataService = require('./dataServices/userDataService'),
 eventDataService = require('./dataServices/eventDataService'),
@@ -30,7 +31,7 @@ ConnectionProvider = require('./routes/connectionProvider');
 var dbOptions = {
  host: 'localhost',
   user: 'root',
-  password: 'theaya5379',
+  password: '@theaya5379085;',
   port: 3306,
   database: 'kriss'
 };
@@ -49,7 +50,7 @@ var serviceSetupCallback = function(connection){
 
 
 
-var sslPath = '/etc/letsencrypt/live/yourdomain.example.com/';
+var sslPath = '/etc/letsencrypt/live/krissmusic.tk/';
 
 var options = {
     key: fs.readFileSync(sslPath + 'privkey.pem'),
@@ -97,9 +98,11 @@ app.get('/generate',function(req,res){
   res.send({code:Math.floor(Math.random() * 90000) + 10000});
 })
 /*app.get('/a/:artistname',songs.getArtist)*/
+app.listen(80)
 app.get('/api/standalone/app',songs.app)
+app.post('/api/standalone/app',songs.app)
 
-app.listen(5000)
-var server = http.createServer(options, this.app);
+var server = http.createServer(options, app);
 var io = require('socket.io').listen(server);
 server.listen(443);
+

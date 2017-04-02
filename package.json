@@ -11,8 +11,12 @@
     "express-minify": "^0.2.0",
     "express-myconnection": "^1.0.4",
     "express-upload": "^0.1.0",
+    "helmet": "^3.5.0",
+    "http": "0.0.0",
+    "https": "^1.0.0",
     "mysql": "^2.13.0",
     "nexmo": "^2.0.2",
+    "socket.io": "^1.7.3",
     "twilio": "^2.11.1"
   },
   "devDependencies": {},
