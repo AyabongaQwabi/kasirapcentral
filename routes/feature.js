@@ -18,9 +18,9 @@ module.exports = function(){
                  var songs = results;
                  songs.forEach(function(song){
                    song.url = song.url.toString();
-                   console.log(song.url);
+                   //console.log(song.url);
                  })
-                 console.log(results[5].url.toString());
+                 //console.log(results[5].url.toString());
                 videoService.getFeatured(function(err, results) {
                     results.forEach(function(result){
                       result.url=getId(result.url)

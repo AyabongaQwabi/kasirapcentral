@@ -25,8 +25,8 @@ module.exports = function(){
               var songService = services.songDataServ;
               songService.getSongs(function(err, results) {
                 results.forEach(function(result){
-                  result.src = 'http://krissmusic.tk'+result.src
-                  result.image = 'http://krissmusic.tk'+result.image
+                  result.src = 'https://krissmusic.tk'+result.src
+                  result.image = 'https://krissmusic.tk'+result.image
                 })
                 var hbs = exphbs.create({
                     defaultLayout: 'index',
