@@ -36,6 +36,23 @@ module.exports = function(){
         });
 
   }
+  this.latest = function(req, res, next){
+
+        req.services(function(err,services){
+              var songService = services.songDataServ;
+              songService.getLatestSongs(function(err, results) {
+                results.forEach(function(result){
+                  result.src = 'https://krissmusic.tk'+result.src
+                  result.image = 'https://krissmusic.tk'+result.image
+                })
+                var hbs = exphbs.create({
+                    defaultLayout: 'index',
+                });
+                hbs.render(__dirname+'/../views/app.handlebars',{songs:results,layout:false}).then(function(t){res.send(t)})
+              })
+        });
+
+  }
   this.getLatestID = function(req, res, next){
         req.services(function(err,services){
               var songService = services.songDataServ;
