@@ -9,6 +9,9 @@ module.exports = function(connection){
   this.getSongs= function(cb){
       executeQuery('select song.id,song.src,song.name,song.play_count,song.download_count,song.flame_count,user.name as artist,image_art.src as image  from user,song,image_art where user.id=song.user_id and song.id = image_art.song_id',cb);
   }
+  this.getLatestSongs= function(cb){
+      executeQuery('select song.id,song.src,song.name,song.play_count,song.download_count,song.flame_count,user.name as artist,image_art.src as image  from user,song,image_art where user.id=song.user_id and song.id = image_art.song_id order by id desc',cb);
+  }
   this.updateSong = function(data){
 
     executeQuery('update song SET ? where ?',data)
