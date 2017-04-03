@@ -153,10 +153,10 @@
 
 
 
-    <div class='col-lg-4 col-md-5 col-xs-12 text-center image-wrapper'>
+    <div class='col-lg-4 col-sm-12 col-md-5 col-xs-12 text-center image-wrapper'>
         <img class='image' src='{{song.image}}' />
     </div>
-    <div class="col-lg-4 col-md-7 col-xs-12 jumbotron jumbotron-fluid">
+    <div class="col-sm-12 col-lg-4 col-md-7 col-xs-12 jumbotron jumbotron-fluid">
         <div class="col-12 container">
 
             <h1 class="col-12 h4container-fluid">{{song.name}}</h1>
@@ -194,14 +194,16 @@
         </div>
     </div>
     {{#song.social_link}}
-        <div class="fb-page col-lg-4 col-md-12 col-xs-12" data-href="{{this}}" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+	<div class="col-lg-4 col-sm-12 col-md-12 col-xs-12">
+        <div class="fb-page" data-href="{{this}}" data-width="600px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
             <blockquote cite="{{this}}" class="fb-xfbml-parse-ignore">
                 <a href="{{this}}">{{song.artist}}</a>
             </blockquote>
         </div>
+	</div>
     {{/song.social_link}}
-    <div class='col-lg-12 col-md-12 col-xs-12'>
-      <div class="col-12 fb-comments" data-href="https://krissmusic.tk/s/{{song.id}}" data-numposts="8"></div>
+    <div style="background: rgba(255,255,255,0.4);" class='col-sm-12 text-center col-lg-12 col-md-12 col-xs-12'>
+      <div  class="fb-comments" data-href="https://facebook.com/krissmusic/s/{{song.id}}" data-numposts="8"></div>
     </div>
 
 </div>
