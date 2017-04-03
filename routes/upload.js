@@ -1,7 +1,14 @@
+var exphbs  = require('express-handlebars');
 module.exports = function(){
 
   this.setup = function(req, res, next){
         res.render('upload')
+  }
+  this.setupStandalone = function(req, res, next){
+    var hbs = exphbs.create({
+        defaultLayout: 'index',
+    });
+    hbs.render(__dirname+'/../views/upload.standalone.handlebars',{layout:false}).then(function(t){res.send(t)})
   }
   this.storeFile = function(req, res, next){
         req.services(function(err,services){
