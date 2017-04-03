@@ -11,6 +11,7 @@ module.exports = function(){
     hbs.render(__dirname+'/../views/upload.standalone.handlebars',{layout:false}).then(function(t){res.send(t)})
   }
   this.storeFile = function(req, res, next){
+	console.log(req.body)
         req.services(function(err,services){
             ////console.log(req.files.audio)
             var data = req.body;
