@@ -44,7 +44,14 @@
         <link rel="stylesheet" href="https://www.krissmusic.tk/css/component.css" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Lato:900" rel="stylesheet">
-    </head>
+    </head><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=223093581500901";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <script src="https://www.krissmusic.tk/js/jquery.fileDownload.js"></script>
 <script src="https://www.krissmusic.tk/js/progress.js"></script>
 <script>
@@ -73,26 +80,29 @@ ga('send', 'pageview');
 
   <div class='col-md-12 container' style='padding-left:0% 30%'>
     <div class='row justify-content-center '>
-      <ul class='col-md-8 list-group'>
+      <ul class='col-md-12 list-group'>
             {{#each songs}}
               <li class='list-group-item'>
-                <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+                <div class='col-xs-12 col-sm-3 col-md-3 col-lg-3'>
                   <img src='{{image}}' style='max-width:100px;display:inline;'>
                 </div>
-                <div class='col-xs-12 col-sm-4 col-md-4 col-lg-46 '>
+                <div class='col-xs-12 col-sm-3 col-md-3 col-lg-3 '>
 
                 <a href='/s/{{id}}'>
 
                   <h2 class="lead"><b>{{name}}</b></h2>
-                  <h2 class="lead">{{artist}}</b></h2>
+                  <h2 class="lead">{{artist}}</h2>
                 </a>
 
 
                 </div>
-                <div class='col-xs-12 col-sm-4 col-md-4 col-lg-4'>
-                  <a href="{{src}}" download><img id='{{id}}' onclick="download(this,'{{src}}')" class='download ico' src='https://www.krissmusic.tk/img/download.png'></a>
+                <div class='col-xs-12 col-sm-3 col-md-3 col-lg-3'>
+		 <a href="{{src}}" download><img id='{{id}}' onclick="download(this,'{{src}}')" class='download ico' src='https://www.krissmusic.tk/img/download.png'></a>
                 </div>
-              </li>
+		<div class='col-xs-12 col-sm-3 col-md-3 col-lg-3'>
+		   <div class="fb-like" data-href="https://krissmusic.tk/s/{{id}}" data-layout="button_count" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
+                </div>
+		</li>
               {{/each}}
 
       </ul>

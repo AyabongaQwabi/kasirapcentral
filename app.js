@@ -103,6 +103,8 @@ app.get('/api/standalone/app',songs.app)
 app.post('/api/standalone/app',songs.app)
 app.get('/api/standalone/app/latest',songs.latest)
 app.post('/api/standalone/app/latest',songs.latest)
+app.post('/api/standalone/app/upload',upload.setup)
+app.get('/api/standalone/app/upload',upload.setup)
 
 var server = http.createServer(options, app);
 var io = require('socket.io').listen(server);
