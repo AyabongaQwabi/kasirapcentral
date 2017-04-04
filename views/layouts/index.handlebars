@@ -288,9 +288,10 @@
             background: rgba(255, 200, 0, 0.85)
         }
 
-        .cooldiv {
-            background: url('/img/salaphi.jpg')no-repeat center center fixed;
-            background-size: cover;
+        .cooldiv .artist-profile {
+            height:20%;
+            background: url('/img/olwethu.jpg') no-repeat 100% 0%;
+            background-size:cover;
             -webkit-filter: saturate(.5)contrast(1.3);
             padding: 5% 1%;
         }
@@ -301,8 +302,8 @@
         }
 
         .blackpar {
-            padding: 1%;
-            background: rgba(0, 0, 0, 0.6)
+            padding: 5%;
+            background:rgba(255, 200, 0, 0.85);
         }
 
         .whitepar {
@@ -571,6 +572,17 @@
             margin: auto;
             right: 20px;
         }
+        .video-div{
+          padding:0;
+          background:black;
+
+        }
+        .cooldiv{
+
+          padding:0;
+        }
+        .black{color:black}
+        .navbar{background:rgba(255, 200, 0, 0);}
     </style>
 
     <script>
@@ -595,20 +607,61 @@
 <span itemprop="thumbnail" itemscope itemtype="https://schema.org/ImageObject">
   <link itemprop="url" href="https://www.krissmusic.tk/img/og/preview.png">
 </span>
+<div class='row' style='background:rgba(255, 200, 0, 0.85);'>
+<div class="col-12">
+  <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/">
+      <img src="/img/favicon/favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="">
+
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/upload">Upload</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/songlist">Song list</a>
+        </li>
+        <!--
+        <li class="nav-item">
+          <a class="nav-link" href="/s/find">Find</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/versus">Versus</a>
+        </li>
+        <li class="nav-item disabled">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        !-->
+      </ul>
+    </div>
+  </nav>
+  </div>
+</div>
       <div class='row'>
-        <div class='col-md-8 col-sm-8 col-xs-12'>
+        <div class='col-md-8 col-sm-12 col-xs-12'>
             {{{body}}}
         </div>
-        <div class='col-md-4 col-sm-4 col-xs-12 cooldiv'>
-
-            <div class='col-md-10 col-xs-12'>
-              <p class= 'white lead blacktip'>
-                 TheSalaphi Sistas
-                 <div class="fb-like" data-href="https://www.facebook.com/thesalaphisistas/" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
+        <div class='col-md-4 col-sm-12 col-xs-12 cooldiv' style='background:rgba(255, 200, 0, 0.85);'>
+            <div class='col-md-12 col-xs-12 artist-profile'>
+            </div>
+            <div class='col-md-12 col-xs-12 black lead blackpar'>
+              <p class= 'display-5'>
+                 <b>Olwethu</b>
+                 <div class="fb-like" data-href="https://www.facebook.com/OlwethuMusic" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="true"></div>
               </p>
-              <p class='white lead blackpar'>The Salaphi Sistas are an Afro pop duo comprised of sisters Enkosi and Tina Salaphi who were born and raised in a small town called Dutywa, Eastern Cape</p>
+              <p class='lead'>Afro Jazz Singer and songwriter <br/>From Queenstown ,EC. Her projects include works with the likes of Khuli Chana and Wandile and Thasman .She has also been featured on a  project for Rhythm City.</p>
+
+            </div>
+            <div class='col-md-12 col-xs-12 video-div'>
               <div class='col-12 whitepar white'>
-                <div class="fb-video" data-href="https://www.facebook.com/thesalaphisistas/videos/1654667208157969/" data-width="600" data-show-text="true"><blockquote cite="https://www.facebook.com/thesalaphisistas/videos/1654667208157969/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/thesalaphisistas/videos/1654667208157969/">Kush Mahleka ft The Salaphi Sistas</a><p>When poetry meets music...this was taken a while back at Durban Youth Radio 105.1</p>Posted by <a href="https://www.facebook.com/thesalaphisistas/">The Salaphi Sistas</a> on Sunday, November 13, 2016</blockquote></div>
+                <div class="fb-video" data-href="https://www.facebook.com/OlwethuMusic/videos/1012165858904365/" data-width="800" data-height='400' data-show-text="false"><blockquote cite="https://www.facebook.com/OlwethuMusic/videos/1012165858904365/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/OlwethuMusic/videos/1012165858904365/"></a><p></p>Posted by <a href="https://www.facebook.com/OlwethuMusic/">OlwethuMusic</a> on Friday, August 19, 2016</blockquote></div>
               </div>
             </div>
 
