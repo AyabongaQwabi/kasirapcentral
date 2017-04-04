@@ -67,6 +67,21 @@ module.exports = function(){
       var url = '/s/'+req.body.id
       res.redirect(url)
     }
+    else if(req.body.name){
+      console.log('Searching for: '+req.body.name)
+      req.services(function(err,services){
+            var songService = services.songDataServ;
+            var data = {name:req.body.name}
+            console.log(data)
+            songService.findSong(data,function(err, results) {
+              if(err){console.log(err)}
+              console.log('found!')
+              console.log(results)
+              var url = '/s/'+results[0].id
+              res.redirect(url)
+            })
+      });
+    }
     else{
       res.redirect('/s/unknown')
     }
@@ -86,7 +101,7 @@ module.exports = function(){
               req.services(function(err,services){
                     var songService = services.songDataServ;
                     songService.getSongs(function(err, results) {
-                        res.render('find',{found:false,layout:false,songs:results})
+                        res.render('find',{found:false,songs:results})
                     })
               });
 
@@ -137,7 +152,7 @@ module.exports = function(){
     req.services(function(err,services){
       var songService = services.songDataServ;
       songService.getCompetition(function(err,results){
-        res.render('versus',{songs:results,layout:false})
+        res.render('versus',{songs:results})
       })
     })
   }
