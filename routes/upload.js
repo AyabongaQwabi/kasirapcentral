@@ -2,7 +2,13 @@ var exphbs  = require('express-handlebars');
 module.exports = function(){
 
   this.setup = function(req, res, next){
-        res.render('upload',{layout:'index'})
+    req.services(function(err,services){
+      var songs = services.songDataServ;
+      songs.fetchGenres(function(err,results){
+        res.render('upload',{genres:results,layout:'index'})
+      })
+    })
+
   }
   this.setupStandalone = function(req, res, next){
     var hbs = exphbs.create({
