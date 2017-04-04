@@ -3,6 +3,9 @@ module.exports = function(connection){
   var executeQuery = function(query, data, cb){
       connection.query(query, data, cb);
   };
+  this.fetchGenres = function(cb){
+    executeQuery('select * from genre',cb)
+  }
   this.getFeatured = function(cb){
       executeQuery('select featured.song_id , song.name as name,song.play_count,song.download_count,song.flame_count,song.src as url ,user.id as user_id,user.location,user.name as artist ,image_art.src as art from featured,song,user, image_art where featured.song_id =song.id and song.user_id = user.id and image_art.song_id = song.id',cb);
   }
