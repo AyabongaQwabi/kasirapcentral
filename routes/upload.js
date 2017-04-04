@@ -2,7 +2,7 @@ var exphbs  = require('express-handlebars');
 module.exports = function(){
 
   this.setup = function(req, res, next){
-        res.render('upload')
+        res.render('upload',{layout:'index'})
   }
   this.setupStandalone = function(req, res, next){
     var hbs = exphbs.create({
