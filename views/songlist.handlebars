@@ -1,74 +1,178 @@
-        <script src="js/jquery.fileDownload.js"></script>
-        <script src="js/progress.js"></script>
-        <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+<script src="js/jquery.fileDownload.js"></script>
+<script src="js/progress.js"></script>
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', 'UA-93856902-1', 'auto');
-        ga('send', 'pageview');
+ga('create', 'UA-93856902-1', 'auto');
+ga('send', 'pageview');
 
-      </script>
+</script>
 
-        <style type='text/css'>
-          body{
-            background:url('/img/Kasil.png')no-repeat center right fixed;
-            background-size:cover;
-            color: white;
-            padding:2% 3%;
-          overflow-y:scroll;}
-          .list-group-item{background:rgba(255,255,255,0.7);}
+<style type='text/css'>
+  body{
+    background:url('/img/Kasil.png')no-repeat center right fixed;
+    background-size:cover;
+    color: white;}
+  .list-group-item{background:rgba(255,255,255,0.7);}
 
-        </style>
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script  type="text/javascript" src="js/typeahead.js/typeahead.bundle.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  // Defining the local dataset
+  var songs=[],name,artist,id;
+  {{#each songs}}
+    name="{{name}}"
+    id="{{id}}"
+    artist="{{artist}}"
+    songs.push({name:name,artist:artist,id:id})
+  {{/each}}
 
-        <div class='row text-center'>
-          <div class='col-12'>
-              <div class='col-12'>
-                <div class='col-md-4 col-xs12'>
+  var tracks= songs.map(function(song){return song.name})
+  var artists= songs.map(function(song){return song.artist})
+  var cars = ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen'];
+  console.log(tracks)
+  console.log(cars)
+  // Constructing the suggestion engine
+  var songs = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.whitespace,
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  local: tracks
+  });
+  var musicians = new Bloodhound({
+  datumTokenizer: Bloodhound.tokenizers.whitespace,
+  queryTokenizer: Bloodhound.tokenizers.whitespace,
+  local: artists
+  });
+  // Initializing the typeahead
+  $('.typeahead').typeahead({
+      hint: true,
+      highlight: true, /* Enable substring highlighting */
+      minLength: 1 /* Specify minimum characters required for showing result */
+    },
+    {
+      name: 'songs',
+      source: songs
+    },
+    {
+      name: 'artists',
+      source: musicians
+    }
+  );
+});
+</script>
+<style type="text/css">
 
-                  <a href='/'>
-                      <h1 class=' col-md-4 col-xs-12 logo'>KRISS </h1>
-                  </a>
-                </div>
-              </div>
-              <div class='col-12'>
-                <div class='row'>
-                  <div class= 'col-md-5 col-xs-12'>
-                     <a href='/s/find' class='btn btn-warning'>Find</a>
-                  </div>
-                  <div class= 'col-md-5 col-xs-12'>
-                     <input class=' form-control-lg' placeholder='search '>
-                  </div>
-                </div>
+.typeahead, .tt-query, .tt-hint {
+border: 2px solid grey;
+border-radius: 5px;
+font-size: 22px; /* Set input font size */
+height: 30px;
+line-height: 30px;
+outline: medium none;
+padding: 18px 12px;
+width: 40vw;
+}
+.typeahead {
+background-color: #FFFFFF;
+}
+.typeahead:focus {
+border: 2px solid #0097CF;
+}
+.tt-query {
+box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+color: #999999;
+}
+.tt-menu {
+background-color: #FFFFFF;
+border: 1px solid rgba(0, 0, 0, 0.2);
+border-radius: 8px;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+margin-top: 12px;
+padding: 8px 0;
+width: 50vw;
+}
+.tt-suggestion {
+font-size: 22px;  /* Set suggestion dropdown font size */
+padding: 3px 20px;
+color:black
+}
+.tt-suggestion:hover {
+cursor: pointer;
+background-color: #0097CF;
+color: #FFFFFF;
+}
+.tt-suggestion p {
+margin: 0;
+}
+.main{padding:0}
+.bs-example{padding:2% 5%}
+.avatar-image{
+  width:80px;
+  height:80px;
+  max-width: 100%;
+  border:3px solid white;
+  box-shadow:1px 1px 5px 1px rgba(0,0,0,0.5);
+}
+li.list-group-item:hover  .avatar-image{
+  border-color: rgba(255, 200, 0, 0.85);
+    transform:scale(1.2);
+    transition: transform .1s ease-in-out;
+}
 
-              </div>
+</style>
+<div class='row text-center justify-content-center '>
+  <div class='col-12 col-md-offset-1 col-xs-offset-1' style="background: rgba(255, 200, 0, 0.85);">
+        <form class='row' method="post" action="/s/find">
+          <div class='col-8 bs-example'>
+            <div class="input-group">
+            <input name='name' type="text" class="col-12 typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="search">
+            <span class="input-group-btn">
+                <span class="glyphicon glyphicon-search" aria-hidden="true">
+                </span>
+            </span>
+            </div>
+
           </div>
+          <div class='col-md-4 col-xs-12 col-sm-12'style="padding:10px 0px";>
+            <input type="submit" class='btn col-12' style='padding:2.8%;text-align:center;background:rgba(0,0,0,1)'value="Find">
+          </div>
+        </form>
 
-          <ul class='list-group'>
-                {{#each songs}}
-                  <li class='list-group-item'>
-                    <div class='col-xs-12 col-sm-12 col-md-6 col-lg-6 '>
+  </div>
 
-                    <a href='/s/{{id}}'>
-                      <h2 class="lead"><b>{{name}}</b></h2>
-                      <h2 class="display-6">{{artist}}</b></h2>
-                    </a>
+  <div class='main'>
+    <ul class='list-group'>
+          {{#each songs}}
+            <li class='list-group-item'>
+              <div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+                <img src="{{image}}" class='avatar-image'/>
+              </div>
+              <div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+                <a href='/s/{{id}}' style="text-decoration:none">
+                  <h2 class="lead"><b>{{name}}</b></h2>
+                  <h2 class="display-6">{{artist}}</b></h2>
+                </a>
+              </div>
+              <div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
+                <a href="{{src}}" download><img id='{{id}}' onclick="download(this,'{{src}}')" class='download ico' src='img/download.png'></a>
+                <img id='{{id}}' onclick="playSound(this,'{{src}}');" class='play ico' src='img/play.png'  />
+                <img id='{{id}}' onclick='flame(this)' class='heat ico' src='img/heat.png' >
+                <div class="hp_slide">
+                    <div class="hp_range"></div>
+                </div>
+              </div>
+            </li>
+            {{/each}}
 
+    </ul>
+  </div>
+</div>
 
-                    </div>
-                    <div class='col-xs-12 col-sm-12 col-md-6 col-lg-6'>
-                      <a href="{{src}}" download><img id='{{id}}' onclick="download(this,'{{src}}')" class='download ico' src='img/download.png'></a>
-                      <img id='{{id}}' onclick="playSound(this,'{{src}}');" class='play ico' src='img/play.png'  />
-                      <img id='{{id}}' onclick='flame(this)' class='heat ico' src='img/heat.png' >
-                      <div class="hp_slide">
-                          <div class="hp_range"></div>
-                      </div>
-                    </div>
-                  </li>
-                  {{/each}}
-
-          </ul>
-        </div>
-
-        <script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
