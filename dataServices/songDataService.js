@@ -22,6 +22,9 @@ module.exports = function(connection){
   this.getSong = function(data,cb){
     executeQuery("select song.id,song.src,song.name,song.play_count,song.download_count,song.flame_count,user.name as artist,image_art.src as image ,bio.link as social_link from user,song,image_art,bio where user.id=song.user_id and song.id = image_art.song_id and user.id = bio.user_id and song.id = ?",data.id,cb)
   }
+  this.findSong = function(data,cb){
+    executeQuery("select * from song where name like ?",data.name,cb)
+  }
   /*this.getArtist = function(data,cb){
     executeQuery(" ",cb)
   }*/
