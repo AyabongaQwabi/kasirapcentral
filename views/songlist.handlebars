@@ -151,10 +151,10 @@ li.list-group-item:hover  .avatar-image{
     <ul class='list-group'>
 	<li class='list-group-item' style='color:black;padding:5%;'>
 		<p class='lead'>
-		Browse by genre and other interesting features coming soon 
+		Browse by genre and other interesting features coming soon
 		To request a feature support plese email your suggestions at ayabonga@projectcodex.co
 		</p>
-	</li> 
+	</li>
          {{#each songs}}
             <li class='list-group-item'>
               <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
@@ -164,6 +164,9 @@ li.list-group-item:hover  .avatar-image{
                 <a href='/s/{{id}}' style="text-decoration:none">
                   <h2 class="lead"><b>{{name}}</b></h2>
                   <h2 class="display-6">{{artist}}</b></h2>
+                  {#genre}}
+                      <span class="badge badge-default">{{this}}</span>
+                  {{/genre}}
                 </a>
               </div>
               <div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
@@ -181,7 +184,7 @@ li.list-group-item:hover  .avatar-image{
       <div class="col-12 card-panel lead" style="padding:16%;">
 		<p> This Website Has been Developed By<a href=''www.salmonesolutions.tk'> Salmone Solutions</a> </p>
 		<p> Contact Ayabonga Qwabi ayabonga@projectcodex.co </p>
-        </div> 
+        </div>
   </div>
 </div>
 
