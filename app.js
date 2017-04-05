@@ -2,6 +2,7 @@ var express= require("express");
 var mysql = require("mysql");
 var myconnection = require("express-myconnection");
 var fileUpload = require('express-fileupload');
+var safe = require('./config/password-safe');
 exphbs  = require('express-handlebars');
 var path = require('path');
 var bodyParser = require('body-parser');
@@ -27,11 +28,10 @@ videoDataService = require('./dataServices/videoDataService'),
 ConnectionProvider = require('./routes/connectionProvider');
 
 
-
 var dbOptions = {
  host: 'localhost',
   user: 'root',
-  password: '@theaya5379085;', //Secure Method to be added later
+  password:safe.fetchSecured(),
   port: 3306,
   database: 'kriss'
 };
