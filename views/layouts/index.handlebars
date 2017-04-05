@@ -598,6 +598,7 @@
     </style>
 
     <script>
+	if(window && Object.prototype.toString.call(window.operamini) === "[object OperaMini]"){$('body').html("Operamini is not supported")}
       window.fbAsyncInit = function() {
         FB.init({
           appId      : '222881211522138',
@@ -640,17 +641,27 @@
         <li class="nav-item">
           <a class="nav-link" href="/songlist">Song list</a>
         </li>
-        <!--
+	<li class="nav-item">
+          <a class="nav-link" href="/api/standalone/app/latest">Latest</a>
+        </li>
+	<li class="nav-item">
+          <a class="nav-link" href="#">My Story</a>
+        </li>	       
         <li class="nav-item">
           <a class="nav-link" href="/s/find">Find</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/versus">Versus</a>
+          <a class="nav-link" href="/#">Versus</a>
         </li>
         <li class="nav-item disabled">
           <a class="nav-link" href="#">About</a>
         </li>
-        !-->
+	<li class="nav-item disabled">
+          <a class="nav-link" href="#">Reach Out</a>
+        </li>
+	<li class="nav-item">
+          <a class="nav-link" href="#">Make Money</a>
+        </li>	
       </ul>
     </div>
   </nav>
