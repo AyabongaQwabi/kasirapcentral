@@ -36,9 +36,9 @@ module.exports = function(){
 
             var audio = req.files.audio
             var imageart=req.files.art
-            //console.log(data)
+            console.log(data)
             var userTableData = {name:data.artist}
-            var songTableData = {name:data.song,src:mp3Path,user_id:''}
+            var songTableData = {name:data.song,src:mp3Path,user_id:'',genre_id:data.genre_id}
             var imageArtData = {song_id:'',src:imagePath}
             var bioTableData = {user_id:'',link:data.link,cellphone:data.cellphone,location:data.location}
 
