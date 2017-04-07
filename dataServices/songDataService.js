@@ -7,10 +7,10 @@ module.exports = function(connection){
     executeQuery('select * from genre',cb)
   }
   this.getFeatured = function(cb){
-      executeQuery('select featured.song_id , song.name as name,song.play_count,song.download_count,song.flame_count,song.src as url ,user.id as user_id,user.location,user.name as artist ,image_art.src as art from featured,song,user, image_art where featured.song_id =song.id and song.user_id = user.id and image_art.song_id = song.id',cb);
+      executeQuery('select featured.song_id , song.name as name,song.play_count,song.download_count,song.flame_count,song.src as url ,user.id as user_id,user.location,user.name as artist ,image_art.src as art,genre.genre from featured,genre,song,user, image_art where featured.song_id =song.id and and song.genre_id = genre.id and song.user_id = user.id and image_art.song_id = song.id order by flame_count desc',cb);
   }
   this.getSongs= function(cb){
-      executeQuery('select song.id,song.src,song.name,song.play_count,song.download_count,song.flame_count,user.name as artist,image_art.src as image  from user,song,image_art where user.id=song.user_id and song.id = image_art.song_id',cb);
+      executeQuery('select song.id,song.src,song.name,song.play_count,song.download_count,song.flame_count,user.name as artist,image_art.src as image,genre.genre  from user,song,image_art,genre where user.id=song.user_id and song.id = image_art.song_id and song.genre_id = genre.id',cb);
   }
   this.getLatestSongs= function(cb){
       executeQuery('select song.id,song.src,song.name,song.play_count,song.download_count,song.flame_count,user.name as artist,image_art.src as image  from user,song,image_art where user.id=song.user_id and song.id = image_art.song_id order by id desc',cb);

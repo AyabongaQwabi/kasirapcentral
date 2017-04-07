@@ -21,6 +21,7 @@ module.exports = function(){
         req.services(function(err,services){
             ////console.log(req.files.audio)
             var data = req.body;
+            console.log(data)
             //console.log('REPLACE : '+data.song)
             var mp3 = (req.files.audio.name).split(' ').join('_')
             var mp3 = (req.files.audio.name).split("'").join('')
@@ -37,10 +38,10 @@ module.exports = function(){
             var audio = req.files.audio
             var imageart=req.files.art
             console.log(data)
-            var userTableData = {name:data.artist}
+            var userTableData = {name:data.artist,location:data.location}
             var songTableData = {name:data.song,src:mp3Path,user_id:'',genre_id:data.genre_id}
             var imageArtData = {song_id:'',src:imagePath}
-            var bioTableData = {user_id:'',link:data.link,cellphone:data.cellphone,location:data.location}
+            var bioTableData = {user_id:'',link:data.link,cellphone:data.cellphone}
 
             var users = services.userDataServ;
             var songs = services.songDataServ;

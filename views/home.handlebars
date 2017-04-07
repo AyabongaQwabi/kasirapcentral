@@ -19,21 +19,8 @@
     ga('send', 'pageview');
 </script>
 <div class='row'>
-    <div id="container-floating">
 
-
-        <div class="nd1 nds" data-toggle="tooltip" data-placement="left" data-original-title="Edoardo@live.it"><img class="reminder">
-            <p class="letter">E</p>
-        </div>
-
-        <div id="floating-button" data-toggle="tooltip" data-placement="left" data-original-title="Create" onclick="newmail()">
-            <p class="plus">+</p>
-            <img class="edit" src="http://ssl.gstatic.com/bt/C3341AA7A1A076756462EE2E5CD71C11/1x/bt_compose2_1x.png">
-        </div>
-
-    </div>
     <div class='col-12 main'>
-        
         <div class='row text-center'>
             <div class='col-md-12 col-xs-12'>
                 <p class='display-4 white'>
@@ -52,11 +39,14 @@
                             <div class="row coralbg white">
                                 <div class="col-md-6 no-pad">
                                     <div class="user-pad">
-                                        <h3 class='h4'> {{name}}</h3>
-                                        <h4 class="white lead"><i class="fa fa-user-circle"></i> <b>{{artist}}</b></h4>
+                                        <h3 class='h4'>{{name}}</h3>
+                                        <h4 class="white lead"><i class="fa fa-user-circle"></i><b>{{artist}}</b></h4>
                                         {{#location}}
-                                            <h4 class="white lead"><i class="fa fa-globe"></i> {{this}}</h4>
+                                            <h4 class="white lead"><i class="fa fa-globe"></i>{{this}}</h4>
                                         {{/location}}
+                                        {{#genre}}
+                                            <span class="badge badge-default">{{this}}</span>
+                                        {{/genre}}
                                     </div>
                                 </div>
                                 <div class="col-md-6 no-pad">
