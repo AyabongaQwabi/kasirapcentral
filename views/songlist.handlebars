@@ -128,7 +128,7 @@ li.list-group-item:hover  .avatar-image{
 
 </style>
 <div class='row text-center justify-content-center '>
-  <div class='col-12 col-md-offset-1 col-xs-offset-1' style="background: rgba(255, 200, 0, 0.85);">
+  <div class='col-12 col-md-offset-1 col-xs-offset-1' style="background:black;">
         <form class='row' method="post" action="/s/find">
           <div class='col-8 bs-example'>
             <div class="input-group">
@@ -164,9 +164,8 @@ li.list-group-item:hover  .avatar-image{
                 <a href='/s/{{id}}' style="text-decoration:none">
                   <h2 class="lead"><b>{{name}}</b></h2>
                   <h2 class="display-6">{{artist}}</b></h2>
-                  {#genre}}
-                      <span class="badge badge-default">{{this}}</span>
-                  {{/genre}}
+                  <span class="badge badge-default">{{genre}}</span>
+                  
                 </a>
               </div>
               <div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>

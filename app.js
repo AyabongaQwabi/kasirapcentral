@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 var minify = require('express-minify');
 var http = require('https');
 var fs = require('fs');
+ 
 
 
 var app = express();
@@ -72,7 +73,6 @@ app.set('view engine', 'handlebars');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
 var feature = new featureMethods();
 var songs = new songMethods();
 var videos = new videoMethods();
@@ -80,7 +80,7 @@ var user = new userMethods();
 var upload = new uploadMethods();
 
 app.get('/',function(req,res){
-  res.render('splash');
+  res.render('splash',{layout:false});
 })
 app.get('/main',feature.getFeatured)
 app.get('/music',songs.getAll)
