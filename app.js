@@ -79,7 +79,10 @@ var videos = new videoMethods();
 var user = new userMethods();
 var upload = new uploadMethods();
 
-app.get('/',feature.getFeatured)
+app.get('/',function(req,res){
+  res.render('splash');
+})
+app.get('/main',feature.getFeatured)
 app.get('/music',songs.getAll)
 app.get('/videos',videos.getAll)
 app.post('/update/flame',songs.updateFlameCount)
@@ -98,7 +101,7 @@ app.get('/generate',function(req,res){
   res.send({code:Math.floor(Math.random() * 90000) + 10000});
 })
 /*app.get('/a/:artistname',songs.getArtist)*/
-app.listen(80)
+app.listen(5000)
 app.get('/api/standalone/app',songs.app)
 app.post('/api/standalone/app',songs.app)
 app.get('/api/standalone/app/latest',songs.latest)
