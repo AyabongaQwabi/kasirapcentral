@@ -1,9 +1,11 @@
-# Kasi Rap Central Website
+# KRISS Music Website
 
 To run this app you need to have a Node development environment installed.
 
 ### How to run:
 `Clone this repo`
+
+`install setup files for mysql Database`
 
 `npm install`
 
