@@ -745,6 +745,7 @@
           $(item).html("Make Bigger")
           $(item).attr('id','1')
           $('.video-div').css('height','210px')
+          $(".advert iframe").css('width','400x');
         }
         else{
           $(item).parent().addClass('col-md-7')
@@ -752,6 +753,7 @@
           $(item).parent().removeClass('col-md-4')
           $(item).parent().siblings('div').addClass('col-md-5')
           $(item).html("Make Smaller")
+          $(".advert iframe").css('width','468px');
           $(item).attr('id','0')
           $('.video-div').css('height','350px')
         }
