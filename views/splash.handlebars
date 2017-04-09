@@ -43,13 +43,14 @@
         <link rel="stylesheet" type="text/css" href="css/demo.css" />
         <link rel="stylesheet" type="text/css" href="css/style1.css" />
         <script type="text/javascript" src="js/modernizr.custom.86080.js"></script>
+
     </head>
 
     <body id="page">
         <ul class="cb-slideshow">
             <li><span>Image 01</span>
                 <div>
-                    <h3>LISTEN</h3></div>
+                    <h3 id='mains'>LISTEN</h3></div>
             </li>
             <li><span>Image 02</span>
                 <div>
@@ -64,15 +65,28 @@
                     <h3>SHARE</h3></div>
             </li>
         </ul>
+
         <div class="container">
             <header>
-                <h1>KRISS</h1>
+                <h1 id='title'>KRISS</h1>
                 <h2>Hustle beats talent whenever talent doesn't hustle</h2>
                 <p class="main">
-                    <a href="/main" class="visit">Visit site</a>
+                    <a href="/main" id='visitlink' class="visit">Visit site</a>
                 </p>
             </header>
         </div>
+        <script type='text/javascript'>
+          var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1);
+          var isOperaMobi = (navigator.userAgent.indexOf('Opera Mobi') > -1);
+
+          if(isOperaMini || isOperaMobi){
+            document.getElementById('title').innerHTML = "Please Use Chrome Browser"
+            document.getElementById('visitlink').innerHTML = "Download Chrome"
+            document.getElementById('visitlink').href= "https://play.google.com/store/apps/details?id=com.android.chrome&hl=en"
+          }
+
+
+        </script>
     </body>
 
 </html>
