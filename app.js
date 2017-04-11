@@ -9,7 +9,7 @@ var bodyParser = require('body-parser');
 var minify = require('express-minify');
 var http = require('https');
 var fs = require('fs');
- 
+
 
 
 var app = express();
@@ -20,12 +20,14 @@ eventDataService = require('./dataServices/eventDataService'),
 imageDataService = require('./dataServices/imageDataservice'),
 bioDataService = require('./dataServices/bioDataservice'),
 featureDataService = require('./dataServices/featureDataservice'),
+songDataService = require('./dataServices/songDataService'),
+videoDataService = require('./dataServices/videoDataService'),
+groupDataService = require('./dataServices/groupDataService'),
+videoMethods =require('./routes/videos'),
 featureMethods =require('./routes/feature'),
 songMethods =require('./routes/songs'),
 uploadMethods =require('./routes/upload'),
-songDataService = require('./dataServices/songDataService'),
-videoMethods =require('./routes/videos'),
-videoDataService = require('./dataServices/videoDataService'),
+groupMethods =require('./routes/groups'),
 ConnectionProvider = require('./routes/connectionProvider');
 
 
@@ -44,6 +46,7 @@ var serviceSetupCallback = function(connection){
     eventDataServ : new eventDataService(connection),
     imageDataServ : new imageDataService(connection),
     bioDataServ : new bioDataService(connection),
+    groupDataServ : new groupDataService(connection),
     featureDataServ : new featureDataService(connection)
 	}
 };
@@ -78,6 +81,7 @@ var songs = new songMethods();
 var videos = new videoMethods();
 var user = new userMethods();
 var upload = new uploadMethods();
+var group = new groupMethods();
 
 app.get('/',function(req,res){
   res.render('splash',{layout:false});
@@ -89,6 +93,8 @@ app.post('/update/flame',songs.updateFlameCount)
 app.post('/update/download',songs.updateDownloadCount)
 app.post('/update/play',songs.updatePlayCount)
 app.get('/upload',upload.setup)
+app.get('/group',group.getGroups)
+app.post('/group',group.add)
 app.post('/upload',upload.storeFile)
 app.get('/songlist',songs.getAll)
 app.get('/versus/setup',songs.getSetupVersus)
