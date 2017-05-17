@@ -193,7 +193,7 @@ module.exports = function(){
         });
   }
   this.updatePlayCount =function(req, res, next){
-    console.log('User updating flame')
+    console.log('User updating play'+req.body.song_id)
         req.services(function(err,services){
               var songService = services.songDataServ;
               songService.getSongs(function(err, results) {
