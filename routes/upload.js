@@ -28,8 +28,11 @@ module.exports = function(){
            mp3name = mp3name.split(' ');
 	   console.log("join->"+mp3name.join("_"))
 	   mp3name=mp3name.join("_")
-           var mp3 = req.files.audio.name.split(' ').join('_');
-           var mp3 = req.files.audio.name.split("'").join("");
+           var randomDigit ;
+	var val = Math.floor(1000 + Math.random() * 9000).toString()
+           var mp3 =req.files.audio.name.split(' ')[0].split("'").join("");
+           var mp3 = "song_"+mp3.trim()+val+".mp3"
+	   mp3name=mp3
             console.log('mp3 name Result : '+mp3name)
             var mp3File = req.files.audio;
              var mp3Path = ("/sound/"+mp3name).toString();

@@ -4,7 +4,7 @@
 
   if(isOperaMini || isOperaMobi){
     alert('Please use Chrome Browser')
-    window.location('https:///www.krissmusic.tk/')
+    window.location ='https:///www.krissmusic.tk/'
   }
 
 
@@ -182,14 +182,22 @@ $('form').ajaxForm({
 		//console.log(percentVal, position, total);
     },
     success: function() {
+	console.log("Success")
         var percentVal = '100%';
         bar.width(percentVal)
         percent.html(percentVal);
+	 $.get('https://krissmusic.tk/s/latest/id',function(data){
+      var url='https://krissmusic.tk/s/'+data.id
+      window.location.assign(url)
+	bar.html(url)
+    })
     },
   complete: function() {
+	console.log("Complete")
     $.get('https://krissmusic.tk/s/latest/id',function(data){
       var url='https://krissmusic.tk/s/'+data.id
-      window.location.replace(url)
+      window.location = url
+	$('form').html(url)
     })
 	}
 });
