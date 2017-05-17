@@ -67,6 +67,8 @@ function hideProgressBar(el) {
     $(el).siblings(".hp_slide").css('visibility', 'collapse');
     //console.log($(el).siblings(".hp_slide"))
     el.src = '/img/play.png'
+    $(el).children('i').removeClass('fa-pause')
+    $(el).children('i').addClass('fa-play')
     console.log('**hides progress bar**')
 }
 
@@ -129,6 +131,8 @@ function playSound(el, soundfile) {
             console.log(' playing the mp3')
             el.mp3.play();
             el.src = '/img/pause.png'
+            $(el).children('i').removeClass('fa-play')
+            $(el).children('i').addClass('fa-pause')
             $(el).addClass('played')
             handleProgressBar(el)
 
@@ -137,6 +141,8 @@ function playSound(el, soundfile) {
             el.mp3.pause();
             $(el).removeClass('played')
             el.src = '/img/play.png'
+            $(el).children('i').removeClass('fa-pause')
+            $(el).children('i').addClass('fa-play')
         }
     } else {
         console.log("loading song on element")
@@ -145,6 +151,8 @@ function playSound(el, soundfile) {
         console.log(' playing the mp3')
         el.mp3.play();
         el.src = '/img/pause.png'
+        $(el).children('i').removeClass('fa-play')
+        $(el).children('i').addClass('fa-pause')
         $(el).addClass('played')
         handleProgressBar(el)
 
