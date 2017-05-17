@@ -95,10 +95,11 @@
   margin-bottom:10%
 }
 .hp_slide {
-    width: 100%;
-    background: white;
-    height: 10px;
-    visibility:collapse;
+  width: 100%;
+  background: gold;
+  height: 10px;
+  border-radius: 10px;
+  visibility:collapse;
 }
 .analytics .badge{
   width: 30%;
