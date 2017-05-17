@@ -34,29 +34,20 @@ ga('send', 'pageview');
 <script type="text/javascript">
 $(document).ready(function(){
   // Defining the local dataset
-  var songs=[],name,artist,id;
+  var songs=[],name,id;
   {{#each songs}}
     name="{{name}}"
     id="{{id}}"
-    artist="{{artist}}"
-    songs.push({name:name,artist:artist,id:id})
+    songs.push({name:name,id:id})
   {{/each}}
 
   var tracks= songs.map(function(song){return song.name})
-  var artists= songs.map(function(song){return song.artist})
-  var cars = ['Audi', 'BMW', 'Bugatti', 'Ferrari', 'Ford', 'Lamborghini', 'Mercedes Benz', 'Porsche', 'Rolls-Royce', 'Volkswagen'];
   console.log(tracks)
-  console.log(cars)
   // Constructing the suggestion engine
   var songs = new Bloodhound({
   datumTokenizer: Bloodhound.tokenizers.whitespace,
   queryTokenizer: Bloodhound.tokenizers.whitespace,
   local: tracks
-  });
-  var musicians = new Bloodhound({
-  datumTokenizer: Bloodhound.tokenizers.whitespace,
-  queryTokenizer: Bloodhound.tokenizers.whitespace,
-  local: artists
   });
   // Initializing the typeahead
   $('.typeahead').typeahead({
@@ -67,10 +58,6 @@ $(document).ready(function(){
     {
       name: 'songs',
       source: songs
-    },
-    {
-      name: 'artists',
-      source: musicians
     }
   );
 });
@@ -78,14 +65,14 @@ $(document).ready(function(){
 <style type="text/css">
 
 .typeahead, .tt-query, .tt-hint {
-border: 2px solid grey;
+border: 1px solid #489;
 border-radius: 5px;
 font-size: 22px; /* Set input font size */
 height: 30px;
 line-height: 30px;
 outline: medium none;
 padding: 18px 12px;
-width: 40vw;
+width: 95vw;
 }
 .typeahead {
 background-color: #FFFFFF;
@@ -122,7 +109,7 @@ color: #FFFFFF;
 margin: 0;
 }
 .main{padding:0}
-.bs-example{padding:2% 5%}
+.bs-example{padding:5px 5%}
 .avatar-image{
   width:80px;
   height:80px;
@@ -138,7 +125,7 @@ li.list-group-item:hover  .avatar-image{
 
 </style>
 <div class='row text-center justify-content-center '>
-  <div class='col-12 col-md-offset-1 col-xs-offset-1' style="background:black;">
+  <div class='col-12 col-md-offset-1 col-xs-offset-1' style="background:#399;">
         <form class='row' method="post" action="/s/find">
           <div class='col-8 bs-example'>
             <div class="input-group">
@@ -150,41 +137,49 @@ li.list-group-item:hover  .avatar-image{
             </div>
 
           </div>
-          <div class='col-md-4 col-xs-12 col-sm-12'style="padding:10px 0px";>
-            <input type="submit" class='btn form-control col-12' style='padding:2.8%;text-align:center;background:rgba(0,0,0,1)'value="Find">
+          <div class='col-md-12 col-xs-12 col-sm-12';>
+            <input type="submit" class='btn form-control col-xs-12 col-md-4' style='text-align:center;background:rgba(255,200,0,1);border-radius:10px!important'value="Find">
           </div>
         </form>
 
   </div>
 
   <div class='main'>
-    <ul class='list-group'>
-	<li class='list-group-item' style='color:black;padding:5%;'>
-		<p class='lead'>
-		Browse by genre and other interesting features coming soon
-		To request a feature support plese email your suggestions at ayabonga@projectcodex.co
-		</p>
-	</li>
+    <ul class='list-group-horizontal'>
+      	<li class='list-group-item' style='color:white;padding:5%;background-color: #0d1017; '>
+      		<p class='lead'>
+      		Browse by genre and other interesting features coming soon
+      		To request a feature support plese email your suggestions at ayabonga@projectcodex.co
+      		</p>
+      	</li>
          {{#each songs}}
-            <li class='list-group-item'>
-              <div class='col-xs-4 col-sm-4 col-md-4 col-lg-4'>
+            <li class='list-group-item col-md-4' style='background-color: #0d1017; border-left:1px solid white;border-top:none;border-bottom:none;'>
+              <div class='row'>
+              <div class='col-4'>
                 <img src="{{image}}" class='avatar-image'/>
               </div>
-              <div class='text-xs-left text-sm-left col-xs-8 col-sm-8 col-md-4 col-lg-4'>
-                <a href='/s/{{id}}' style="text-decoration:none">
-                  <h2 class="lead"><b>{{name}}</b></h2>
-                  <h2 class="display-6">{{artist}}</b></h2>
-                  <span class="badge badge-default">{{genre}}</span>
-                  
-                </a>
-              </div>
-              <div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
-                <a href="{{src}}" download><img id='{{id}}' onclick="download(this,'{{src}}')" class='download ico' src='img/download.png'></a>
-                <img id='{{id}}' onclick="playSound(this,'{{src}}');" class='play ico' src='img/play.png'  />
-                <img id='{{id}}' onclick='flame(this)' class='heat ico' src='img/heat.png' >
-                <div class="hp_slide">
-                    <div class="hp_range"></div>
+              <div class='col-8 text-center'>
+                <div class='col-xs-12'>
+                  <a href='/s/{{id}}' style="text-decoration:none">
+                    <h6 class="lead"><b>{{name}}</b></h6>
+                    <h6 class="display-6">{{artist}}</b></h6>
+                    <span class="badge badge-danger">{{genre}}</span>
+
+                  </a>
                 </div>
+                <div class='col-xs-12' style='margin-top:10px'>
+                  <a href="{{src}}" download>
+                    <span id='{{id}}' onclick="download(this,'{{src}}')" class='download ico'>
+                      <i class="fa fa-download black" style='color:#333;text-shadow:0px 0px 0px white;'></i>
+                    </span>
+                  </a>
+                  <span id='{{id}}' onclick="playSound(this,'{{src}}');" class='play ico' ><i class="fa fa-play black" style='color:#333;text-shadow:1px 1px 1px gold;font-size: 1.5em;'></i></span>
+                  <span id='{{id}}' onclick='flame(this)' class='heat ico'><i class="fa fa-hand-pointer-o black" style='color:#333;text-shadow:0px 0px 0px #333;'></i></span>
+                  <div class="hp_slide" style='margin:10px;'>
+                      <div class="hp_range"></div>
+                  </div>
+                </div>
+              </div>
               </div>
             </li>
             {{/each}}
