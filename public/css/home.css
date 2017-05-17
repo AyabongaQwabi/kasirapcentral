@@ -258,12 +258,9 @@ a {
     font-size: 25px;
     display: inline-block;
     margin-top: 10px;
-    margin-left: 40px;
-    margin-right: 150px;
-    width: 300px;
-    ;
+    margin-left: 20px;
+    width: 50px;
     text-align: left;
-    color: #C7D0E1;
 }
 button{
 	width:40%;

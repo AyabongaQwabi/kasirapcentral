@@ -27,7 +27,7 @@ module.exports = function(){
                     })
                     var videos = results;
                     eventService.getEvents(function(err, results) {
-                      res.render('home',{songs:songs,videos:videos,events:results,layout:"index.video.handlebars"})
+                      res.render('home',{songs:songs,videos:videos,events:results})
                     })
 
                 })

@@ -30,7 +30,7 @@
 
   }
   .main{
-    background:url('/img/Kasil.png')no-repeat center right fixed;
+    background:#0d1017;
     background-size:cover;
     height:100vh;
     overflow-y: scroll;
@@ -145,7 +145,7 @@
 
   }
   .main{
-    background:url('/img/Kasil.png')no-repeat center right fixed;
+    background:#0d1017;
     background-size:cover;
     height:100vh;
     overflow-y: scroll;

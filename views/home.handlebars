@@ -36,81 +36,31 @@
 <div class='row'>
 
     <div class='col-12 main'>
-        <div class='row text-center'>
-            <div class='col-md-12 col-xs-12'>
-                <p class='display-4 white'>
-                    Download and listen to your favorite local musician now.
-                </p>
+        <div class="card card-inverse" style="background-color: #0d1017; border-color: #0d1017;">
+          <div class="card-block">
+            <p class="card-title display-4 white" style='font-size:1.9rem;'>Download and listen to your favorite local musician now.</p>
+          </div>
+        </div>
+
+        <div class='card-group'>
+          {{#each songs}}
+          <div class="card col-md-3" style="padding:0;margin:1%;">
+            <img class="card-img-top" src="{{art}}" alt="Card image cap" style="width: 100%;height: 10em;">
+            <div class="card-block">
+              <h4 class="card-title">{{name}}</h4>
+              <p class="card-text">{{genre}}</p>
+              <p class="card-text">
+                    <i class="fa fa-play black" style='color:#0d1017'> {{play_count}}</i>
+                    <i class="fa fa-download black" style='color:#0d1017'>{{download_count}}</i>
+                    <i class="fa fa-fire black" style='color:#0d1017'>{{flame_count}}</i>
+              </p>
+              <a class='btn btn-primary' href={{location}}> Go to </a>
             </div>
-        </div>
-
-
-        <div class='col-md-12 col-xs-12'>
-            <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" rel="stylesheet" media="screen">
-            {{#each songs}}
-                <div class="container col-md-10 col-xs-12" onclick="window.location.replace('/s/{{song_id}}')">
-                    <div class="row user-menu-container square">
-                        <div class="col-md-12 col-xs-12 user-details">
-                            <div class="row coralbg white">
-                                <div class="col-md-6 no-pad">
-                                    <div class="user-pad">
-                                        <h3 class='h4'>{{name}}</h3>
-                                        <h4 class="white lead"><i class="fa fa-user-circle"></i><b>{{artist}}</b></h4>
-                                        {{#location}}
-                                            <h4 class="white lead"><i class="fa fa-globe"></i>{{this}}</h4>
-                                        {{/location}}
-                                        {{#genre}}
-                                            <span class="badge badge-default">{{this}}</span>
-                                        {{/genre}}
-                                    </div>
-                                </div>
-                                <div class="col-md-6 no-pad">
-                                    <div class="user-image">
-                                        <img src="{{art}}" class="img-responsive thumbnail">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row overview ">
-                                <div class=" col-4 user-pad text-center">
-                                    <h3>PLAYS</h3>
-                                    <h4>{{play_count}}</h4>
-                                </div>
-                                <div class=" col-4 user-pad text-center">
-                                    <h3>DOWNLOADS</h3>
-                                    <h4>{{download_count}}</h4>
-                                </div>
-                                <div class=" col-4 user-pad text-center">
-                                    <h3>FLAMES</h3>
-                                    <h4>{{flame_count}}</h4>
-                                </div>
-                            </div>
-                            <div class='row overview'>
-                              <div class='col-12 advert hidden-sm-down'>
-                                <script type="text/javascript" src="//ylx-1.com/bnr.php?section=General&pub=473964&format=468x60&ga=g"></script>
-                                <noscript><a href="https://yllix.com/publishers/473964" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/468x60.png" border="0" /></a></noscript>
-                                <script type="text/javascript" src="http://ylx-4.com/layer.php?section=General&pub=473964&ga=g&show=1&fp"></script>
-                              </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class='col-xs-12 hidden-md-up'>
-                  <script type="text/javascript" src="//ylx-1.com/bnr.php?section=General&pub=473964&format=300x50&ga=g"></script>
-                  <noscript><a href="https://yllix.com/publishers/473964" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub_zn9ugf.png" border="0" /></a></noscript>
-                  <script type="text/javascript" src="http://ylx-4.com/layer.php?section=General&pub=473964&ga=g&show=1&fp"></script>
-                </div>
-
-            {{/each}}
-        </div>
+          </div>
+          {{/each}}
+       </div>
     </div>
 </div>
 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/classise.js"></script>
-<script type="text/hjavascript">
-    $(document).ready(function() { var $btnSets = $('#responsive'), $btnLinks = $btnSets.find('a'); $btnLinks.click(function(e) { e.preventDefault(); $(this).siblings('a.active').removeClass("active"); $(this).addClass("active"); var index = $(this).index();
-    $("div.user-menu>div.user-menu-content").removeClass("active"); $("div.user-menu>div.user-menu-content").eq(index).addClass("active"); }); }); $( document ).ready(function() { $("[rel='tooltip']").tooltip(); $('.view').hover( function(){ $(this).find('.caption').slideDown(250);
-    //.fadeIn(250) }, function(){ $(this).find('.caption').slideUp(250); //.fadeOut(205) } ); });
-</script>
