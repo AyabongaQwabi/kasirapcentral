@@ -3,7 +3,7 @@
   var isOperaMini = (navigator.userAgent.indexOf('Opera Mini') > -1);
   var isOperaMobi = (navigator.userAgent.indexOf('Opera Mobi') > -1);
 
-  if(isOperaMini || isOperaMobi){ 
+  if(isOperaMini || isOperaMobi){
      alert('Please use Chrome Browser')
     indow.location('/')
   }
@@ -86,7 +86,7 @@
 <style>
     body {
         overflow-y: scroll;
-        background: url('/img/Kasil.png')no-repeat center right fixed;
+        background: #0d1017;
         background-size: cover;
     }
 
@@ -123,9 +123,9 @@
         text-decoration: none;
     }
 </style>
-<div class='row text-center justify-content-center'>
+<div class='row text-center justify-content-center' style='background:#399;'>
     <div class=' col-xs-12 col-sm-12 col-md-4 col-lg-4'>
-        <a href='/'><h1 class='col-xs-12 logo'>KRISS </h1></a>
+        <a href='/main'><h1 class='col-xs-12 logo'>KRISS </h1></a>
         <div class='col-xs-12 col-md-6' style="padding: 0% 30%;">
             <div class="fb-like" data-share="true" data-show-faces="true">
             </div>
@@ -141,15 +141,7 @@
         </div>
 
     </div>
-    <div class='col-xs-12 col-sm-12 col-md-4 col-lg-4'>
-      <div class='col-12 advert hidden-sm-down' style='background:rgba(255,200,0,1)'>
-        <script type="text/javascript" src="//ylx-1.com/bnr.php?section=General&pub=473964&format=468x60&ga=g"></script>
-        <noscript><a href="https://yllix.com/publishers/473964" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/468x60.png" border="0" /></a></noscript>
-        <script type="text/javascript" src="http://ylx-4.com/layer.php?section=General&pub=473964&ga=g&show=1&fp"></script>
-      </div>
 
-
-    </div>
 </div>
 <!--<div class='row justify-content-center'>
   <div class='col-md-12 text-justify' style='padding:1% 10%;color:black;background:#fcad26;'>
@@ -189,17 +181,23 @@
                 </a>
             </div>
 
-            <div class='col-12'>
-                <a href="../{{song.src}}" download><img id='{{song.id}}' onclick="download(this,'{{../song.src}}')" class='download ico' src='../img/download.png'></a>
-                <img id='{{song.id}}' onclick="playSound(this,'../{{song.src}}');" class='play ico' src='../img/play.png' />
-                <img id='{{song.id}}' onclick='flame(this)' class='heat ico' src='../img/heat.png'>
-                <div class='analytics'>
+            <div class='col-12' style='margin-top:15px;'>
+              <a href="{{song.src}}" download>
+                <span id='{{song.id}}' onclick="download(this,'{{song.src}}')" class='download'>
+                  <i class="fa fa-download black" style='background:none;padding-left:50px;color:#399;text-shadow:0px 0px 0px white;font-size: 3.5em;margin'></i>
+                </span>
+              </a>
+              <span id='{{song.id}}' onclick="playSound(this,'{{song.src}}');" class='play' ><i class="fa fa-play black" style='background:none;padding-left:50px;color:#399;text-shadow:1px 1px 1px gold;font-size: 3.5em;margin'></i></span>
+              <span id='{{song.id}}' onclick='flame(this)' class='heat'><i class="fa fa-hand-pointer-o black" style='background:none;padding-left:50px;color:#399;text-shadow:0px 0px 0px #399;font-size: 3.5em;margin'></i></span>
+
+
+                <div class='analytics' style='margin-top:10px;'>
                     <span class='badge badge-pill badge-warning download_count'>{{song.download_count}}</span>
                     <span class='badge badge-pill badge-warning play_count'>{{song.play_count}}</span>
                     <span class='badge badge-pill badge-warning flame_count'>{{song.flame_count}}</span>
 
                 </div>
-                <div class="hp_slide">
+                <div class="hp_slide" style='margin-top:10px;'>
                     <div class="hp_range"></div>
                 </div>
 
@@ -208,11 +206,7 @@
         </div>
 
     </div>
-    <div class='col-12 advert hidden-md-up' style='background:rgba(255,200,0,1)'>
-      <script type="text/javascript" src="//ylx-1.com/bnr.php?section=General&pub=473964&format=300x50&ga=g"></script>
-      <noscript><a href="https://yllix.com/publishers/473964" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub_zn9ugf.png" border="0" /></a></noscript>
-      <script type="text/javascript" src="http://ylx-4.com/layer.php?section=General&pub=473964&ga=g&show=1&fp"></script>
-    </div>
+
     {{#song.social_link}}
 	<div class="col-lg-4 col-sm-12 col-md-12 col-xs-12">
         <div class="fb-page" data-href="{{this}}" data-width="600px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
@@ -222,20 +216,8 @@
         </div>
 	</div>
     {{/song.social_link}}
-    <div style="background: rgba(255,255,255,0.4);" class='col-sm-12 text-center col-lg-12 col-md-12 col-xs-12'>
+    <div style="background: #399;" class='col-sm-12 text-center col-lg-12 col-md-12 col-xs-12'>
       <div  class="fb-comments" data-href="https://facebook.com/krissmusic/s/{{song.id}}" data-numposts="8"></div>
     </div>
 
-</div>
-<div class='row' style='padding:2%;'>
-  <div class='col-12 advert hidden-md-up' style='background:rgba(255,200,0,1)'>
-    <script type="text/javascript" src="//ylx-1.com/bnr.php?section=General&pub=473964&format=300x50&ga=g"></script>
-    <noscript><a href="https://yllix.com/publishers/473964" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub_zn9ugf.png" border="0" /></a></noscript>
-    <script type="text/javascript" src="http://ylx-4.com/layer.php?section=General&pub=473964&ga=g&show=1&fp"></script>
-  </div>
-  <div class='col-12 advert hidden-sm-down' style='background:rgba(255,200,0,1)'>
-    <script type="text/javascript" src="//ylx-1.com/bnr.php?section=General&pub=473964&format=468x60&ga=g"></script>
-    <noscript><a href="https://yllix.com/publishers/473964" target="_blank"><img src="//ylx-aff.advertica-cdn.com/pub/468x60.png" border="0" /></a></noscript>
-    <script type="text/javascript" src="http://ylx-4.com/layer.php?section=General&pub=473964&ga=g&show=1&fp"></script>
-  </div>
 </div>
