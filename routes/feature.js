@@ -30,7 +30,7 @@ module.exports = function(){
                       //res.render('home',{songs:songs,videos:videos,events:results})
                       res.render('home',{songs:songs,videos:videos,events:results},function(err, html) {
                             // The output is minified, huzzah!
-                            console.log(html);
+                            //console.log(html);
                             res.send(html);
                       })
                     })

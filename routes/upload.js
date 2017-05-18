@@ -8,7 +8,7 @@ module.exports = function(){
         //res.render('upload',{genres:results,layout:'index'})
         res.render('upload',{genres:results,layout:'index'} ,function(err, html) {
               // The output is minified, huzzah!
-              console.log(html);
+              //console.log(html);
               res.send(html);
         })
       })
