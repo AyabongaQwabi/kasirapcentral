@@ -34,7 +34,12 @@ module.exports = function(){
               var songService = services.songDataServ;
               songService.getSongs(function(err, results) {
                   //console.log(results)
-                  res.render('songlist',{songs:shuffle(results)})
+                  //res.render('songlist',{songs:shuffle(results)})
+                  res.render('songlist',{songs:shuffle(results)},function(err, html) {
+                        // The output is minified, huzzah!
+                        ////;
+                        res.send(html);
+                  })
               })
         });
   }
@@ -120,7 +125,12 @@ module.exports = function(){
               req.services(function(err,services){
                     var songService = services.songDataServ;
                     songService.getSongs(function(err, results) {
-                        res.render('find',{found:false,songs:results})
+                        //res.render('find',{found:false,songs:results})
+                        res.render('find',{found:false,songs:results} ,function(err, html) {
+                              // The output is minified, huzzah!
+                              ////;
+                              res.send(html);
+                        })
                     })
               });
 
@@ -147,7 +157,12 @@ module.exports = function(){
       console.log(err)
           var songService = services.songDataServ;
           songService.getSongs(function(err, results) {
-            res.render('versus_setup',{songs:results})
+            //res.render('versus_setup',{songs:results})
+            res.render('versus_setup',{songs:results} ,function(err, html) {
+                  // The output is minified, huzzah!
+                  //;
+                  res.send(html);
+            })
           })
     })
 

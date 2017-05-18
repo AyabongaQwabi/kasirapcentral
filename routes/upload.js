@@ -5,7 +5,12 @@ module.exports = function(){
     req.services(function(err,services){
       var songs = services.songDataServ;
       songs.fetchGenres(function(err,results){
-        res.render('upload',{genres:results,layout:'index'})
+        //res.render('upload',{genres:results,layout:'index'})
+        res.render('upload',{genres:results,layout:'index'} ,function(err, html) {
+              // The output is minified, huzzah!
+              console.log(html);
+              res.send(html);
+        })
       })
     })
 

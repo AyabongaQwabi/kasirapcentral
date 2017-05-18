@@ -9,8 +9,9 @@ var bodyParser = require('body-parser');
 var minify = require('express-minify');
 var http = require('https');
 var fs = require('fs');
-
-
+var minifyHTML = require('express-minify-html');
+var compression = require('compression');
+var fs = require('fs');
 
 var app = express();
 //app.use(require('helmet')());
@@ -29,12 +30,12 @@ songMethods =require('./routes/songs'),
 uploadMethods =require('./routes/upload'),
 groupMethods =require('./routes/groups'),
 ConnectionProvider = require('./routes/connectionProvider');
-
+var csso = require('csso');
 
 var dbOptions = {
  host: 'localhost',
   user: 'root',
-  password:safe.fetchSecured(),
+  password:'theaya5379',
   port: 3306,
   database: 'kriss'
 };
@@ -53,14 +54,14 @@ var serviceSetupCallback = function(connection){
 
 
 
-
+/*
 var sslPath = '/etc/letsencrypt/live/krissmusic.tk/';
 
 var options = {
     key: fs.readFileSync(sslPath + 'privkey.pem'),
     cert: fs.readFileSync(sslPath + 'fullchain.pem')
 };
-
+*/
 
 
 var myConnectionProvider = new ConnectionProvider(dbOptions, serviceSetupCallback);
@@ -70,9 +71,43 @@ app.use(express.static('public'))
 app.use(minify({cache: __dirname + '/cache'}));
 app.use(fileUpload());
 app.use(minify());
+app.use(compression());
 
 app.engine('handlebars', exphbs({defaultLayout: 'index'}));
 app.set('view engine', 'handlebars');
+
+app.use(minifyHTML({
+    override:      true,
+    exception_url: false,
+    htmlMinifier: {
+        removeComments:            false,
+        collapseWhitespace:        true,
+        collapseBooleanAttributes: true,
+        removeAttributeQuotes:     true,
+        removeEmptyAttributes:     true,
+        minifyJS:                  true
+    }
+}));
+
+/*
+var files = fs.readdirSync(__dirname+'/public/css');
+//console.log(files)
+files.forEach(function(filename){
+  if(filename.indexOf('.css')!= (-1) && filename.indexOf('.min')== (-1) && filename.indexOf('bootstrap')== (-1)){
+    console.log(filename)
+    var css = fs.readFileSync(__dirname+'/public/css/'+filename, 'utf8');
+    var newName = filename.split('.')[0]+'.min.css';
+    console.log('to --> '+newName)
+    var result = csso.minify(css, {
+      filename: __dirname+'/public/css/'+newName ,           // generate source map
+      restructure: false,
+      sourceMap: true,
+      debug: true
+   });
+  }
+})
+*/
+
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -84,8 +119,15 @@ var upload = new uploadMethods();
 var group = new groupMethods();
 
 app.get('/',function(req,res){
-  res.render('splash',{layout:false});
+  //res.render('splash',{layout:false});
+  res.render('splash',{layout:false} ,function(err, html) {
+        // The output is minified, huzzah!
+        console.log(html);
+        res.send(html);
+  })
 })
+
+
 app.get('/main',feature.getFeatured)
 app.get('/music',songs.getAll)
 app.get('/videos',videos.getAll)
@@ -114,7 +156,8 @@ app.get('/api/standalone/app/latest',songs.latest)
 app.post('/api/standalone/app/latest',songs.latest)
 app.get('/api/standalone/app/upload',upload.setupStandalone)
 app.post('/api/standalone/app/upload',upload.setupStandalone)
-
+/*
 var server = http.createServer(options, app);
 var io = require('socket.io').listen(server);
 server.listen(443);
+*/

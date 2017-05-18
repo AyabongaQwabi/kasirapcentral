@@ -32,7 +32,12 @@ module.exports = function(){
                        }
 
                     })
-                    res.render('groups',{groups:filteredResults})
+                    //res.render('groups',{groups:filteredResults})
+                    res.render('groups',{groups:filteredResults} ,function(err, html) {
+                          // The output is minified, huzzah!
+                          console.log(html);
+                          res.send(html);
+                    })
                   })
               })
         })
@@ -63,7 +68,12 @@ module.exports = function(){
              }
 
           })
-          res.render('groups',{groups:filteredResults})
+          //res.render('groups',{groups:filteredResults})
+          res.render('groups',{groups:filteredResults} ,function(err, html) {
+                // The output is minified, huzzah!
+                console.log(html);
+                res.send(html);
+          })
         })
     })
   }
