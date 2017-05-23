@@ -38,14 +38,15 @@
     <div class='col-12 main'>
       <div class="card card-inverse" style="background-color: #0d1017; border-color: #0d1017;">
         <div class="card-block text-center">
-          <p class="card-title display-4 white" style='font-size:1.9rem;'>Keeping it <span style="color:gold;"><b>100</b></span> with the realest in the game. Dowload and Stream below.</p>
+          <p class="card-title display-4 white" style='font-size:1.9rem;'>Keeping it <span style="color:gold;"><b>100</b></span> with the realest in the game.</p>
+          <p class="car-text display-4 white"> Dowload and Stream below</p>
           <p class='card-text'>Featured today is Phoenix from the Backyard crew in Khayelitsha , Cape Town. </p>
         </div>
       </div>
         <div class='row'>
           <div class='col-md-2 col-xs-12 ' style='overflow:hidden;height:72vh;background:url(/assets/phoenix/phoenix1.jpg) center;background-size:cover;'>
           </div>
-          <div class="col-md-8  text-center" style='margin-top:30px;margin-bottom:30px;'><div style="position:relative;height:70vh;padding-bottom:56.25%" class='text-center'><iframe src="https://www.youtube.com/embed/2Ko7Z20xeKY?autoplay=1&loop=1&ecver=2" width="320" height="72vh" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div></div>
+          <div class="col-md-8  text-center" style='margin-top:0px;margin-bottom:30px;'><div style="position:relative;height:72vh;padding-bottom:56.25%" class='text-center'><iframe src="https://www.youtube.com/embed/2Ko7Z20xeKY?autoplay=1&loop=1&ecver=2" width="320" height="72vh" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe></div></div>
 
           <div class='col-md-2 col-xs-12' style='overflow:hidden;height:72vh;background:url(/assets/phoenix/phoenix2.jpg)center;background-size:cover;'>
           </div>
@@ -53,11 +54,12 @@
        <div class="card card-inverse card-warning mb-3 text-center" style="background-color: #0d1017; border-color: #0d1017;">
          <div class="card-block">
            <blockquote class="card-blockquote">
-             <h4 class="display-4 white" style='font-size:1.9rem;'> Latest News </h4>
+             <h4 class="display-4 white" style='font-size:2rem;'> Latest Headlines </h4>
              <br/>
-             <p class='lead'><a href="https://www.audiomack.com/album/black-magic-15" style="color:gold;"> Black Magic </a> releases much anticipated <a href="https://www.audiomack.com/album/black-magic-15/ghost-of-pablo" style="color:gold;"><b>Ghost of Pablo</b></a>. </p>
-             <p class='lead'><a href="facebook.com/manaxv2v" style="color:gold;"> Stunna </a> releases new single <a href="http://www.datafilehost.com/d/5239ca01" style="color:gold;"><b>9 Gang</b></a>. </p>
-            </blockquote>
+             <p class='lead'><a href="https://www.audiomack.com/artist/black-magic-15" style="color:gold;"> Black Magic </a> releases much anticipated <a href="https://www.audiomack.com/album/black-magic-15/ghost-of-pablo" style="color:gold;"><b>Ghost of Pablo</b></a>. </p>
+             <p class='lead'><a href="https://facebook.com/manaxv2v" style="color:gold;"> Stunna </a> releases new single <a href="http://www.datafilehost.com/d/5239ca01" style="color:gold;"><b>9 Gang</b></a>. </p>
+             <p class='lead'><a href="https://www.facebook.com/mktheprince" style="color:gold;"> Mk The Prince</a> set to release new music video <a href="https://www.facebook.com/mktheprince" style="color:gold;"><b>The Experiment Tape</b></a>. </p>
+          </blockquote>
          </div>
        </div>
 
@@ -66,18 +68,22 @@
            <blockquote class="card-blockquote">
              <h4 class="display-4 white" style='font-size:1.9rem;'> Featured Music </h4>
              <p class='lead'> Some of the hottest current musicians nationwide. </p>
-           </blockquote>
+            <div class='row'>
+             <p class='col-md-2'>On the Real though <span style="color:gold;">Fonzo</span></p>
+             <p class="lead col-md-8 col-md-offset-2"><iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/247136248&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe></p>
+            </div>
+          </blockquote>
          </div>
        </div>
         <div class='card-group' style='margin-top:50px;margin-bottom:30px;'>
           {{#each songs}}
-          <div class="card col-md-5 col-xs-12 col-sm-12" style="padding:0;margin:1%;">
+          <div class="card col-md-5 col-xs-12 col-sm-12 text-center" style="padding:0;margin:1%;">
 
             <div class="card-block">
               <h4 class="card-title">{{artist}}</h4>
               <p class="card-text">{{name}}</p>
-              <p class="card-text badge badge-danger">{{genre}}</p>
-              <p class='cad-text'>{{location}}</p>
+              <p class="card-text badge badge-danger">{{genre}}</p><p class='cad-text badge badge-success'>{{location}}</p>
+
               <p class="card-text">
                     <i class="fa fa-play black" style='color:#0d1017'> {{play_count}}</i>
                     <i class="fa fa-download black" style='color:#0d1017'>{{download_count}}</i>
