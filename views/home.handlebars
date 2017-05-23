@@ -53,17 +53,14 @@
        <div class="card card-inverse card-warning mb-3 text-center" style="background-color: #0d1017; border-color: #0d1017;">
          <div class="card-block">
            <blockquote class="card-blockquote">
-             <h4 class="display-4 white" style='font-size:1.9rem;'> Latest Releases </h4>
-             <p class='lead'> Black Magic releases much anticipated <span style="color:gold;"><b>Ghost of Pablo</b></span>. </p>
-           </blockquote>
+             <h4 class="display-4 white" style='font-size:1.9rem;'> Latest News </h4>
+             <br/>
+             <p class='lead'><a href="https://www.audiomack.com/album/black-magic-15" style="color:gold;"> Black Magic </a> releases much anticipated <a href="https://www.audiomack.com/album/black-magic-15/ghost-of-pablo" style="color:gold;"><b>Ghost of Pablo</b></a>. </p>
+             <p class='lead'><a href="facebook.com/manaxv2v" style="color:gold;"> Stunna </a> releases new single <a href="http://www.datafilehost.com/d/5239ca01" style="color:gold;"><b>9 Gang</b></a>. </p>
+            </blockquote>
          </div>
        </div>
-       <div class='row'>
-         <div class='col-md-2 hidden-sm-down'></div>
-         <div class='col-md-8 col-xs-12'>
-            <iframe src="https://www.audiomack.com/embed/album/black-magic-15/ghost-of-pablo" scrolling="no" width="100%" height="400" scrollbars="no" frameborder="0"></iframe>
-         </div>
-       </div>
+
       <div class="card card-inverse card-warning mb-3 text-center" style="background-color: #0d1017; border-color: #0d1017;">
          <div class="card-block">
            <blockquote class="card-blockquote">
@@ -75,10 +72,11 @@
         <div class='card-group' style='margin-top:50px;margin-bottom:30px;'>
           {{#each songs}}
           <div class="card col-md-5 col-xs-12 col-sm-12" style="padding:0;margin:1%;">
-            <img class="card-img-top" src="{{art}}" alt="Card image cap" style="width: 100%;height: 15em;">
+
             <div class="card-block">
-              <h4 class="card-title">{{name}}</h4>
-              <p class="card-text">{{genre}}</p>
+              <h4 class="card-title">{{artist}}</h4>
+              <p class="card-text">{{name}}</p>
+              <p class="card-text badge badge-danger">{{genre}}</p>
               <p class='cad-text'>{{location}}</p>
               <p class="card-text">
                     <i class="fa fa-play black" style='color:#0d1017'> {{play_count}}</i>
